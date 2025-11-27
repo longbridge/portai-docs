@@ -8,10 +8,10 @@ hero:
   actions:
     - theme: brand
       text: Getting Started
-      link: /zh-HK/guide/getting-started
+      link: /en/ai/docs/guide/getting-started
     - theme: alt
       text: API Reference
-      link: /zh-HK/api/introduction
+      link: /en/ai/docs/api/introduction
 
 features:
   - icon: 🚀
