@@ -3,7 +3,6 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 // @ts-ignore
 export default defineConfig(({mode}) => {
-  const isDev = mode === 'development';
   return {
   title: "PortAI Docs",
   description: "PortAI Documentation",
@@ -14,23 +13,6 @@ export default defineConfig(({mode}) => {
   metaChunk: true,
   base: '/',
   
-  vite: {
-    build: {
-      // 自定义 assets 输出目录
-      assetsDir: '/assets/',
-    },
-  },
-
-  // 使用 transformHtml hook 来处理 HTML 中的资源路径
-  transformHtml(code, id, ctx) {
-    if (!isDev) {
-      // 只替换 assets 相关的路径，不替换页面链接
-      return code
-        .replace(/href="\/assets\//g, 'href="/infra-docs-assets/')
-        .replace(/src="\/assets\//g, 'src="/infra-docs-assets/')
-    }
-    return code
-  },
 
   // Multi-language support
   locales: {
