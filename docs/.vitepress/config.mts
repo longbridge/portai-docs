@@ -1,12 +1,40 @@
 import { defineConfig } from "vitepress";
 
+// 判断当前是否为开发环境
+// const isDev = process.env.NODE_ENV === 'development';
+// console.log("🚀 ~ isDev:", isDev);
+// console.log("🚀 ~ NODE_ENV:", process.env.NODE_ENV);
+
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+// @ts-ignore
+export default defineConfig(({mode}) => {
+  console.log("🚀 ~ mode:", mode)
+  const isDev = mode === 'development';
+  return {
   title: "PortAI Docs",
   description: "PortAI Documentation",
   lang: "en",
   ignoreDeadLinks: true,
-  base: '/en/ai/docs/',
+  base: '/',
+  
+  vite: {
+    build: {
+      // 自定义 assets 输出目录
+      assetsDir: '/assets/',
+    },
+  },
+
+  // 使用 transformHtml hook 来处理 HTML 中的资源路径
+  transformHtml(code, id, ctx) {
+    if (!isDev) {
+      // 只替换 assets 相关的路径，不替换页面链接
+      return code
+        .replace(/href="\/assets\//g, 'href="/en/ai/docs/assets/')
+        .replace(/src="\/assets\//g, 'src="/en/ai/docs/assets/')
+        .replace(/href="\/vp-icons\.css"/g, 'href="/en/ai/docs/vp-icons.css"')
+    }
+    return code
+  },
 
   // Multi-language support
   locales: {
@@ -17,25 +45,25 @@ export default defineConfig({
       description: "PortAI Documentation",
       themeConfig: {
         nav: [
-          { text: "Home", link: "/en/ai/docs/" },
-          { text: "Guide", link: "/en/ai/docs/guide/getting-started" },
-          { text: "API", link: "/en/ai/docs/api/introduction" },
+          { text: "Home", link: "/en/" },
+          { text: "Guide", link: "/en/guide/getting-started" },
+          { text: "API", link: "/en/api/introduction" },
         ],
 
         sidebar: [
           {
             text: "Guide",
             items: [
-              { text: "Getting Started", link: "/en/ai/docs/guide/getting-started" },
-              { text: "Configuration", link: "/en/ai/docs/guide/configuration" },
-              { text: "Deployment", link: "/en/ai/docs/guide/deployment" },
+              { text: "Getting Started", link: "/en/guide/getting-started" },
+              { text: "Configuration", link: "/en/guide/configuration" },
+              { text: "Deployment", link: "/en/guide/deployment" },
             ],
           },
           {
             text: "API Reference",
             items: [
-              { text: "Introduction", link: "/en/ai/docs/api/introduction" },
-              { text: "Core API", link: "/en/ai/docs/api/core" },
+              { text: "Introduction", link: "/en/api/introduction" },
+              { text: "Core API", link: "/en/api/core" },
             ],
           },
         ],
@@ -62,25 +90,25 @@ export default defineConfig({
       description: "PortAI 项目文档",
       themeConfig: {
         nav: [
-          { text: "首页", link: "/zh-CN/ai/docs/" },
-          { text: "指南", link: "/zh-CN/ai/docs/guide/getting-started" },
-          { text: "API", link: "/zh-CN/ai/docs/api/introduction" },
+          { text: "首页", link: "/zh-CN/" },
+          { text: "指南", link: "/zh-CN/guide/getting-started" },
+          { text: "API", link: "/zh-CN/api/introduction" },
         ],
 
         sidebar: [
           {
             text: "指南",
             items: [
-              { text: "快速开始", link: "/zh-CN/ai/docs/guide/getting-started" },
-              { text: "配置说明", link: "/zh-CN/ai/docs/guide/configuration" },
-              { text: "部署", link: "/zh-CN/ai/docs/guide/deployment" },
+              { text: "快速开始", link: "/zh-CN/guide/getting-started" },
+              { text: "配置说明", link: "/zh-CN/guide/configuration" },
+              { text: "部署", link: "/zh-CN/guide/deployment" },
             ],
           },
           {
             text: "API 参考",
             items: [
-              { text: "介绍", link: "/zh-CN/ai/docs/api/introduction" },
-              { text: "核心 API", link: "/zh-CN/ai/docs/api/core" },
+              { text: "介绍", link: "/zh-CN/api/introduction" },
+              { text: "核心 API", link: "/zh-CN/api/core" },
             ],
           },
         ],
@@ -122,25 +150,25 @@ export default defineConfig({
       description: "PortAI 項目文檔",
       themeConfig: {
         nav: [
-          { text: "首頁", link: "/zh-HK/ai/docs/" },
-          { text: "指南", link: "/zh-HK/ai/docs/guide/getting-started" },
-          { text: "API", link: "/zh-HK/ai/docs/api/introduction" },
+          { text: "首頁", link: "/zh-HK/" },
+          { text: "指南", link: "/zh-HK/guide/getting-started" },
+          { text: "API", link: "/zh-HK/api/introduction" },
         ],
 
         sidebar: [
           {
             text: "指南",
             items: [
-              { text: "快速開始", link: "/zh-HK/ai/docs/guide/getting-started" },
-              { text: "配置說明", link: "/zh-HK/ai/docs/guide/configuration" },
-              { text: "部署", link: "/zh-HK/ai/docs/guide/deployment" },
+              { text: "快速開始", link: "/zh-HK/guide/getting-started" },
+              { text: "配置說明", link: "/zh-HK/guide/configuration" },
+              { text: "部署", link: "/zh-HK/guide/deployment" },
             ],
           },
           {
             text: "API 參考",
             items: [
-              { text: "介紹", link: "/zh-HK/ai/docs/api/introduction" },
-              { text: "核心 API", link: "/zh-HK/ai/docs/api/core" },
+              { text: "介紹", link: "/zh-HK/api/introduction" },
+              { text: "核心 API", link: "/zh-HK/api/core" },
             ],
           },
         ],
@@ -244,4 +272,4 @@ export default defineConfig({
       },
     },
   },
-});
+}});
