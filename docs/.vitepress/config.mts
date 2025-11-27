@@ -1,10 +1,5 @@
 import { defineConfig } from "vitepress";
 
-// 判断当前是否为开发环境
-// const isDev = process.env.NODE_ENV === 'development';
-// console.log("🚀 ~ isDev:", isDev);
-// console.log("🚀 ~ NODE_ENV:", process.env.NODE_ENV);
-
 // https://vitepress.dev/reference/site-config
 // @ts-ignore
 export default defineConfig(({mode}) => {
@@ -15,26 +10,25 @@ export default defineConfig(({mode}) => {
   description: "PortAI Documentation",
   lang: "en",
   ignoreDeadLinks: true,
-  // base: '/',
+  base: '/',
   
-  // vite: {
-  //   build: {
-  //     // 自定义 assets 输出目录
-  //     assetsDir: '/assets/',
-  //   },
-  // },
+  vite: {
+    build: {
+      // 自定义 assets 输出目录
+      assetsDir: '/assets/',
+    },
+  },
 
-  // // 使用 transformHtml hook 来处理 HTML 中的资源路径
-  // transformHtml(code, id, ctx) {
-  //   if (!isDev) {
-  //     // 只替换 assets 相关的路径，不替换页面链接
-  //     return code
-  //       .replace(/href="\/assets\//g, 'href="/en/ai/docs/assets/')
-  //       .replace(/src="\/assets\//g, 'src="/en/ai/docs/assets/')
-  //       .replace(/href="\/vp-icons\.css"/g, 'href="/en/ai/docs/vp-icons.css"')
-  //   }
-  //   return code
-  // },
+  // 使用 transformHtml hook 来处理 HTML 中的资源路径
+  transformHtml(code, id, ctx) {
+    if (!isDev) {
+      // 只替换 assets 相关的路径，不替换页面链接
+      return code
+        .replace(/href="\/assets\//g, 'href="/infra-docs-assets/')
+        .replace(/src="\/assets\//g, 'src="/infra-docs-assets/')
+    }
+    return code
+  },
 
   // Multi-language support
   locales: {
