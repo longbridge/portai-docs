@@ -3,13 +3,15 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 // @ts-ignore
 export default defineConfig(({mode}) => {
-  console.log("🚀 ~ mode:", mode)
   const isDev = mode === 'development';
   return {
   title: "PortAI Docs",
   description: "PortAI Documentation",
-  lang: "en",
   ignoreDeadLinks: true,
+  cleanUrls: true,
+  appearance: true,
+  lastUpdated: true,
+  metaChunk: true,
   base: '/',
   
   vite: {
