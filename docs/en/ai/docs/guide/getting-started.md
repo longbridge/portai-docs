@@ -78,6 +78,6 @@ This is a danger warning box
 
 ## Next Steps
 
-- Learn how to [configure](/guide/configuration) your documentation site
-- Learn how to [deploy](/guide/deployment) to production
-- Check out the [API Reference](/api/introduction) for more features
+- Learn how to [configure](/en/ai/docs/guide/configuration) your documentation site
+- Learn how to [deploy](/en/ai/docs/guide/deployment) to production
+- Check out the [API Reference](/en/ai/docs/api/introduction) for more features

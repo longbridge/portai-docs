@@ -1,18 +1,18 @@
-# 核心 API
+# Core API
 
-本頁面列出了 PortAI 的核心 API 接口。
+This page lists the core API endpoints of PortAI.
 
-## 用戶管理
+## User Management
 
-### 獲取用戶信息
+### Get User Info
 
-獲取當前認證用戶的信息。
+Get information about the currently authenticated user.
 
 ```http
 GET /api/users/me
 ```
 
-**響應示例：**
+**Response Example:**
 
 ```json
 {
@@ -26,15 +26,15 @@ GET /api/users/me
 }
 ```
 
-### 更新用戶信息
+### Update User Info
 
-更新當前用戶的個人信息。
+Update the current user's personal information.
 
 ```http
 PUT /api/users/me
 ```
 
-**請求體：**
+**Request Body:**
 
 ```json
 {
@@ -43,7 +43,7 @@ PUT /api/users/me
 }
 ```
 
-**響應示例：**
+**Response Example:**
 
 ```json
 {
@@ -54,29 +54,29 @@ PUT /api/users/me
     "email": "newemail@example.com",
     "updatedAt": "2025-11-25T00:00:00Z"
   },
-  "message": "用戶信息更新成功"
+  "message": "User information updated successfully"
 }
 ```
 
-## 項目管理
+## Project Management
 
-### 獲取項目列表
+### Get Project List
 
-獲取當前用戶的所有項目。
+Get all projects for the current user.
 
 ```http
 GET /api/projects
 ```
 
-**查詢參數：**
+**Query Parameters:**
 
-| 參數 | 類型 | 必需 | 說明 |
-|------|------|------|------|
-| page | number | 否 | 頁碼，默認 1 |
-| limit | number | 否 | 每頁數量，默認 20 |
-| status | string | 否 | 項目狀態過濾 |
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| page | number | No | Page number, default 1 |
+| limit | number | No | Items per page, default 20 |
+| status | string | No | Project status filter |
 
-**響應示例：**
+**Response Example:**
 
 ```json
 {
@@ -86,7 +86,7 @@ GET /api/projects
       {
         "id": "proj_123",
         "name": "My Project",
-        "description": "項目描述",
+        "description": "Project description",
         "status": "active",
         "createdAt": "2025-01-01T00:00:00Z"
       }
@@ -101,27 +101,27 @@ GET /api/projects
 }
 ```
 
-### 創建項目
+### Create Project
 
-創建一個新項目。
+Create a new project.
 
 ```http
 POST /api/projects
 ```
 
-**請求體：**
+**Request Body:**
 
 ```json
 {
   "name": "New Project",
-  "description": "項目描述",
+  "description": "Project description",
   "settings": {
     "visibility": "private"
   }
 }
 ```
 
-**響應示例：**
+**Response Example:**
 
 ```json
 {
@@ -129,27 +129,27 @@ POST /api/projects
   "data": {
     "id": "proj_456",
     "name": "New Project",
-    "description": "項目描述",
+    "description": "Project description",
     "status": "active",
     "createdAt": "2025-11-25T00:00:00Z"
   },
-  "message": "項目創建成功"
+  "message": "Project created successfully"
 }
 ```
 
-### 獲取項目詳情
+### Get Project Details
 
-獲取指定項目的詳細信息。
+Get detailed information about a specific project.
 
 ```http
 GET /api/projects/:id
 ```
 
-**路徑參數：**
+**Path Parameters:**
 
-- `id`: 項目 ID
+- `id`: Project ID
 
-**響應示例：**
+**Response Example:**
 
 ```json
 {
@@ -157,7 +157,7 @@ GET /api/projects/:id
   "data": {
     "id": "proj_123",
     "name": "My Project",
-    "description": "項目描述",
+    "description": "Project description",
     "status": "active",
     "settings": {
       "visibility": "private"
@@ -168,56 +168,56 @@ GET /api/projects/:id
 }
 ```
 
-### 更新項目
+### Update Project
 
-更新項目信息。
+Update project information.
 
 ```http
 PUT /api/projects/:id
 ```
 
-**請求體：**
+**Request Body:**
 
 ```json
 {
   "name": "Updated Project Name",
-  "description": "更新的描述"
+  "description": "Updated description"
 }
 ```
 
-### 刪除項目
+### Delete Project
 
-刪除指定項目。
+Delete a specific project.
 
 ```http
 DELETE /api/projects/:id
 ```
 
-**響應示例：**
+**Response Example:**
 
 ```json
 {
   "success": true,
-  "message": "項目刪除成功"
+  "message": "Project deleted successfully"
 }
 ```
 
-## 數據管理
+## Data Management
 
-### 上傳數據
+### Upload Data
 
-上傳數據到項目。
+Upload data to a project.
 
 ```http
 POST /api/projects/:id/data
 ```
 
-**請求體（multipart/form-data）：**
+**Request Body (multipart/form-data):**
 
-- `file`: 文件
-- `metadata`: JSON 格式的元數據
+- `file`: File
+- `metadata`: JSON-formatted metadata
 
-**響應示例：**
+**Response Example:**
 
 ```json
 {
@@ -228,19 +228,19 @@ POST /api/projects/:id/data
     "size": 1024000,
     "uploadedAt": "2025-11-25T00:00:00Z"
   },
-  "message": "數據上傳成功"
+  "message": "Data uploaded successfully"
 }
 ```
 
-### 獲取數據列表
+### Get Data List
 
-獲取項目的數據列表。
+Get the data list for a project.
 
 ```http
 GET /api/projects/:id/data
 ```
 
-**響應示例：**
+**Response Example:**
 
 ```json
 {
@@ -258,18 +258,18 @@ GET /api/projects/:id/data
 }
 ```
 
-## 錯誤代碼
+## Error Codes
 
-| 錯誤代碼 | 說明 |
-|----------|------|
-| `INVALID_REQUEST` | 請求參數無效 |
-| `UNAUTHORIZED` | 未授權訪問 |
-| `FORBIDDEN` | 禁止訪問 |
-| `NOT_FOUND` | 資源不存在 |
-| `RATE_LIMIT_EXCEEDED` | 超出速率限制 |
-| `INTERNAL_ERROR` | 服務器內部錯誤 |
+| Error Code | Description |
+|------------|-------------|
+| `INVALID_REQUEST` | Invalid request parameters |
+| `UNAUTHORIZED` | Unauthorized access |
+| `FORBIDDEN` | Forbidden access |
+| `NOT_FOUND` | Resource not found |
+| `RATE_LIMIT_EXCEEDED` | Rate limit exceeded |
+| `INTERNAL_ERROR` | Internal server error |
 
-## SDK 示例
+## SDK Examples
 
 ### JavaScript/TypeScript
 
@@ -280,13 +280,13 @@ const client = new PortAI({
   apiKey: 'YOUR_API_TOKEN'
 })
 
-// 獲取用戶信息
+// Get user info
 const user = await client.users.me()
 
-// 創建項目
+// Create project
 const project = await client.projects.create({
   name: 'My Project',
-  description: '項目描述'
+  description: 'Project description'
 })
 ```
 
@@ -297,21 +297,20 @@ from portai import PortAI
 
 client = PortAI(api_key='YOUR_API_TOKEN')
 
-# 獲取用戶信息
+# Get user info
 user = client.users.me()
 
-# 創建項目
+# Create project
 project = client.projects.create(
     name='My Project',
-    description='項目描述'
+    description='Project description'
 )
 ```
 
-## 更多信息
+## More Information
 
-如需更多幫助，請查看：
+For more help, check out:
 
-- [API 介紹](/zh-HK/api/introduction)
-- [快速開始](/zh-HK/guide/getting-started)
-- [配置說明](/zh-HK/guide/configuration)
-
+- [API Introduction](/api/introduction)
+- [Getting Started](/guide/getting-started)
+- [Configuration](/guide/configuration)
