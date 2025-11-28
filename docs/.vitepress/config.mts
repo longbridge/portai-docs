@@ -33,7 +33,7 @@ export default defineConfig({
             text: "API Reference",
             items: [
               { text: "Introduction", link: "/api/introduction" },
-              { text: "Core API", link: "/api/core" },
+              { text: "Agent run API", link: "/api/agent_run" },
             ],
           },
         ],
@@ -78,7 +78,7 @@ export default defineConfig({
             text: "API 参考",
             items: [
               { text: "介绍", link: "/zh-CN/api/introduction" },
-              { text: "核心 API", link: "/zh-CN/api/core" },
+              { text: "运行 Agent API", link: "/zh-CN/api/agent_run" },
             ],
           },
         ],
@@ -138,7 +138,7 @@ export default defineConfig({
             text: "API 參考",
             items: [
               { text: "介紹", link: "/zh-HK/api/introduction" },
-              { text: "核心 API", link: "/zh-HK/api/core" },
+              { text: "運行 Agent API", link: "/zh-HK/api/agent_run" },
             ],
           },
         ],
