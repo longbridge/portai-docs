@@ -41,7 +41,7 @@ export default defineConfig(({mode}) => {
             text: "API Reference",
             items: [
               { text: "Introduction", link: "/en/ai/docs/api/introduction" },
-              { text: "Core API", link: "/en/ai/docs/api/core" },
+              { text: "Agent Run API", link: "/en/ai/docs/api/agent-run" },
             ],
           },
         ],
@@ -86,7 +86,7 @@ export default defineConfig(({mode}) => {
             text: "API 参考",
             items: [
               { text: "介绍", link: "/zh-CN/ai/docs/api/introduction" },
-              { text: "核心 API", link: "/zh-CN/ai/docs/api/core" },
+              { text: "Agent 运行 API", link: "/zh-CN/ai/docs/api/agent-run" },
             ],
           },
         ],
@@ -146,7 +146,7 @@ export default defineConfig(({mode}) => {
             text: "API 參考",
             items: [
               { text: "介紹", link: "/zh-HK/ai/docs/api/introduction" },
-              { text: "核心 API", link: "/zh-HK/ai/docs/api/core" },
+              { text: "Agent 運行 API", link: "/zh-HK/ai/docs/api/agent-run" },
             ],
           },
         ],
