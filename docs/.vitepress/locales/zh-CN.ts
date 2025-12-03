@@ -1,0 +1,167 @@
+import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
+
+export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
+  label: '简体中文',
+  lang: 'zh-CN',
+  title: 'PortAI 文档',
+  description: 'PortAI 项目文档',
+  themeConfig: {
+    logoLink: '/zh-CN/ai/docs/',
+    nav: [
+      { text: '首页', link: '/zh-CN/ai/docs/' },
+      { text: '介绍', link: '/zh-CN/ai/docs/getting-started/introduction' },
+      { text: 'API', link: '/zh-CN/ai/docs/api/agent-run' },
+    ],
+
+    sidebar: [
+      {
+        text: '入门',
+        collapsed: true,
+        items: [
+          { text: '介绍', link: '/zh-CN/ai/docs/getting-started/introduction' },
+          { text: '核心概念', link: '/zh-CN/ai/docs/getting-started/core-concepts' },
+        ],
+      },
+      {
+        text: '节点',
+        collapsed: true,
+        items: [
+          { text: '用户输入', link: '/zh-CN/ai/docs/nodes/user-input' },
+          { text: '大语言模型', link: '/zh-CN/ai/docs/nodes/llm' },
+          { text: '答案', link: '/zh-CN/ai/docs/nodes/answer' },
+          { text: '输出', link: '/zh-CN/ai/docs/nodes/output' },
+          { text: '智能代理', link: '/zh-CN/ai/docs/nodes/agent' },
+          { text: '工具', link: '/zh-CN/ai/docs/nodes/tools' },
+          { text: '问题分类器', link: '/zh-CN/ai/docs/nodes/question-classifier' },
+          { text: 'If-Else', link: '/zh-CN/ai/docs/nodes/if-else' },
+          { text: '迭代', link: '/zh-CN/ai/docs/nodes/iteration' },
+          { text: '循环', link: '/zh-CN/ai/docs/nodes/loop' },
+          { text: '代码', link: '/zh-CN/ai/docs/nodes/code' },
+          { text: '模板', link: '/zh-CN/ai/docs/nodes/template' },
+          { text: '变量聚合器', link: '/zh-CN/ai/docs/nodes/variable-aggregator' },
+          { text: '变量赋值器', link: '/zh-CN/ai/docs/nodes/variable-assigner' },
+          { text: '参数提取器', link: '/zh-CN/ai/docs/nodes/parameter-extractor' },
+          { text: 'HTTP 请求', link: '/zh-CN/ai/docs/nodes/http-request' },
+        ],
+      },
+      {
+        text: '构建',
+        collapsed: true,
+        items: [
+          { text: '快捷键', link: '/zh-CN/ai/docs/build/shortcuts' },
+          { text: '流程逻辑', link: '/zh-CN/ai/docs/build/flow-logic' },
+          { text: '处理错误', link: '/zh-CN/ai/docs/build/error-handling' },
+          { text: '使用 MCP 工具', link: '/zh-CN/ai/docs/build/mcp-tools' },
+          { text: '版本控制', link: '/zh-CN/ai/docs/build/version-control' },
+        ],
+      },
+      {
+        text: '调试',
+        collapsed: true,
+        items: [
+          { text: '单节点', link: '/zh-CN/ai/docs/debug/single-node' },
+          { text: '工作流', link: '/zh-CN/ai/docs/debug/workflow' },
+          { text: '运行历史', link: '/zh-CN/ai/docs/debug/run-history' },
+          { text: '错误类型', link: '/zh-CN/ai/docs/debug/error-types' },
+        ],
+      },
+      {
+        text: '发布',
+        collapsed: true,
+        items: [
+          { text: '分享你的 AI 应用', link: '/zh-CN/ai/docs/publish/share' },
+          { text: 'Web App', link: '/zh-CN/ai/docs/publish/web-app' },
+        ],
+      },
+      {
+        text: 'API',
+        collapsed: true,
+        items: [
+          { text: 'Agent 运行', link: '/zh-CN/ai/docs/api/agent-run' },
+        ],
+      },
+      {
+        text: '监控',
+        collapsed: true,
+        items: [
+          { text: '日志', link: '/zh-CN/ai/docs/monitor/logs' },
+          { text: '统计', link: '/zh-CN/ai/docs/monitor/statistics' },
+        ],
+      },
+      {
+        text: '知识库',
+        collapsed: true,
+        items: [
+          { text: '功能简介', link: '/zh-CN/ai/docs/knowledge-base/introduction' },
+          { text: '创建知识库', link: '/zh-CN/ai/docs/knowledge-base/create' },
+          { text: '管理知识库', link: '/zh-CN/ai/docs/knowledge-base/manage' },
+          { text: '元数据', link: '/zh-CN/ai/docs/knowledge-base/metadata' },
+          { text: '召回测试', link: '/zh-CN/ai/docs/knowledge-base/recall-test' },
+        ],
+      },
+      {
+        text: '工作区',
+        collapsed: true,
+        items: [
+          { text: '管理应用', link: '/zh-CN/ai/docs/workspace/manage-apps' },
+          { text: '管理成员', link: '/zh-CN/ai/docs/workspace/manage-members' },
+          { text: '个人设置', link: '/zh-CN/ai/docs/workspace/personal-settings' },
+        ],
+      },
+      {
+        text: '教程',
+        collapsed: true,
+        items: [
+          { text: '简单聊天机器人', link: '/zh-CN/ai/docs/tutorials/simple-chatbot' },
+        ],
+      },
+    ],
+
+    editLink: {
+      pattern: 'https://github.com/yourusername/portai-docs/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页',
+    },
+
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'medium',
+      },
+    },
+
+    docFooter: {
+      prev: '上一页',
+      next: '下一页',
+    },
+
+    outline: {
+      label: '页面导航',
+    },
+
+    returnToTopLabel: '回到顶部',
+    sidebarMenuLabel: '菜单',
+    darkModeSwitchLabel: '主题',
+    lightModeSwitchTitle: '切换到浅色模式',
+    darkModeSwitchTitle: '切换到深色模式',
+  },
+}
+
+export const zhCNSearch: DefaultTheme.LocalSearchOptions['locales'] = {
+  'zh-CN': {
+    translations: {
+      button: {
+        buttonText: '搜索文档',
+        buttonAriaLabel: '搜索文档',
+      },
+      modal: {
+        noResultsText: '无法找到相关结果',
+        resetButtonTitle: '清除查询条件',
+        footer: {
+          selectText: '选择',
+          navigateText: '切换',
+        },
+      },
+    },
+  },
+}

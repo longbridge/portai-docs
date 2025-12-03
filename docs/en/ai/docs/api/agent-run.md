@@ -1,5 +1,10 @@
 ---
-title: API Reference
+title: Agent Run API - PortAI API Reference
+description: Run AI Agent workflows via HTTP API. Supports synchronous JSON and streaming SSE responses. Complete guide with cURL and Go code examples.
+head:
+  - - meta
+    - name: keywords
+      content: PortAI, Agent API, workflow, SSE, streaming, AI agent, HTTP API, REST
 outline: deep
 ---
 

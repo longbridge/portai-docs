@@ -1,5 +1,11 @@
 ---
 layout: home
+title: PortAI Documentation - AI-Powered Development Platform
+description: PortAI is a high-performance documentation system built with Bun and VitePress. Get started with our comprehensive guides, API references, and developer resources.
+head:
+  - - meta
+    - name: keywords
+      content: PortAI, AI platform, documentation, API, developer tools, Bun, VitePress
 
 hero:
   name: "PortAI Docs"
@@ -8,10 +14,10 @@ hero:
   actions:
     - theme: brand
       text: Getting Started
-      link: /en/ai/docs/guide/getting-started
+      link: /en/ai/docs/getting-started/introduction
     - theme: alt
       text: API Reference
-      link: /en/ai/docs/api/introduction
+      link: /en/ai/docs/api/agent-run
 
 features:
   - icon: 🚀

@@ -1,35 +1,41 @@
 ---
 layout: home
+title: PortAI 文档 - AI 驱动的开发平台
+description: PortAI 是基于 Bun 和 VitePress 构建的高性能文档系统。获取全面的使用指南、API 参考和开发者资源。
+head:
+  - - meta
+    - name: keywords
+      content: PortAI, AI 平台, 文档, API, 开发者工具, Bun, VitePress
 
 hero:
   name: "PortAI Docs"
-  text: "Modern Documentation Site"
-  tagline: High-performance documentation system built with Bun and VitePress
+  text: "现代化文档站点"
+  tagline: 基于 Bun 和 VitePress 构建的高性能文档系统
   actions:
     - theme: brand
-      text: Getting Started
-      link: /zh-CN/ai/docs/guide/getting-started
+      text: 快速开始
+      link: /zh-CN/ai/docs/getting-started/introduction
     - theme: alt
-      text: API Reference
-      link: /zh-CN/ai/docs/api/introduction
+      text: API 参考
+      link: /zh-CN/ai/docs/api/agent-run
 
 features:
   - icon: 🚀
-    title: Lightning Fast
-    details: Powered by Bun runtime for ultimate development experience and blazing fast builds
+    title: 极速体验
+    details: 基于 Bun 运行时，提供极致的开发体验和闪电般的构建速度
   - icon: 📝
-    title: Markdown-Powered
-    details: Write documentation in Markdown, focus on content creation with simplicity and efficiency
+    title: Markdown 驱动
+    details: 使用 Markdown 编写文档，专注于内容创作，简单高效
   - icon: 🎨
-    title: Beautiful Theme
-    details: Modern, responsive UI based on VitePress default theme
+    title: 精美主题
+    details: 基于 VitePress 默认主题，现代化响应式 UI 设计
   - icon: ⚡️
-    title: Excellent Performance
-    details: Built on Vite, providing lightning-fast HMR and optimized production builds
+    title: 卓越性能
+    details: 基于 Vite 构建，提供闪电般的热更新和优化的生产构建
   - icon: 🔍
-    title: Built-in Search
-    details: Out-of-the-box full-text search functionality to quickly find what you need
+    title: 内置搜索
+    details: 开箱即用的全文搜索功能，快速找到所需内容
   - icon: 🌐
-    title: i18n Support
-    details: Multi-language documentation support, easily build internationalized docs
+    title: 多语言支持
+    details: 支持多语言文档，轻松构建国际化文档站点
 ---

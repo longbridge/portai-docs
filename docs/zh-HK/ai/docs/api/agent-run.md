@@ -1,5 +1,10 @@
 ---
-title: API 參考
+title: Agent 運行 API - PortAI API 參考
+description: 透過 HTTP API 執行 AI Agent 工作流。支援同步 JSON 和串流 SSE 回應。包含 cURL 和 Go 代碼示例的完整指南。
+head:
+  - - meta
+    - name: keywords
+      content: PortAI, Agent API, 工作流, SSE, 串流回應, AI Agent, HTTP API, REST
 outline: deep
 ---
 # 概覽
