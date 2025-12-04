@@ -4,6 +4,11 @@ import { zhCNConfig } from '../locales/zh-CN'
 import { zhHKConfig } from '../locales/zh-HK'
 
 export const localesConfig: LocaleConfig<DefaultTheme.Config> = {
+  en: {
+    label: 'English',
+    lang: 'en-US',
+    ...enConfig,
+  },
   'zh-CN': {
     label: '简体中文',
     lang: 'zh-CN',
@@ -13,10 +18,5 @@ export const localesConfig: LocaleConfig<DefaultTheme.Config> = {
     label: '繁體中文',
     lang: 'zh-HK',
     ...zhHKConfig,
-  },
-  root: {
-    label: 'English',
-    lang: 'en-US',
-    ...enConfig,
   },
 }

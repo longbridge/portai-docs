@@ -57,9 +57,5 @@ export const rewriteMarkdownPath = (path: string) => {
     }
   }
 
-  if (np.includes('en')) {
-    np = np.replace('en/', '')
-  }
-
   return np
 }
