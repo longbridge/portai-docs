@@ -19,7 +19,7 @@ export function useBreadcrumb() {
   const getHomeItem = (): BreadcrumbItem => {
     return {
       text: t('breadcrumb.home'),
-      link: localePath('/'),
+      link: localePath('/ai/docs/'),
     }
   }
 
