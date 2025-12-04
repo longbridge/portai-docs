@@ -1,8 +1,10 @@
 {
   "name": "portai-docs",
   "version": "1.0.0",
+  "author": "Longbridge",
   "description": "PortAI Documentation powered by VitePress",
   "type": "module",
+  "private": true,
   "scripts": {
     "dev": "VITE_API_BASE_URL=https://openapi.longbridge.xyz vitepress dev docs",
     "dev:prod": "VITE_API_BASE_URL=https://openapi.longportapp.com vitepress dev docs",
@@ -17,10 +19,39 @@
     "documentation",
     "bun"
   ],
-  "author": "",
   "license": "MIT",
+  "dependencies": {
+    "@headlessui/vue": "^1.7.23",
+    "@jsonforms/core": "^3.5.1",
+    "@jsonforms/vue": "^3.5.1",
+    "@jsonforms/vue-vanilla": "^3.5.1",
+    "cheerio": "^1.1.0",
+    "fs-extra": "^11.3.0",
+    "glob": "^11.0.3",
+    "gray-matter": "^4.0.3",
+    "shiki": "^3.6.0",
+    "ufo": "^1.6.1",
+    "vue-i18n": "11"
+  },
   "devDependencies": {
-    "vitepress": "^1.0.0"
+    "@types/bun": "latest",
+    "@types/fs-extra": "^11.0.4",
+    "@unocss/extractor-mdc": "^66.1.2",
+    "@unocss/transformer-variant-group": "^66.1.2",
+    "markdown-it": "^14.1.0",
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-mathjax3": "^4.3.2",
+    "mermaid": "^11.8.1",
+    "postcss-rtlcss": "^5.7.0",
+    "prettier": "^3.5.3",
+    "sass-embedded": "^1.89.2",
+    "unocss": "^66.1.2",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-group-icons": "^1.5.2",
+    "vitepress-plugin-mermaid": "^2.0.17",
+    "vue": "^3.5.13"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
   }
 }
-
