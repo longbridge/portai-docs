@@ -1,18 +1,35 @@
 import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
-
+import { nav } from './nav'
+import { search } from './search'
+// import { sidebar } from './sidebar'
 export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
-  label: '简体中文',
-  lang: 'zh-CN',
-  title: 'PortAI 文档',
-  description: 'PortAI 项目文档',
-  themeConfig: {
-    logoLink: '/zh-CN/ai/docs/',
-    nav: [
-      { text: '首页', link: '/zh-CN/ai/docs/' },
-      { text: '介绍', link: '/zh-CN/ai/docs/getting-started/introduction' },
-      { text: 'API', link: '/zh-CN/ai/docs/api/agent-run' },
+  head: [
+    ['meta', { property: 'og:url', content: 'https://longportapp.com/zh-CN/ai/docs/' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'PortAI 文档' }],
+    [
+      'meta',
+      {
+        property: 'og:description',
+        content: 'PortAI 为您提供灵活多样的接入服务，满足您的量化交易需求，快速构建您的交易策略。',
+      },
     ],
-
+    [
+      'meta',
+      { property: 'og:image', content: 'https://pub.pbkrs.com/files/202211/sJswdGqSX1xDqrES/lonport-seo-img.png' },
+    ],
+    ['meta', { property: 'og:locale', content: 'zh-CN' }],
+    ['meta', { property: 'og:site_name', content: 'PortAI 文档' }],
+    ['link', { rel: 'canonical', href: 'https://longportapp.com/zh-CN/ai/docs/' }],
+  ],
+  title: 'PortAI 文档',
+  description: 'PortAI 为您提供灵活多样的接入服务，满足您的量化交易需求，快速构建您的交易策略。',
+  themeConfig: {
+    logoLink: {
+      link: '/zh-CN/ai/docs/',
+      target: '_self',
+    },
+    nav: nav('zh-CN'),
     sidebar: [
       {
         text: '入门',
@@ -76,9 +93,7 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       {
         text: 'API',
         collapsed: true,
-        items: [
-          { text: 'Agent 运行', link: '/zh-CN/ai/docs/api/agent-run' },
-        ],
+        items: [{ text: 'Agent 运行', link: '/zh-CN/ai/docs/api/agent-run' }],
       },
       {
         text: '监控',
@@ -111,25 +126,14 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       {
         text: '教程',
         collapsed: true,
-        items: [
-          { text: '简单聊天机器人', link: '/zh-CN/ai/docs/tutorials/simple-chatbot' },
-        ],
+        items: [{ text: '简单聊天机器人', link: '/zh-CN/ai/docs/tutorials/simple-chatbot' }],
       },
     ],
 
-    editLink: {
-      pattern: 'https://github.com/yourusername/portai-docs/edit/main/docs/:path',
-      text: '在 GitHub 上编辑此页',
+    search: {
+      provider: 'local',
+      options: search,
     },
-
-    lastUpdated: {
-      text: '最后更新于',
-      formatOptions: {
-        dateStyle: 'short',
-        timeStyle: 'medium',
-      },
-    },
-
     docFooter: {
       prev: '上一页',
       next: '下一页',
@@ -139,29 +143,19 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       label: '页面导航',
     },
 
+    notFound: {
+      title: '页面未找到',
+      quote: '但如果你不改变方向，并且继续寻找，你可能最终会到达你所前往的地方。',
+      linkLabel: '前往首页',
+      linkText: '带我回首页',
+    },
+
+    langMenuLabel: '多语言',
     returnToTopLabel: '回到顶部',
     sidebarMenuLabel: '菜单',
     darkModeSwitchLabel: '主题',
     lightModeSwitchTitle: '切换到浅色模式',
     darkModeSwitchTitle: '切换到深色模式',
-  },
-}
-
-export const zhCNSearch: DefaultTheme.LocalSearchOptions['locales'] = {
-  'zh-CN': {
-    translations: {
-      button: {
-        buttonText: '搜索文档',
-        buttonAriaLabel: '搜索文档',
-      },
-      modal: {
-        noResultsText: '无法找到相关结果',
-        resetButtonTitle: '清除查询条件',
-        footer: {
-          selectText: '选择',
-          navigateText: '切换',
-        },
-      },
-    },
+    skipToContentLabel: '跳转到内容',
   },
 }

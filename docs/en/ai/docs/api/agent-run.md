@@ -36,26 +36,26 @@ Run the published Workflow for a specified Agent.
 
 ## Path parameters
 
-| Name | Type | Required | Description |
-| --- | --- | --- | --- |
-| uid | string | Yes | Agent unique identifier |
+| Name | Type   | Required | Description             |
+| ---- | ------ | -------- | ----------------------- |
+| uid  | string | Yes      | Agent unique identifier |
 
 ## Query parameters (Query)
 
-| Name | Type | Required | Description |
-| --- | --- | --- | --- |
-| mode | string | No | `async` for asynchronous mode; omit for synchronous |
+| Name | Type   | Required | Description                                         |
+| ---- | ------ | -------- | --------------------------------------------------- |
+| mode | string | No       | `async` for asynchronous mode; omit for synchronous |
 
 - Synchronous mode: returns the final result directly
 - Asynchronous mode (`mode=async`): returns `workflow_run_id` immediately; fetch the result later via the query API
 
 ## Headers
 
-| Header | Required | Value |
-| --- | --- | --- |
-| x-agent-key | Yes | Your Agent Key |
-| Content-Type | Yes | `application/json` |
-| Accept (optional) | No | `text/event-stream` (to use SSE streaming) |
+| Header            | Required | Value                                      |
+| ----------------- | -------- | ------------------------------------------ |
+| x-agent-key       | Yes      | Your Agent Key                             |
+| Content-Type      | Yes      | `application/json`                         |
+| Accept (optional) | No       | `text/event-stream` (to use SSE streaming) |
 
 ## Request body
 
@@ -66,8 +66,8 @@ Provide the inputs required by the Workflow Start node. Example:
   "query": "Tesla price action today"
 }
 ```
-> Actual fields depend on how the Agent is configured on the platform.
 
+> Actual fields depend on how the Agent is configured on the platform.
 
 ## Synchronous response (JSON, default)
 
@@ -86,13 +86,13 @@ Returns only the final result (the last node’s output).
   "workflow_run_id": 496
 }
 ```
-  - Field reference
-  - `elapsed_time`: execution duration in seconds
-  - `error`: error message if failed
-  - `outputs`: final output (shape depends on the Workflow configuration)
-  - `status`: `succeeded` or `failed`
-  - `workflow_run_id`: ID of this run
 
+- Field reference
+- `elapsed_time`: execution duration in seconds
+- `error`: error message if failed
+- `outputs`: final output (shape depends on the Workflow configuration)
+- `status`: `succeeded` or `failed`
+- `workflow_run_id`: ID of this run
 
 ## Streaming response (SSE)
 
@@ -144,17 +144,17 @@ Unified JSON structure (fields vary by event):
   }
 }
 ```
-  - Field reference
-  - `workflow_run_id`: run ID
-  - `event`: event name (see above)
-  - `data.started_at`: Unix timestamp (seconds)
-  - `data.workflow_id`: Workflow ID
-  - `data.inputs`: inputs used for this run
-  - `data.text`: incremental text (for `message` events)
-  - `data.outputs`: final outputs (for `workflow_finished`)
-  - `data.status`: `succeeded` or `failed`
-  - `data.error`: error message when failed
 
+- Field reference
+- `workflow_run_id`: run ID
+- `event`: event name (see above)
+- `data.started_at`: Unix timestamp (seconds)
+- `data.workflow_id`: Workflow ID
+- `data.inputs`: inputs used for this run
+- `data.text`: incremental text (for `message` events)
+- `data.outputs`: final outputs (for `workflow_finished`)
+- `data.status`: `succeeded` or `failed`
+- `data.error`: error message when failed
 
 ## Request examples
 
@@ -170,10 +170,10 @@ curl -N -X POST "https://api.longbridge.xyz/v1/babbage/api/agents/<UID>/runs" \
   -H "x-agent-key: <YOUR_AGENT_KEY>" \
   -H "Content-Type: application/json" \
   -H "Accept: text/event-stream" \
-  -d '{"query":"Tesla price action today"}'### Go (SSE streaming)  
+  -d '{"query":"Tesla price action today"}'### Go (SSE streaming)
 ```
 
-### golang 
+### golang
 
 #### SSE Request Method
 
@@ -334,6 +334,7 @@ func main() {
   "workflow_run_id": 59480850550554625
 }
 ```
+
 - Field reference
 - `status`: `succeeded`, `failed`, or `running`
 
@@ -352,11 +353,10 @@ All endpoints return a non‑200 status code on failure and include an error mes
 
 Common errors:
 
-| HTTP Status | Scenario |
-| --- | --- |
-| 400 | Invalid or missing parameters |
-| 401 | Authentication failed (`x-agent-key` invalid) |
-| 404 | Resource not found (Agent/run ID) |
-| 429 | Rate limited |
-| 500 | Internal server error |
----
+| HTTP Status | Scenario                                      |
+| ----------- | --------------------------------------------- |
+| 400         | Invalid or missing parameters                 |
+| 401         | Authentication failed (`x-agent-key` invalid) |
+| 404         | Resource not found (Agent/run ID)             |
+| 429         | Rate limited                                  |
+| 500         | Internal server error                         |

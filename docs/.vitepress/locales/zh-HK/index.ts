@@ -1,18 +1,37 @@
 import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
-
+import { nav } from './nav'
+import { search } from './search'
+// import { sidebar } from './sidebar'
 export const zhHKConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
-  label: '繁體中文',
-  lang: 'zh-HK',
-  title: 'PortAI 文檔',
-  description: 'PortAI 項目文檔',
-  themeConfig: {
-    logoLink: '/zh-HK/ai/docs/',
-    nav: [
-      { text: '首頁', link: '/zh-HK/ai/docs/' },
-      { text: '介紹', link: '/zh-HK/ai/docs/getting-started/introduction' },
-      { text: 'API', link: '/zh-HK/ai/docs/api/agent-run' },
+  head: [
+    ['meta', { property: 'og:url', content: 'https://open.longportapp.com' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'LongPort OpenAPI：靈活支持程序化交易' }],
+    [
+      'meta',
+      {
+        property: 'og:description',
+        content: 'LongPort OpenAPI 為您提供靈活多樣的接入服務，滿足您的量化交易需求，快速構建您的交易策略。',
+      },
     ],
+    [
+      'meta',
+      { property: 'og:image', content: 'https://pub.pbkrs.com/files/202211/sJswdGqSX1xDqrES/lonport-seo-img.png' },
+    ],
+    ['meta', { property: 'og:locale', content: 'zh-HK' }],
+    ['meta', { property: 'og:site_name', content: 'OpenAPI | LongPort 開放平臺' }],
+    ['link', { rel: 'canonical', href: 'https://open.longportapp.com/zh-HK/' }],
+  ],
+  title: 'PortAI 文檔',
+  description: 'LongPort OpenAPI 為您提供靈活多樣的接入服務，滿足您的量化交易需求，快速構建您的交易策略。',
 
+  themeConfig: {
+    logoLink: {
+      link: '/zh-HK/ai/docs/',
+      target: '_self',
+    },
+    // sidebar: sidebar,
+    nav: nav('zh-HK'),
     sidebar: [
       {
         text: '入門',
@@ -76,9 +95,7 @@ export const zhHKConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       {
         text: 'API',
         collapsed: true,
-        items: [
-          { text: 'Agent 運行', link: '/zh-HK/ai/docs/api/agent-run' },
-        ],
+        items: [{ text: 'Agent 運行', link: '/zh-HK/ai/docs/api/agent-run' }],
       },
       {
         text: '監控',
@@ -111,25 +128,14 @@ export const zhHKConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       {
         text: '教程',
         collapsed: true,
-        items: [
-          { text: '簡單聊天機器人', link: '/zh-HK/ai/docs/tutorials/simple-chatbot' },
-        ],
+        items: [{ text: '簡單聊天機器人', link: '/zh-HK/ai/docs/tutorials/simple-chatbot' }],
       },
     ],
 
-    editLink: {
-      pattern: 'https://github.com/yourusername/portai-docs/edit/main/docs/:path',
-      text: '在 GitHub 上編輯此頁',
+    search: {
+      provider: 'local',
+      options: search,
     },
-
-    lastUpdated: {
-      text: '最後更新於',
-      formatOptions: {
-        dateStyle: 'short',
-        timeStyle: 'medium',
-      },
-    },
-
     docFooter: {
       prev: '上一頁',
       next: '下一頁',
@@ -139,29 +145,19 @@ export const zhHKConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       label: '頁面導航',
     },
 
+    notFound: {
+      title: '頁面未找到',
+      quote: '但如果你不改變方向，並且繼續尋找，你可能最終會到達你所前往的地方。',
+      linkLabel: '前往首頁',
+      linkText: '帶我回首頁',
+    },
+
+    langMenuLabel: '多語言',
     returnToTopLabel: '回到頂部',
-    sidebarMenuLabel: '選單',
+    sidebarMenuLabel: '菜單',
     darkModeSwitchLabel: '主題',
     lightModeSwitchTitle: '切換到淺色模式',
     darkModeSwitchTitle: '切換到深色模式',
-  },
-}
-
-export const zhHKSearch: DefaultTheme.LocalSearchOptions['locales'] = {
-  'zh-HK': {
-    translations: {
-      button: {
-        buttonText: '搜尋文檔',
-        buttonAriaLabel: '搜尋文檔',
-      },
-      modal: {
-        noResultsText: '無法找到相關結果',
-        resetButtonTitle: '清除查詢條件',
-        footer: {
-          selectText: '選擇',
-          navigateText: '切換',
-        },
-      },
-    },
+    skipToContentLabel: '跳轉到內容',
   },
 }
