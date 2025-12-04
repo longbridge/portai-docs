@@ -1,22 +1,14 @@
 export const isServer = () => typeof window === 'undefined'
 
 export function getBasenameLocale() {
-  if (isServer()) return undefined
+  if (isServer()) return 'en'
   const invalidLocaleRegexResult = window.location.pathname.match(/^\/(zh-CN|en|zh-HK)\/?/)
-  return invalidLocaleRegexResult?.[1] || ''
+  return invalidLocaleRegexResult?.[1] || 'en'
 }
 
 export const localePath = (path: string) => {
-  if (isServer()) {
-    return path
-  }
-
-  if (!path.startsWith('/') && !path.startsWith('./') && !path.startsWith('../')) {
-    return path
-  }
-
   const locale = getBasenameLocale()
-  return locale ? `/${locale}${path}` : path
+  return `/${locale}${path}`
 }
 
 // 从路径中取得当前语言
