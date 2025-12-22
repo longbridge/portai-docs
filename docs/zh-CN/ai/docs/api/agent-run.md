@@ -83,7 +83,7 @@ outline: deep
     }
   },
   "status": "succeeded",
-  "workflow_run_id": 496
+  "workflow_run_id": "496"
 }
 ```
 
@@ -111,7 +111,7 @@ outline: deep
 ```json
 {
   "event": "workflow_started",
-  "workflow_run_id": 842,
+  "workflow_run_id": "842",
   "data": {
     "started_at": 1751553245,
     "workflow_id": 1,
@@ -121,7 +121,7 @@ outline: deep
 
 {
   "event": "message",
-  "workflow_run_id": 842,
+  "workflow_run_id": "842",
   "data": {
     "text": "……增量输出……",
     "started_at": 1751553249
@@ -130,7 +130,7 @@ outline: deep
 
 {
   "event": "workflow_finished",
-  "workflow_run_id": 842,
+  "workflow_run_id": "842",
   "data": {
     "started_at": 1751553245,
     "workflow_id": 1,
@@ -323,7 +323,7 @@ func main() {
 | 参数            | 类型   | 必填 | 说明                                  |
 | --------------- | ------ | ---- | ------------------------------------- |
 | uid             | string | 是   | Agent 的唯一标识                      |
-| workflow_run_id | int64  | 是   | 运行 ID（来自 `mode=async` 或响应体） |
+| workflow_run_id | string  | 是   | 运行 ID（来自 `mode=async` 或响应体） |
 
 ## 响应（JSON）
 
@@ -335,7 +335,7 @@ func main() {
   "inputs": {},
   "outputs": {},
   "status": "succeeded",
-  "workflow_run_id": 59480850550554625
+  "workflow_run_id": "59480850550554625"
 }
 ```
 
