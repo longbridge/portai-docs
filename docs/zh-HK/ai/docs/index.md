@@ -1,41 +1,36 @@
 ---
 layout: home
-title: PortAI 文檔 - AI 驅動的開發平台
-description: PortAI 是基於 Bun 和 VitePress 構建的高性能文檔系統。獲取全面的使用指南、API 參考和開發者資源。
+title: PortAI Babbage - 企业级金融智能 Agent 構建平台
+description: PortAI Babbage 是 PortAI 旗下的 Agent Builder 平台，融合 SOTA 大模型接入、内置金融工具与多场景 Agent 構建能力，提供安全、可观测、可治理的智能 Agent 基础设施，助力 AI 在金融业务中的规模化落地。
 head:
   - - meta
     - name: keywords
-      content: PortAI, AI 平台, 文檔, API, 開發者工具, Bun, VitePress
+      content: PortAI, PortAI Babbage, Agent Builder, AI Infra, 智能 Agent, 大模型平台, 金融 AI, AI 治理, 可观测性, 安全合规
+
 
 hero:
-  name: "PortAI Docs"
-  text: "現代化文檔站點"
-  tagline: 基於 Bun 和 VitePress 構建的高性能文檔系統
+  name: "PortAI Babbage Docs"
+  text: "企业级金融智能 Agent 構建平台"
+  tagline: 融合 SOTA 大模型、金融工具与可治理 Agent 框架的 AI Infra 底座
   actions:
     - theme: brand
       text: 快速開始
-      link: /zh-HK/ai/docs/getting-started/introduction
+      link: /zh-CN/ai/docs/getting-started/introduction
     - theme: alt
-      text: API 參考
-      link: /zh-HK/ai/docs/api/agent-run
+      text: API 参考
+      link: /zh-CN/ai/docs/api/agent-run
 
 features:
-  - icon: 🚀
-    title: 極速體驗
-    details: 基於 Bun 運行時，提供極致的開發體驗和閃電般的構建速度
-  - icon: 📝
-    title: Markdown 驅動
-    details: 使用 Markdown 編寫文檔，專注於內容創作，簡單高效
-  - icon: 🎨
-    title: 精美主題
-    details: 基於 VitePress 預設主題，現代化響應式 UI 設計
-  - icon: ⚡️
-    title: 卓越性能
-    details: 基於 Vite 構建，提供閃電般的熱更新和優化的生產構建
-  - icon: 🔍
-    title: 內建搜尋
-    details: 開箱即用的全文搜尋功能，快速找到所需內容
-  - icon: 🌐
-    title: 多語言支援
-    details: 支援多語言文檔，輕鬆構建國際化文檔站點
+  - title: SOTA 大模型接入
+    details: 支援接入业界领先的 SOTA 大模型，涵盖通用大语言模型与多模态模型，透過统一抽象层屏蔽模型差异，实现灵活切换与持续演进
+  - title: 丰富的内置金融工具
+    details: 内置多种金融领域工具能力，如数据查询、指标计算、规则引擎与知识检索，支援模型安全调用，增强金融场景下的业务落地能力
+  - title: 多场景 Agent 打造
+    details: 提供通用 Agent 構建框架，支援多角色、多步骤与多工具协同，灵活适配投研、风控、运营、客服等多种业务场景
+  - title: 安全与合规保障
+    details: 提供企业级安全能力，包括身份认证、权限控制、数据隔离与审计追踪，满足金融行业对数据安全与合规性的严格要求
+  - title: 全鏈路可观测
+    details: 覆盖模型调用、Agent 執行与工具使用的全鏈路监控能力，实时掌握性能、稳定性与异常情况，提升系统可运维性
+  - title: 可治理的 AI 能力
+    details: 提供模型与 Agent 的使用治理能力，支援配额管理、策略控制与成本分析，确保 AI 能力规模化應用下的可控与可持续
 ---

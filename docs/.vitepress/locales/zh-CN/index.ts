@@ -33,78 +33,69 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     },
     nav: nav('zh-CN'),
     sidebar: [
-      // {
-      //   text: '入门',
-      //   collapsed: true,
-      //   items: [
-      //     { text: '介绍', link: '/zh-CN/ai/docs/getting-started/introduction' },
-      //     { text: '核心概念', link: '/zh-CN/ai/docs/getting-started/core-concepts' },
-      //   ],
-      // },
-      // {
-      //   text: '节点',
-      //   collapsed: true,
-      //   items: [
-      //     { text: '用户输入', link: '/zh-CN/ai/docs/nodes/user-input' },
-      //     { text: '大语言模型', link: '/zh-CN/ai/docs/nodes/llm' },
-      //     { text: '答案', link: '/zh-CN/ai/docs/nodes/answer' },
-      //     { text: '输出', link: '/zh-CN/ai/docs/nodes/output' },
-      //     { text: '智能代理', link: '/zh-CN/ai/docs/nodes/agent' },
-      //     { text: '工具', link: '/zh-CN/ai/docs/nodes/tools' },
-      //     { text: '问题分类器', link: '/zh-CN/ai/docs/nodes/question-classifier' },
-      //     { text: 'If-Else', link: '/zh-CN/ai/docs/nodes/if-else' },
-      //     { text: '迭代', link: '/zh-CN/ai/docs/nodes/iteration' },
-      //     { text: '循环', link: '/zh-CN/ai/docs/nodes/loop' },
-      //     { text: '代码', link: '/zh-CN/ai/docs/nodes/code' },
-      //     { text: '模板', link: '/zh-CN/ai/docs/nodes/template' },
-      //     { text: '变量聚合器', link: '/zh-CN/ai/docs/nodes/variable-aggregator' },
-      //     { text: '变量赋值器', link: '/zh-CN/ai/docs/nodes/variable-assigner' },
-      //     { text: '参数提取器', link: '/zh-CN/ai/docs/nodes/parameter-extractor' },
-      //     { text: 'HTTP 请求', link: '/zh-CN/ai/docs/nodes/http-request' },
-      //   ],
-      // },
-      // {
-      //   text: '构建',
-      //   collapsed: true,
-      //   items: [
-      //     { text: '快捷键', link: '/zh-CN/ai/docs/build/shortcuts' },
-      //     { text: '流程逻辑', link: '/zh-CN/ai/docs/build/flow-logic' },
-      //     { text: '处理错误', link: '/zh-CN/ai/docs/build/error-handling' },
-      //     { text: '使用 MCP 工具', link: '/zh-CN/ai/docs/build/mcp-tools' },
-      //     { text: '版本控制', link: '/zh-CN/ai/docs/build/version-control' },
-      //   ],
-      // },
-      // {
-      //   text: '调试',
-      //   collapsed: true,
-      //   items: [
-      //     { text: '单节点', link: '/zh-CN/ai/docs/debug/single-node' },
-      //     { text: '工作流', link: '/zh-CN/ai/docs/debug/workflow' },
-      //     { text: '运行历史', link: '/zh-CN/ai/docs/debug/run-history' },
-      //     { text: '错误类型', link: '/zh-CN/ai/docs/debug/error-types' },
-      //   ],
-      // },
-      // {
-      //   text: '发布',
-      //   collapsed: true,
-      //   items: [
-      //     { text: '分享你的 AI 应用', link: '/zh-CN/ai/docs/publish/share' },
-      //     { text: 'Web App', link: '/zh-CN/ai/docs/publish/web-app' },
-      //   ],
-      // },
+      {
+        text: '入门',
+        collapsed: true,
+        items: [
+          { text: '介绍', link: '/zh-CN/ai/docs/getting-started/introduction' },
+          { text: '核心概念', link: '/zh-CN/ai/docs/getting-started/core-concepts' },
+        ],
+      },
+      {
+        text: '节点',
+        collapsed: true,
+        items: [
+          { text: '开始', link: '/zh-CN/ai/docs/nodes/start' },
+          { text: '大语言模型', link: '/zh-CN/ai/docs/nodes/llm' },
+          { text: '答案', link: '/zh-CN/ai/docs/nodes/answer' },
+          { text: '结束', link: '/zh-CN/ai/docs/nodes/output' },
+          { text: '智能代理', link: '/zh-CN/ai/docs/nodes/agent' },
+          { text: '工具', link: '/zh-CN/ai/docs/nodes/tools' },
+          { text: '问题分类器', link: '/zh-CN/ai/docs/nodes/question-classifier' },
+          { text: 'If-Else', link: '/zh-CN/ai/docs/nodes/if-else' },
+          { text: '迭代', link: '/zh-CN/ai/docs/nodes/iteration' },
+          { text: '循环', link: '/zh-CN/ai/docs/nodes/loop' },
+          { text: '代码', link: '/zh-CN/ai/docs/nodes/code' },
+          { text: '模板转换', link: '/zh-CN/ai/docs/nodes/template' },
+          { text: '分支聚合器', link: '/zh-CN/ai/docs/nodes/branch-aggregator' },
+          { text: '变量赋值器', link: '/zh-CN/ai/docs/nodes/variable-assigner' },
+          { text: '参数提取器', link: '/zh-CN/ai/docs/nodes/parameter-extractor' },
+          { text: 'HTTP 请求', link: '/zh-CN/ai/docs/nodes/http-request' },
+        ],
+      },
+      {
+        text: '构建',
+        collapsed: true,
+        items: [
+          { text: '快捷键', link: '/zh-CN/ai/docs/build/shortcuts' },
+          { text: '流程逻辑', link: '/zh-CN/ai/docs/build/flow-logic' },
+          { text: '错误处理', link: '/zh-CN/ai/docs/build/error-handling' },
+          { text: '使用 MCP 工具', link: '/zh-CN/ai/docs/build/mcp-tools' },
+          { text: '版本控制', link: '/zh-CN/ai/docs/build/version-control' },
+        ],
+      },
+      {
+        text: '调试',
+        collapsed: true,
+        items: [
+          { text: '单节点', link: '/zh-CN/ai/docs/debug/single-node' },
+          { text: '工作流', link: '/zh-CN/ai/docs/debug/workflow' },
+          { text: '运行历史', link: '/zh-CN/ai/docs/debug/run-history' },
+        ],
+      },
+      {
+        text: '发布',
+        collapsed: true,
+        items: [
+          { text: '分享你的 AI 应用', link: '/zh-CN/ai/docs/publish/share' },
+          { text: 'Web App', link: '/zh-CN/ai/docs/publish/web-app' },
+        ],
+      },
       {
         text: 'API',
         collapsed: true,
         items: [{ text: 'Agent 运行', link: '/zh-CN/ai/docs/api/agent-run' }],
       },
-      // {
-      //   text: '监控',
-      //   collapsed: true,
-      //   items: [
-      //     { text: '日志', link: '/zh-CN/ai/docs/monitor/logs' },
-      //     { text: '统计', link: '/zh-CN/ai/docs/monitor/statistics' },
-      //   ],
-      // },
       // {
       //   text: '知识库',
       //   collapsed: true,
@@ -116,20 +107,20 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       //     { text: '召回测试', link: '/zh-CN/ai/docs/knowledge-base/recall-test' },
       //   ],
       // },
-      // {
-      //   text: '工作区',
-      //   collapsed: true,
-      //   items: [
-      //     { text: '管理应用', link: '/zh-CN/ai/docs/workspace/manage-apps' },
-      //     { text: '管理成员', link: '/zh-CN/ai/docs/workspace/manage-members' },
-      //     { text: '个人设置', link: '/zh-CN/ai/docs/workspace/personal-settings' },
-      //   ],
-      // },
-      // {
-      //   text: '教程',
-      //   collapsed: true,
-      //   items: [{ text: '简单聊天机器人', link: '/zh-CN/ai/docs/tutorials/simple-chatbot' }],
-      // },
+      {
+        text: '工作区',
+        collapsed: true,
+        items: [
+          { text: '管理应用', link: '/zh-CN/ai/docs/workspace/manage-apps' },
+          { text: '管理成员', link: '/zh-CN/ai/docs/workspace/manage-members' },
+          { text: '个人设置', link: '/zh-CN/ai/docs/workspace/personal-settings' },
+        ],
+      },
+      {
+        text: '教程',
+        collapsed: true,
+        items: [{ text: '简单聊天机器人', link: '/zh-CN/ai/docs/tutorials/simple-chatbot' }],
+      },
     ],
 
     search: {
