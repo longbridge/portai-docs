@@ -1,4 +1,3 @@
 # Recall Test
 
-This section introduces how to perform recall tests on the knowledge base to verify retrieval effectiveness.
-
+This section describes how to perform recall tests on the Knowledge Base to verify retrieval effectiveness.

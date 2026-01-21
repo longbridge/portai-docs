@@ -1,4 +1,3 @@
 # Metadata
 
-This section introduces knowledge base metadata configuration and usage.
-
+This section describes the configuration and usage of metadata in the Knowledge Base.

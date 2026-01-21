@@ -22,9 +22,7 @@ This document explains how to run an Agent’s Workflow via the HTTP API and obt
 
 > Tip: The request body fields must match the parameters of the Agent’s Start node. The examples below use a `query` field.
 
----
-
-# Run an Agent
+## Run an Agent
 
 Run the published Workflow for a specified Agent.
 
