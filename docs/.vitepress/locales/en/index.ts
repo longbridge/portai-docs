@@ -96,17 +96,16 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         collapsed: true,
         items: [{ text: 'Agent Run', link: '/en/ai/docs/api/agent-run' }],
       },
-      // {
-      //   text: 'Knowledge Base',
-      //   collapsed: true,
-      //   items: [
-      //     { text: 'Introduction', link: '/en/ai/docs/knowledge-base/introduction' },
-      //     { text: 'Create Knowledge Base', link: '/en/ai/docs/knowledge-base/create' },
-      //     { text: 'Manage Knowledge Base', link: '/en/ai/docs/knowledge-base/manage' },
-      //     { text: 'Metadata', link: '/en/ai/docs/knowledge-base/metadata' },
-      //     { text: 'Recall Test', link: '/en/ai/docs/knowledge-base/recall-test' },
-      //   ],
-      // },
+      {
+        text: 'Knowledge Base',
+        collapsed: true,
+        items: [
+          { text: 'Introduction', link: '/en/ai/docs/knowledge-base/introduction' },
+          { text: 'Create Knowledge Base', link: '/en/ai/docs/knowledge-base/create' },
+          { text: 'Manage Knowledge Base', link: '/en/ai/docs/knowledge-base/manage' },
+          { text: 'Recall Test', link: '/en/ai/docs/knowledge-base/recall-test' },
+        ],
+      },
       {
         text: 'Workspace',
         collapsed: true,

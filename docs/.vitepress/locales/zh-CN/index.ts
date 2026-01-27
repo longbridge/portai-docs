@@ -96,17 +96,16 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         collapsed: true,
         items: [{ text: 'Agent 运行', link: '/zh-CN/ai/docs/api/agent-run' }],
       },
-      // {
-      //   text: '知识库',
-      //   collapsed: true,
-      //   items: [
-      //     { text: '功能简介', link: '/zh-CN/ai/docs/knowledge-base/introduction' },
-      //     { text: '创建知识库', link: '/zh-CN/ai/docs/knowledge-base/create' },
-      //     { text: '管理知识库', link: '/zh-CN/ai/docs/knowledge-base/manage' },
-      //     { text: '元数据', link: '/zh-CN/ai/docs/knowledge-base/metadata' },
-      //     { text: '召回测试', link: '/zh-CN/ai/docs/knowledge-base/recall-test' },
-      //   ],
-      // },
+      {
+        text: '知识库',
+        collapsed: true,
+        items: [
+          { text: '功能简介', link: '/zh-CN/ai/docs/knowledge-base/introduction' },
+          { text: '创建知识库', link: '/zh-CN/ai/docs/knowledge-base/create' },
+          { text: '管理知识库', link: '/zh-CN/ai/docs/knowledge-base/manage' },
+          { text: '召回测试', link: '/zh-CN/ai/docs/knowledge-base/recall-test' },
+        ],
+      },
       {
         text: '工作区',
         collapsed: true,

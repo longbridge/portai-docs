@@ -98,17 +98,16 @@ export const zhHKConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         collapsed: true,
         items: [{ text: 'Agent 運行', link: '/zh-HK/ai/docs/api/agent-run' }],
       },
-      // {
-      //   text: '知識庫',
-      //   collapsed: true,
-      //   items: [
-      //     { text: '功能簡介', link: '/zh-HK/ai/docs/knowledge-base/introduction' },
-      //     { text: '創建知識庫', link: '/zh-HK/ai/docs/knowledge-base/create' },
-      //     { text: '管理知識庫', link: '/zh-HK/ai/docs/knowledge-base/manage' },
-      //     { text: '元數據', link: '/zh-HK/ai/docs/knowledge-base/metadata' },
-      //     { text: '召回測試', link: '/zh-HK/ai/docs/knowledge-base/recall-test' },
-      //   ],
-      // },
+      {
+        text: '知識庫',
+        collapsed: true,
+        items: [
+          { text: '功能簡介', link: '/zh-HK/ai/docs/knowledge-base/introduction' },
+          { text: '創建知識庫', link: '/zh-HK/ai/docs/knowledge-base/create' },
+          { text: '管理知識庫', link: '/zh-HK/ai/docs/knowledge-base/manage' },
+          { text: '召回測試', link: '/zh-HK/ai/docs/knowledge-base/recall-test' },
+        ],
+      },
       {
         text: '工作區',
         collapsed: true,
