@@ -10,7 +10,7 @@ Web App 是平台提供的 **统一 Chatbot 使用入口**，
 
 ## 访问方式
 
-在 **PortAI 首頁**，你可以：
+在 **LongbridgeAI 首頁**，你可以：
 
 * 进入 Chatbot Web App
 * 以聊天窗口的形式使用不同的 ChatFlow Agent

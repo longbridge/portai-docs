@@ -6,13 +6,13 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   head: [
     ['meta', { property: 'og:url', content: 'https://longportapp.com/zh-CN/ai/docs/' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'Longbridge | PortAI 文档' }],
+    ['meta', { property: 'og:title', content: 'Longbridge | LongbridgeAI 文档' }],
     [
       'meta',
       {
         property: 'og:description',
         content:
-          'PortAI 是 Longbridge AI 推出的智能 AI 工作流平台，通过可视化节点编排和 API 集成，帮助开发者快速构建、调试和部署 AI 应用。',
+          'LongbridgeAI 是 Longbridge AI 推出的智能 AI 工作流平台，通过可视化节点编排和 API 集成，帮助开发者快速构建、调试和部署 AI 应用。',
       },
     ],
     [
@@ -20,12 +20,12 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       { property: 'og:image', content: 'https://pub.pbkrs.com/files/202211/sJswdGqSX1xDqrES/lonport-seo-img.png' },
     ],
     ['meta', { property: 'og:locale', content: 'zh-CN' }],
-    ['meta', { property: 'og:site_name', content: 'Longbridge | PortAI 文档' }],
+    ['meta', { property: 'og:site_name', content: 'Longbridge | LongbridgeAI 文档' }],
     ['link', { rel: 'canonical', href: 'https://longportapp.com/zh-CN/ai/docs/' }],
   ],
-  title: 'PortAI 文档',
+  title: 'LongbridgeAI 文档',
   description:
-    'PortAI 是 Longbridge AI 推出的智能 AI 工作流平台，通过可视化节点编排和 API 集成，帮助开发者快速构建、调试和部署 AI 应用。',
+    'LongbridgeAI 是 Longbridge AI 推出的智能 AI 工作流平台，通过可视化节点编排和 API 集成，帮助开发者快速构建、调试和部署 AI 应用。',
   themeConfig: {
     logoLink: {
       link: '/zh-CN/ai/docs/',

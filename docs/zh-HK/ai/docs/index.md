@@ -1,15 +1,15 @@
 ---
 layout: home
-title: PortAI Babbage - 企业级金融智能 Agent 構建平台
-description: PortAI Babbage 是 PortAI 旗下的 Agent Builder 平台，融合 SOTA 大模型接入、内置金融工具与多场景 Agent 構建能力，提供安全、可观测、可治理的智能 Agent 基础设施，助力 AI 在金融业务中的规模化落地。
+title: LongbridgeAI Babbage - 企业级金融智能 Agent 構建平台
+description: LongbridgeAI Babbage 是 LongbridgeAI 旗下的 Agent Builder 平台，融合 SOTA 大模型接入、内置金融工具与多场景 Agent 構建能力，提供安全、可观测、可治理的智能 Agent 基础设施，助力 AI 在金融业务中的规模化落地。
 head:
   - - meta
     - name: keywords
-      content: PortAI, PortAI Babbage, Agent Builder, AI Infra, 智能 Agent, 大模型平台, 金融 AI, AI 治理, 可观测性, 安全合规
+      content: LongbridgeAI, LongbridgeAI Babbage, Agent Builder, AI Infra, 智能 Agent, 大模型平台, 金融 AI, AI 治理, 可观测性, 安全合规
 
 
 hero:
-  name: "PortAI Babbage Docs"
+  name: "LongbridgeAI Babbage Docs"
   text: "企业级金融智能 Agent 構建平台"
   tagline: 融合 SOTA 大模型、金融工具与可治理 Agent 框架的 AI Infra 底座
   actions:

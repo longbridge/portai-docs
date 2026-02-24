@@ -9,7 +9,7 @@ Users can interact with Agents directly without entering the Agent Builder.
 
 ## Access Method
 
-On the **PortAI homepage**, you can:
+On the **LongbridgeAI homepage**, you can:
 
 * Enter the Chatbot Web App
 * Use different ChatFlow Agents in the form of a chat window

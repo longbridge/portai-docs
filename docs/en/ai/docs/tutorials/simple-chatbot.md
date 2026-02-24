@@ -4,7 +4,7 @@ This tutorial will guide you through creating a simple chatbot application.
 
 ## Overview
 
-Through this tutorial, you will learn how to build a basic chatbot using the PortAI platform.
+Through this tutorial, you will learn how to build a basic chatbot using the LongbridgeAI platform.
 
 ## Steps
 

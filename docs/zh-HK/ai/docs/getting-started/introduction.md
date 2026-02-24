@@ -1,6 +1,6 @@
 # 介紹
 
-欢迎使用 PortAI 文档。本章节将帮助您了解 PortAI 平台的基本概念和功能。
+欢迎使用 LongbridgeAI 文档。本章节将帮助您了解 LongbridgeAI 平台的基本概念和功能。
 
 # Agent Builder 平台整体介紹
 

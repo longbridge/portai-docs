@@ -84,8 +84,8 @@ export default defineConfig({
    'ja': {
      label: '日本語',
      lang: 'ja',
-     title: 'PortAI ドキュメント',
-     description: 'PortAI プロジェクトドキュメント',
+     title: 'LongbridgeAI ドキュメント',
+     description: 'LongbridgeAI プロジェクトドキュメント',
      themeConfig: {
        nav: [
          { text: 'ホーム', link: '/ja/' },

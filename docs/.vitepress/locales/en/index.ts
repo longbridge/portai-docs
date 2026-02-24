@@ -6,13 +6,13 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   head: [
     ['meta', { property: 'og:url', content: 'https://longportapp.com/en/ai/docs/' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'Longbridge | PortAI Docs' }],
+    ['meta', { property: 'og:title', content: 'Longbridge | LongbridgeAI Docs' }],
     [
       'meta',
       {
         property: 'og:description',
         content:
-          'PortAI is a smart AI workflow platform from Longbridge AI, helping developers quickly build, debug, and deploy AI applications through visual node orchestration and API integration.',
+          'LongbridgeAI is a smart AI workflow platform from Longbridge AI, helping developers quickly build, debug, and deploy AI applications through visual node orchestration and API integration.',
       },
     ],
     [
@@ -20,12 +20,12 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       { property: 'og:image', content: 'https://pub.pbkrs.com/files/202211/sJswdGqSX1xDqrES/lonport-seo-img.png' },
     ],
     ['meta', { property: 'og:locale', content: 'en' }],
-    ['meta', { property: 'og:site_name', content: 'Longbridge | PortAI Docs' }],
+    ['meta', { property: 'og:site_name', content: 'Longbridge | LongbridgeAI Docs' }],
     ['link', { rel: 'canonical', href: 'https://longportapp.com/en/ai/docs//' }],
   ],
-  title: 'PortAI Docs',
+  title: 'LongbridgeAI Docs',
   description:
-    'PortAI is a smart AI workflow platform from Longbridge AI, helping developers quickly build, debug, and deploy AI applications through visual node orchestration and API integration.',
+    'LongbridgeAI is a smart AI workflow platform from Longbridge AI, helping developers quickly build, debug, and deploy AI applications through visual node orchestration and API integration.',
   themeConfig: {
     logoLink: {
       link: '/en/ai/docs/',
