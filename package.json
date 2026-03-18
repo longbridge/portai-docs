@@ -2,7 +2,7 @@
   "name": "portai-docs",
   "version": "1.0.0",
   "author": "Longbridge",
-  "description": "PortAI Documentation powered by VitePress",
+  "description": "LongbridgeAI Documentation powered by VitePress",
   "type": "module",
   "private": true,
   "scripts": {

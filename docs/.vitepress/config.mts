@@ -20,7 +20,7 @@ const insertScript = (html: string) => {
 
 export default defineConfig(
   withMermaid({
-    title: 'PortAI Docs',
+    title: 'LongbridgeAI Docs',
     appearance: true,
     cleanUrls: true,
     metaChunk: true,

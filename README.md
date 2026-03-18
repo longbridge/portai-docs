@@ -1,4 +1,4 @@
-# PortAI Docs
+# LongbridgeAI Docs
 
 基于 Bun 和 VitePress 构建的现代化文档站点。
 
