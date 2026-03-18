@@ -5,7 +5,7 @@ description: LongbridgeAI Babbage 是 LongbridgeAI 旗下的 Agent Builder 平�
 head:
   - - meta
     - name: keywords
-      content: LongbridgeAI, LongbridgeAI Babbage, Agent Builder, AI Infra, 智能 Agent, 大模型平台, 金融 AI, AI 治理, 可观测性, 安全合规
+      content: LongbridgeAI, LongbridgeAI Babbage, Agent Builder, AI Infra, 智能 Agent, 大模型平台，金融 AI, AI 治理，可观测性，安全合规
 
 
 hero:
