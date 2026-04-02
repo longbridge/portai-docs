@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # 开始
 
 ## 是什么

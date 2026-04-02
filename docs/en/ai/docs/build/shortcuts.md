@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # Agent Builder Canvas Shortcut Keys
 
 ## Canvas-level Shortcut Operations

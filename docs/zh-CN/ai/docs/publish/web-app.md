@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # Web App（Chatbot 应用）
 
 ## 功能说明

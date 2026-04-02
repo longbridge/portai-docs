@@ -1,3 +1,6 @@
+---
+sidebar_position: 12
+---
 # Template Transformer
 
 ## What is it?

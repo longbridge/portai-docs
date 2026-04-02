@@ -14,8 +14,8 @@
   --at-apply: py-0;
 }
 
-.VPSidebarItem.is-active {
-  --at-apply: bg-gray-600/5 dark:bg-gray-200/5
+.VPSidebarItem.is-active .VPLink {
+  background-color: color-mix(in srgb, var(--brand-color) 12%, transparent);
 }
 
 :root {

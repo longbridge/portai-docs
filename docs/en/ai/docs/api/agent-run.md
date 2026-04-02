@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 title: Agent Run API - LongbridgeAI API Reference
 description: Run AI Agent workflows via HTTP API. Supports synchronous JSON and streaming SSE responses. Complete guide with cURL and Go code examples.
 head:

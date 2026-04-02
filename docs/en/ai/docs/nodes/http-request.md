@@ -1,3 +1,6 @@
+---
+sidebar_position: 16
+---
 # HTTP Request Node
 
 ## What is it?

@@ -1,3 +1,6 @@
+---
+sidebar_position: 7
+---
 # Question Classifier
 
 ## What is it?

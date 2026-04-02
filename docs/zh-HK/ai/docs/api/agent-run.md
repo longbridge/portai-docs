@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 title: Agent 運行 API - LongbridgeAI API 參考
 description: 透過 HTTP API 執行 AI Agent 工作流。支援同步 JSON 和串流 SSE 回應。包含 cURL 和 Go 代碼示例的完整指南。
 head:

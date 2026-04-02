@@ -1,3 +1,6 @@
+---
+sidebar_position: 7
+---
 # 问题分类器（Question Classifier）
 
 ## 是什么

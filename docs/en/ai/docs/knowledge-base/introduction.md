@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # Knowledge Base Overview
 
 On the Infra platform, you can use your own data as "knowledge" inside AI applications. A knowledge base provides domain context to large language models (LLMs), making responses more accurate, relevant, and less prone to hallucination. This is powered by **Retrieval-Augmented Generation (RAG)**.

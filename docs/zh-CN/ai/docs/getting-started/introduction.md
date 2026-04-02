@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # 介绍
 
 欢迎使用 LongbridgeAI 文档。本章节将帮助您了解 LongbridgeAI 平台的基本概念和功能。

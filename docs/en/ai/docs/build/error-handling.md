@@ -1,3 +1,6 @@
+---
+sidebar_position: 3
+---
 # Error Handling
 
 ## Error Validation Before Publishing

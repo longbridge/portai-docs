@@ -7,10 +7,9 @@ head:
     - name: keywords
       content: LongbridgeAI, LongbridgeAI Babbage, Agent Builder, AI Infra, 智能 Agent, 大模型平台，金融 AI, AI 治理，可观测性，安全合规
 
-
 hero:
-  name: "LongbridgeAI Babbage Docs"
-  text: "企业级金融智能 Agent 构建平台"
+  name: 'LongbridgeAI Babbage Docs'
+  text: '企业级金融智能 Agent 构建平台'
   tagline: 融合 SOTA 大模型、金融工具与可治理 Agent 框架的 AI Infra 底座
   actions:
     - theme: brand
@@ -33,10 +32,4 @@ features:
     details: 覆盖模型调用、Agent 执行与工具使用的全链路监控能力，实时掌握性能、稳定性与异常情况，提升系统可运维性
   - title: 可治理的 AI 能力
     details: 提供模型与 Agent 的使用治理能力，支持配额管理、策略控制与成本分析，确保 AI 能力规模化应用下的可控与可持续
----
-    title: Full-chain Observability
-    details: Covers full-chain monitoring capabilities for model calls, Agent execution, and tool usage. Real-time monitoring of performance, stability, and exceptions to improve system maintainability.
-  - icon: ""
-    title: Governable AI Capabilities
-    details: Provides governance capabilities for model and Agent usage, supporting quota management, policy control, and cost analysis, ensuring controllable and sustainable AI applications at scale.
 ---

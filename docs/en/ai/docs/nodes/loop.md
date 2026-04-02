@@ -1,3 +1,6 @@
+---
+sidebar_position: 10
+---
 # Loop Node
 
 ## What is it?

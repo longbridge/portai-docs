@@ -1,3 +1,6 @@
+---
+sidebar_position: 3
+---
 # Manage a Knowledge Base
 
 This page describes how to manage documents, chunks, and knowledge base settings.
