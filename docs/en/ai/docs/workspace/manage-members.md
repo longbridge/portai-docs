@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # Workspace User Management
 
 ## What is a Workspace?

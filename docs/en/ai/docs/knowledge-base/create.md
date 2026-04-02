@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # Create a Knowledge Base
 
 This page describes how to create and configure a knowledge base and the main options available.

@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # Introduction
 
 Welcome to the LongbridgeAI documentation. This section will help you understand the basic concepts and features of the LongbridgeAI platform.

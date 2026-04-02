@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # Agent Builder 的核心基本概念
 
 ## Agent 是什么？

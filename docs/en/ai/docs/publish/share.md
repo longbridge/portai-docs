@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # Sharing Feature
 
 ## Function Description

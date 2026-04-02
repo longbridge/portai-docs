@@ -23,10 +23,10 @@ type MSidebar = DefaultTheme.SidebarItem & { position?: number }
  * @param basePath Base path to read files from (e.g., 'docs')
  * @returns Function that returns an array of navigation items
  */
-export function genMarkdowDocs(lang: string, basePath: string, debug = false) {
+export function genMarkdowDocs(lang: string, basePath: string, options?: { dirOrder?: string[] }, debug = false) {
   return function (): DefaultTheme.SidebarItem[] {
     const rootDir = path.resolve(__dirname, '../../../', lang, basePath)
-    const fc = generateSidebarItems(rootDir, `/${basePath}`, `/${basePath}`)
+    const fc = generateSidebarItems(rootDir, `/${basePath}`, `/${basePath}`, options?.dirOrder)
     if (debug) {
       fs.writeFileSync(path.resolve(__dirname, `./${lang}_sidebar.json`), JSON.stringify(fc, null, 2))
     }
@@ -70,14 +70,14 @@ function sortByPosition<T extends { position?: number }>(items: T[]): T[] {
  * @param relativePath Relative path for links
  * @returns Array of navigation items
  */
-function generateSidebarItems(dirPath: string, relativePath: string, rootPath: string): DefaultTheme.SidebarItem[] {
+function generateSidebarItems(dirPath: string, relativePath: string, rootPath: string, dirOrder?: string[]): DefaultTheme.SidebarItem[] {
   const items: DefaultTheme.SidebarItem[] = []
 
   try {
     const files = fs.readdirSync(dirPath)
 
     // Process markdown files
-    const mdFiles = files.filter((file) => file.endsWith('.md') && file !== '_category_.json')
+    const mdFiles = files.filter((file) => file.endsWith('.md') && file !== '_category_.json' && file !== 'index.md')
     const fileItems: MSidebar[] = []
 
     for (const file of mdFiles) {
@@ -117,17 +117,16 @@ function generateSidebarItems(dirPath: string, relativePath: string, rootPath: s
       const subDirPath = path.join(dirPath, dir)
       const subRelativePath = path.join(relativePath, dir)
       const subCategoryConfig = readCategoryConfig(subDirPath)
-      const subItems = generateSidebarItems(subDirPath, subRelativePath, rootPath)
+      const subItems = generateSidebarItems(subDirPath, subRelativePath, rootPath, dirOrder)
 
       if (subItems.length > 0) {
         const dirTitle = subCategoryConfig?.label || formatDirName(dir)
-        const collapsed = subCategoryConfig?.collapsed || false
-        const position = subCategoryConfig?.position
+        const orderIndex = dirOrder ? dirOrder.indexOf(dir) : -1
+        const position = subCategoryConfig?.position ?? (orderIndex >= 0 ? orderIndex : undefined)
 
         const sidebarItem: MSidebar = {
           text: dirTitle,
           items: subItems,
-          collapsed,
           position,
         }
 

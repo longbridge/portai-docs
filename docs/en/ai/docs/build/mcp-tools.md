@@ -1,3 +1,6 @@
+---
+sidebar_position: 4
+---
 # Use MCP Tools
 
 This section describes how to use MCP (Model Context Protocol) tools within a workflow.

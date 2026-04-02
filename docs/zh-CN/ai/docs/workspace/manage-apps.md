@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # 应用管理（My Agent）
 
 ## 功能说明

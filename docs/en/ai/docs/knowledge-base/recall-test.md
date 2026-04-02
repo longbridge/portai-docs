@@ -1,3 +1,6 @@
+---
+sidebar_position: 4
+---
 # Recall Testing
 
 Recall testing lets you run sample queries against your knowledge base, see what gets retrieved, and try different retrieval settings to find a good configuration.

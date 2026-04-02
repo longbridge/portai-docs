@@ -1,3 +1,6 @@
+---
+sidebar_position: 6
+---
 # 工具節點（Tool）
 
 ## 是什麼

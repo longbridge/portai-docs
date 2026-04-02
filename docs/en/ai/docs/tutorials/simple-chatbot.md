@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # Simple Chatbot
 
 This tutorial will guide you through creating a simple chatbot application.

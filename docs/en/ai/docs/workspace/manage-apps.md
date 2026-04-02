@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # Application Management (My Agent)
 
 ## Function Description

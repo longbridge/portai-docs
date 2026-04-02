@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # Agent Builder 画布快捷键说明
 
 ## 画布级快捷操作

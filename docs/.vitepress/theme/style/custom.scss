@@ -1,3 +1,7 @@
+::selection {
+  background-color: color-mix(in srgb, var(--brand-color) 20%, transparent);
+}
+
 .longport-home-page {
   .VPContent .VPHome {
     margin-bottom: 0px;

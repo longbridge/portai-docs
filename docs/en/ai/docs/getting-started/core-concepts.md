@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # Core Basic Concepts of Agent Builder
 
 ## What is an Agent?
