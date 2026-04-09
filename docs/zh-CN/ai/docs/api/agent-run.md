@@ -13,8 +13,6 @@ outline: deep
 
 本文档介绍如何通过 HTTP API 运行 Agent 的 Workflow，并获取同步/异步执行结果。支持 JSON 与服务端推送（SSE）两种响应方式。
 
-- 基础域名（Base URL）
-  - `https://api.lbkrs.com/v1/babbage`
 - 认证方式
   - 需在请求头携带 `x-agent-key`（可在 Agent 详情获取）
 - 返回格式
@@ -322,7 +320,7 @@ func main() {
 | 参数            | 类型   | 必填 | 说明                                  |
 | --------------- | ------ | ---- | ------------------------------------- |
 | uid             | string | 是   | Agent 的唯一标识                      |
-| workflow_run_id | string  | 是   | 运行 ID（来自 `mode=async` 或响应体） |
+| workflow_run_id | string | 是   | 运行 ID（来自 `mode=async` 或响应体） |
 
 ## 响应（JSON）
 

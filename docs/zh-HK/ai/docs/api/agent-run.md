@@ -13,8 +13,6 @@ outline: deep
 
 本文檔介紹如何透過 HTTP API 執行 Agent 的 Workflow，並獲取同步／非同步執行結果。支援 JSON 與伺服器推送（SSE）兩種回應方式。
 
-- 基礎網域（Base URL）
-  - `https://api.lbkrs.com/v1/babbage`
 - 認證方式
   - 需在請求標頭攜帶 `x-agent-key`（可在 Agent 詳情頁取得）
 - 回應格式
