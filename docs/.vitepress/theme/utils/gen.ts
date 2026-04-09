@@ -1,7 +1,12 @@
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'node:url'
+import { dirname } from 'node:path'
 import matter from 'gray-matter'
 import { type DefaultTheme } from 'vitepress'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 interface CategoryConfig {
   position?: number
@@ -83,8 +88,8 @@ function generateSidebarItems(dirPath: string, relativePath: string, rootPath: s
     for (const file of mdFiles) {
       const filePath = path.join(dirPath, file)
       const fileContent = fs.readFileSync(filePath, 'utf8')
-      const { data } = matter(fileContent)
-      const title = data['sidebar_label'] || data['title'] || getDefaultTitle(file)
+      const { data, content } = matter(fileContent)
+      const title = data['sidebar_label'] || data['title'] || extractFirstH1(content) || getDefaultTitle(file)
       const slug = data['slug']
 
       const normalizeLink =
@@ -167,4 +172,14 @@ function getDefaultTitle(fileName: string): string {
     .split('-')
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(' ')
+}
+
+/**
+ * Extract the first H1 heading from markdown content (after frontmatter)
+ * @param content Markdown content without frontmatter
+ * @returns H1 heading text or undefined
+ */
+function extractFirstH1(content: string): string | undefined {
+  const match = content.match(/^#\s+(.+)$/m)
+  return match ? match[1].trim() : undefined
 }

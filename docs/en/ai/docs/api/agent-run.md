@@ -13,8 +13,6 @@ outline: deep
 
 This document explains how to run an Agent’s Workflow via the HTTP API and obtain results synchronously or asynchronously. Two response modes are supported: JSON and Server-Sent Events (SSE).
 
-- Base URL
-  - `https://api.lbkrs.com/v1/babbage`
 - Authentication
   - Include `x-agent-key` in the request headers (available on the Agent detail page)
 - Response formats

@@ -15,10 +15,10 @@ hero:
   actions:
     - theme: brand
       text: 快速開始
-      link: /zh-CN/ai/docs/getting-started/introduction
+      link: /zh-HK/ai/docs/getting-started/introduction
     - theme: alt
       text: API 参考
-      link: /zh-CN/ai/docs/api/agent-run
+      link: /zh-HK/ai/docs/api/agent-run
 
 features:
   - title: SOTA 大模型接入
