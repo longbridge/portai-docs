@@ -6,10 +6,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "VITE_API_BASE_URL=https://openapi.longbridge.xyz vitepress dev docs",
-    "dev:prod": "VITE_API_BASE_URL=https://openapi.longportapp.com vitepress dev docs",
-    "build:canary": "VITE_API_BASE_URL=https://openapi.longbridge.xyz vitepress build docs",
-    "build:release": "VITE_API_BASE_URL=https://openapi.longportapp.com vitepress build docs",
+    "dev": "vitepress dev docs",
+    "build:canary": "vitepress build docs && bun run scripts/fix-llm-paths.ts",
+    "build:release": "vitepress build docs && bun run scripts/fix-llm-paths.ts",
     "preview": "vitepress preview docs",
     "lint:docs": "prettier -c --parser typescript \"packages/**/*.{js,ts,vue}\"",
     "format:docs": "prettier --write \"packages/**/*.{js,ts,vue}\""

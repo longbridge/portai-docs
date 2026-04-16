@@ -77,16 +77,6 @@ export default defineConfig(
       ssr: {
         noExternal: ['vue-i18n'],
       },
-      server: {
-        port: 8000,
-        proxy: {
-          '/api': {
-            target: process.env.VITE_API_BASE_URL || 'https://openapi.longportapp.com',
-            changeOrigin: true,
-            rewrite: (path) => path.replace(/^\/api/, ''),
-          },
-        },
-      },
       optimizeDeps: {
         // Exclude vuetify since it has an issue with vite dev - TypeError: makeVExpansionPanelTextProps is not a function - the makeVExpansionPanelTextProps is used before it is defined
         exclude: ['vuetify'],
