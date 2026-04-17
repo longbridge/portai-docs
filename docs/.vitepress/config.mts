@@ -7,17 +7,7 @@ import { fileURLToPath } from 'node:url'
 import { localesConfig } from './config/locales'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 import { rewriteMarkdownPath } from './utils'
-import * as cheerio from 'cheerio'
 import llmstxt from 'vitepress-plugin-llms'
-
-const insertScript = (html: string) => {
-  const $ = cheerio.load(html)
-  $('head').prepend(
-    `<script>window.__API_PROXY_URL__ = ${JSON.stringify(process.env.VITE_PORTAL_GATEWAY_BASE_URL)}</script>`,
-    `<script defer˝ src="https://assets.lbctrl.com/uploads/b63bb77e-74b5-43d3-8bf4-d610be91c838/longport-internal.iife.js"></script>`
-  )
-  return $.html()
-}
 
 export default defineConfig(
   withMermaid({
@@ -31,10 +21,6 @@ export default defineConfig(
     srcExclude: ['README.md'],
     rewrites: rewriteMarkdownPath,
     markdown: markdownConfig,
-    transformHtml(code) {
-      return insertScript(code)
-    },
-
     sitemap: {
       hostname: 'https://open.longportapp.com',
       transformItems(items) {
@@ -44,12 +30,23 @@ export default defineConfig(
 
     /* prettier-ignore */
     head: [
+      ['link', { rel: 'icon', type: 'image/x-icon', href: 'https://assets.lbkrs.com/uploads/f029efba-486b-4c32-8b05-1a87b0fb61f8/logo-without-title-lb.svg' }],
       ['link', { rel: 'shortcut icon', type: 'image/x-icon', href: 'https://assets.lbkrs.com/uploads/f029efba-486b-4c32-8b05-1a87b0fb61f8/logo-without-title-lb.svg' }],
-      ['meta', { name: 'theme-color', content: '#5f67ee' }],
+      ['link', { rel: 'apple-touch-icon', href: 'https://assets.wbrks.com/assets/manifest-icons/icon-72x72.png', sizes: '76x76' }],
+      ['link', { rel: 'apple-touch-icon', href: 'https://assets.wbrks.com/assets/manifest-icons/icon-128x128.png', sizes: '120x120' }],
+      ['link', { rel: 'apple-touch-icon', href: 'https://assets.wbrks.com/assets/manifest-icons/icon-152x152.png', sizes: '152x152' }],
+      ['meta', { name: 'author', content: 'Longbridge' }],
+      ['meta', { name: 'application-name', content: 'LongbridgeAI' }],
+      ['meta', { name: 'theme-color', content: '#33cdcd' }],
       ['meta', { name: 'twitter:card', content: 'summary' }],
-      ['meta', { name: 'twitter:site', content: 'https://open.longportapp.com' }],
+      ['meta', { name: 'twitter:site', content: 'https://longbridge.com' }],
+      ['meta', { name: 'apple-itunes-app', content: 'app-id=1470042146' }],
+      ['meta', { property: 'og:image:width', content: '1200' }],
+      ['meta', { property: 'og:image:height', content: '630' }],
       ['meta', { name: 'robots', content: 'index,follow' }],
       ['meta', { name: 'googlebot', content: 'index,follow' }],
+      ['link', { rel: 'dns-prefetch', href: 'https://assets.lbctrl.com' }],
+      ['link', { rel: 'dns-prefetch', href: 'https://assets.wbrks.com' }],
       ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-JNRX7GS04Y' }],
       ['script', {}, `window.dataLayer = window.dataLayer||[];
     function gtag() {
@@ -62,9 +59,9 @@ export default defineConfig(
     ],
     themeConfig: {
       logo: {
-        src: 'https://assets.lbkrs.com/uploads/f029efba-486b-4c32-8b05-1a87b0fb61f8/logo-without-title-lb.svg',
-        width: 48,
-        height: 48,
+        src: 'https://assets.wbrks.com/assets/logo/logo1.png',
+        width: 24,
+        height: 24,
       },
       search: {
         provider: 'local',
@@ -74,6 +71,9 @@ export default defineConfig(
     locales: localesConfig,
 
     vite: {
+      server: {
+        port: 8000,
+      },
       ssr: {
         noExternal: ['vue-i18n'],
       },
@@ -105,17 +105,6 @@ export default defineConfig(
         Unocss({
           configFile: '../unocss.config.ts',
         }),
-
-        /**s
-         * see https://github.com/vuejs/vitepress/issues/3314
-         * 实际上仅会在开发者模式注入
-         */
-        {
-          name: 'inject-extra-script',
-          transformIndexHtml(code) {
-            return insertScript(code)
-          },
-        },
       ],
     },
   })

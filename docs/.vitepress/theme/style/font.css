@@ -4,3 +4,9 @@
   --vp-font-family-base: '__Inter_c8d9fa', '__Inter_Fallback_c8d9fa'
 }
 
+.vp-doc {
+  font-size: 15px;
+  line-height: 1.75;
+  letter-spacing: -0.011em;
+}
+

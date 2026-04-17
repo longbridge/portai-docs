@@ -1,31 +1,23 @@
 import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
+import { createLocaleHead } from '../shared'
 import { nav } from './nav'
 import { search } from './search'
 import { sidebar } from './sidebar'
+
+const title = 'Longbridge | LongbridgeAI 文档'
+const description =
+  'LongbridgeAI 是 Longbridge AI 推出的智能 AI 工作流平台，通过可视化节点编排和 API 集成，帮助开发者快速构建、调试和部署 AI 应用。'
+
 export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
-  head: [
-    ['meta', { property: 'og:url', content: 'https://longportapp.com/zh-CN/ai/docs/' }],
-    ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'Longbridge | LongbridgeAI 文档' }],
-    [
-      'meta',
-      {
-        property: 'og:description',
-        content:
-          'LongbridgeAI 是 Longbridge AI 推出的智能 AI 工作流平台，通过可视化节点编排和 API 集成，帮助开发者快速构建、调试和部署 AI 应用。',
-      },
-    ],
-    [
-      'meta',
-      { property: 'og:image', content: 'https://pub.pbkrs.com/files/202211/sJswdGqSX1xDqrES/lonport-seo-img.png' },
-    ],
-    ['meta', { property: 'og:locale', content: 'zh-CN' }],
-    ['meta', { property: 'og:site_name', content: 'Longbridge | LongbridgeAI 文档' }],
-    ['link', { rel: 'canonical', href: 'https://longportapp.com/zh-CN/ai/docs/' }],
-  ],
+  head: createLocaleHead({
+    locale: 'zh-CN',
+    ogLocale: 'zh_CN',
+    title,
+    description,
+    keywords: 'LongbridgeAI,AI Agent,工作流,Agent Builder,Longbridge,AI 应用',
+  }),
   title: 'LongbridgeAI 文档',
-  description:
-    'LongbridgeAI 是 Longbridge AI 推出的智能 AI 工作流平台，通过可视化节点编排和 API 集成，帮助开发者快速构建、调试和部署 AI 应用。',
+  description,
   themeConfig: {
     logoLink: {
       link: '/zh-CN/ai/docs/',
