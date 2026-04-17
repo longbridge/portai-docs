@@ -3,7 +3,7 @@ import type { HeadConfig } from 'vitepress'
 export const SITE_URL = 'https://longportapp.com'
 export const DOCS_PATH = '/ai/docs/'
 export const OG_IMAGE =
-  'https://assets.lbctrl.com/uploads/b510b04f-9238-4fe0-b39d-11e076876ac1/longbridge-og.png'
+  'https://assets.lbctrl.com/uploads/704969a1-f4c7-4518-bc33-9e6d79e4009f/longbridge-ai-brand.png'
 export const LOGO_URL = 'https://assets.wbrks.com/assets/logo/logo1.png'
 export const PUBLISHER_NAME = 'Longbridge'
 
