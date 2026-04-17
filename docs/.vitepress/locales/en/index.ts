@@ -1,31 +1,23 @@
 import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
+import { createLocaleHead } from '../shared'
 import { nav } from './nav'
 import { search } from './search'
 import { sidebar } from './sidebar'
+
+const title = 'Longbridge | LongbridgeAI Docs'
+const description =
+  'LongbridgeAI is a smart AI workflow platform from Longbridge AI, helping developers quickly build, debug, and deploy AI applications through visual node orchestration and API integration.'
+
 export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
-  head: [
-    ['meta', { property: 'og:url', content: 'https://longportapp.com/en/ai/docs/' }],
-    ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'Longbridge | LongbridgeAI Docs' }],
-    [
-      'meta',
-      {
-        property: 'og:description',
-        content:
-          'LongbridgeAI is a smart AI workflow platform from Longbridge AI, helping developers quickly build, debug, and deploy AI applications through visual node orchestration and API integration.',
-      },
-    ],
-    [
-      'meta',
-      { property: 'og:image', content: 'https://pub.pbkrs.com/files/202211/sJswdGqSX1xDqrES/lonport-seo-img.png' },
-    ],
-    ['meta', { property: 'og:locale', content: 'en' }],
-    ['meta', { property: 'og:site_name', content: 'Longbridge | LongbridgeAI Docs' }],
-    ['link', { rel: 'canonical', href: 'https://longportapp.com/en/ai/docs//' }],
-  ],
+  head: createLocaleHead({
+    locale: 'en',
+    ogLocale: 'en_US',
+    title,
+    description,
+    keywords: 'LongbridgeAI,AI Agent,Workflow,Agent Builder,Longbridge',
+  }),
   title: 'LongbridgeAI Docs',
-  description:
-    'LongbridgeAI is a smart AI workflow platform from Longbridge AI, helping developers quickly build, debug, and deploy AI applications through visual node orchestration and API integration.',
+  description,
   themeConfig: {
     logoLink: {
       link: '/en/ai/docs/',

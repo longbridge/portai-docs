@@ -1,5 +1,131 @@
+/* 导航栏毛玻璃 */
+:root {
+  --vp-c-divider: rgba(0, 0, 0, 0.06);
+  --vp-c-gutter: var(--vp-c-divider);
+  --vp-navbar-bg: rgba(255, 255, 255, 0.7);
+  --vp-navbar-border: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --vp-c-divider: rgba(255, 255, 255, 0.06);
+  --vp-navbar-bg: rgba(27, 27, 31, 0.95);
+  --vp-navbar-border: rgba(255, 255, 255, 0.08);
+}
+
+.VPNavBar {
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  background-color: var(--vp-navbar-bg) !important;
+  border-bottom: none !important;
+  transition:
+    background-color 0.25s,
+    backdrop-filter 0.25s !important;
+}
+
+/* 内部子元素透明，避免遮盖 backdrop-filter */
+.VPNavBar .content-body,
+.VPNavBar .title {
+  background-color: transparent !important;
+}
+
+.curtain {
+  background-color: transparent !important;
+}
+
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar .divider {
+    padding-left: calc((100% - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
+  }
+}
+
+.VPNavBar .divider-line {
+  background-color: var(--vp-c-gutter) !important;
+}
+
+/* 有侧边栏时，导航栏 title 区域右侧分割线（仅桌面端） */
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar div.title {
+    border-right: 1px solid var(--vp-c-divider) !important;
+  }
+}
+
+/* 移除 VPNavBarTitle 内 a.title 的底部 border */
+@media (min-width: 960px) {
+  .VPNavBarTitle.has-sidebar .title {
+    border-bottom-color: transparent !important;
+  }
+}
+
+/* 有侧边栏时，底部 border 仅在 content 区域显示，title 区域无 border */
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar {
+    border-bottom: none !important;
+  }
+
+  .VPNavBar.has-sidebar::after {
+    display: none;
+  }
+}
+
+/* 搜索框圆角 */
+.VPNavBarSearchButton {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  border-radius: 20px !important;
+
+  .keys {
+    border: 0 !important;
+    font-size: 12px !important;
+    color: var(--vp-c-text-3) !important;
+  }
+}
+
+.DocSearch-Button {
+  border-radius: 20px !important;
+  height: 36px !important;
+}
+
+.DocSearch-Button-Keys {
+  border: none !important;
+}
+
+.DocSearch-Button-Key {
+  border: none !important;
+}
+
+/* VPDoc 品牌色渐变背景 */
+.VPDoc {
+  position: relative;
+}
+
+.VPDoc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    680px 320px at 50% 0%,
+    color-mix(in srgb, var(--vp-c-brand-1) 8%, transparent) 25%,
+    transparent 100%
+  );
+  z-index: 0;
+}
+
 ::selection {
   background-color: color-mix(in srgb, var(--brand-color) 20%, transparent);
+}
+
+/* VPContent 撑满右侧区域 */
+.VPContent.has-sidebar {
+  padding-right: 0 !important;
+}
+
+.VPDoc .container {
+  max-width: 100% !important;
+}
+
+.VPDoc.has-aside .content-container {
+  max-width: 688px;
 }
 
 .longport-home-page {

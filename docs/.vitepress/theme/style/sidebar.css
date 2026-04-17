@@ -1,5 +1,7 @@
 .VPSidebar {
-  --at-apply: outline-none
+  --at-apply: outline-none;
+  background-color: var(--vp-c-bg) !important;
+  border-right: 1px solid var(--vp-c-divider) !important;
 }
 
 .VPSidebarItem:hover {
