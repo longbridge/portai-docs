@@ -6,7 +6,7 @@ import { sidebar } from './sidebar'
 
 const title = 'Longbridge | LongbridgeAI Docs'
 const description =
-  'LongbridgeAI is a smart AI workflow platform from Longbridge AI, helping developers quickly build, debug, and deploy AI applications through visual node orchestration and API integration.'
+  'LongbridgeAI is a smart AI workflow platform from Longbridge, helping developers quickly build, debug, and deploy AI applications through visual node orchestration and API integration.'
 
 export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   head: createLocaleHead({
