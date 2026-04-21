@@ -6,7 +6,7 @@ import { sidebar } from './sidebar'
 
 const title = 'Longbridge | LongbridgeAI 文档'
 const description =
-  'LongbridgeAI 是 Longbridge AI 推出的智能 AI 工作流平台，通过可视化节点编排和 API 集成，帮助开发者快速构建、调试和部署 AI 应用。'
+  'LongbridgeAI 是 Longbridge 推出的智能 AI 工作流平台，通过可视化节点编排和 API 集成，帮助开发者快速构建、调试和部署 AI 应用。'
 
 export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   head: createLocaleHead({
@@ -14,7 +14,7 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     ogLocale: 'zh_CN',
     title,
     description,
-    keywords: 'LongbridgeAI,AI Agent,工作流,Agent Builder,Longbridge,AI 应用',
+    keywords: 'LongbridgeAI,AI Agent，工作流，Agent Builder,Longbridge,AI 应用',
   }),
   title: 'LongbridgeAI 文档',
   description,
