@@ -28,10 +28,17 @@ type MSidebar = DefaultTheme.SidebarItem & { position?: number }
  * @param basePath Base path to read files from (e.g., 'docs')
  * @returns Function that returns an array of navigation items
  */
+const OVERVIEW_LABEL: Record<string, string> = {
+  'zh-CN': '概览',
+  'zh-HK': '概覽',
+  en: 'Overview',
+}
+
 export function genMarkdowDocs(lang: string, basePath: string, options?: { dirOrder?: string[] }, debug = false) {
   return function (): DefaultTheme.SidebarItem[] {
     const rootDir = path.resolve(__dirname, '../../../', lang, basePath)
-    const fc = generateSidebarItems(rootDir, `/${basePath}`, `/${basePath}`, options?.dirOrder)
+    const overview = OVERVIEW_LABEL[lang] || OVERVIEW_LABEL['en']
+    const fc = generateSidebarItems(rootDir, `/${basePath}`, `/${basePath}`, options?.dirOrder, overview)
     if (debug) {
       fs.writeFileSync(path.resolve(__dirname, `./${lang}_sidebar.json`), JSON.stringify(fc, null, 2))
     }
@@ -75,7 +82,13 @@ function sortByPosition<T extends { position?: number }>(items: T[]): T[] {
  * @param relativePath Relative path for links
  * @returns Array of navigation items
  */
-function generateSidebarItems(dirPath: string, relativePath: string, rootPath: string, dirOrder?: string[]): DefaultTheme.SidebarItem[] {
+function generateSidebarItems(
+  dirPath: string,
+  relativePath: string,
+  rootPath: string,
+  dirOrder?: string[],
+  overviewLabel = 'Overview'
+): DefaultTheme.SidebarItem[] {
   const items: DefaultTheme.SidebarItem[] = []
 
   try {
@@ -85,10 +98,33 @@ function generateSidebarItems(dirPath: string, relativePath: string, rootPath: s
     const mdFiles = files.filter((file) => file.endsWith('.md') && file !== '_category_.json' && file !== 'index.md')
     const fileItems: MSidebar[] = []
 
+    // 若目录内有 index.md 且未 hidden、非 layout: home（hero 首页不该进 sidebar），
+    // 把它加入 sidebar 作为该分类的首个可点击项
+    // link 指向目录 URL（如 /ai/docs/compliance），position 用 index.md 的 sidebar_position（默认 0）
+    // 若 index 的 title 与该目录的 _category_.json label 相同，展示为 "概览" 避免重复
+    if (files.includes('index.md')) {
+      const indexPath = path.join(dirPath, 'index.md')
+      const indexRaw = fs.readFileSync(indexPath, 'utf8')
+      const { data, content } = matter(indexRaw)
+      if (data['hidden'] !== true && data['layout'] !== 'home') {
+        const rawTitle =
+          data['sidebar_label'] || data['title'] || extractFirstH1(content) || getDefaultTitle('index.md')
+        const dirCategoryConfig = readCategoryConfig(dirPath)
+        const title = dirCategoryConfig?.label && dirCategoryConfig.label === rawTitle ? overviewLabel : rawTitle
+        fileItems.push({
+          text: title,
+          link: relativePath,
+          position: data['sidebar_position'] ?? 0,
+        })
+      }
+    }
+
     for (const file of mdFiles) {
       const filePath = path.join(dirPath, file)
       const fileContent = fs.readFileSync(filePath, 'utf8')
       const { data, content } = matter(fileContent)
+      // 跳过 hidden: true 的文档（如 URL 重定向占位页）
+      if (data['hidden'] === true) continue
       const title = data['sidebar_label'] || data['title'] || extractFirstH1(content) || getDefaultTitle(file)
       const slug = data['slug']
 
@@ -122,7 +158,7 @@ function generateSidebarItems(dirPath: string, relativePath: string, rootPath: s
       const subDirPath = path.join(dirPath, dir)
       const subRelativePath = path.join(relativePath, dir)
       const subCategoryConfig = readCategoryConfig(subDirPath)
-      const subItems = generateSidebarItems(subDirPath, subRelativePath, rootPath, dirOrder)
+      const subItems = generateSidebarItems(subDirPath, subRelativePath, rootPath, dirOrder, overviewLabel)
 
       if (subItems.length > 0) {
         const dirTitle = subCategoryConfig?.label || formatDirName(dir)

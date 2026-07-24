@@ -1,62 +1,62 @@
 ---
 sidebar_position: 1
-title: Agent 運行 API - LongbridgeAI API 參考
-description: 透過 HTTP API 執行 AI Agent 工作流。支援同步 JSON 和串流 SSE 回應。包含 cURL 和 Go 代碼示例的完整指南。
+title: Agent 執行 API - LongbridgeAI API 參考
+description: 通過 HTTP API 執行 AI Agent 工作流。支援同步 JSON 和流式 SSE 響應。包含 cURL 和 Go 程式碼示例的完整指南。
 head:
   - - meta
     - name: keywords
-      content: LongbridgeAI, Agent API, 工作流，SSE, 串流回應，AI Agent, HTTP API, REST
+      content: LongbridgeAI, Agent API, 工作流，SSE, 流式響應，AI Agent, HTTP API, REST
 outline: deep
 ---
 
 # 概覽
 
-本文檔介紹如何透過 HTTP API 執行 Agent 的 Workflow，並獲取同步／非同步執行結果。支援 JSON 與伺服器推送（SSE）兩種回應方式。
+本文件介紹如何通過 HTTP API 執行 Agent 的 Workflow，並獲取同步/非同步執行結果。支援 JSON 與服務端推送（SSE）兩種響應方式。
 
 - 認證方式
-  - 需在請求標頭攜帶 `x-agent-key`（可在 Agent 詳情頁取得）
-- 回應格式
+  - 需在請求頭攜帶 `x-agent-key`（可在 Agent 詳情獲取）
+- 返回格式
   - 同步：JSON（預設）
-  - 串流：SSE（請求 header 需要設定 `Accept: text/event-stream`）
+  - 流式：SSE（請求 header 需要設定 `Accept: text/event-stream`）
 
-> 提示：請求體欄位需與該 Agent 的「Start 節點」參數保持一致，以下示例以 `query` 欄位示範。
+> 提示：請求體欄位需與該 Agent 的「Start 節點」引數保持一致，以下示例以 `query` 欄位演示。
 
 ## 執行 Agent
 
-執行指定 Agent 已發佈的 Workflow。
+執行指定 Agent 已釋出的 Workflow。
 
 - 方法與路徑：`POST /api/agents/:uid/runs`
 - 完整 URL：`{BaseURL}/api/agents/:uid/runs`
-- 回應模式：
-  - 預設同步 JSON
-  - 可透過請求標頭選擇 SSE 串流輸出
+- 響應模式：
+  - 默認同步 JSON
+  - 通過請求頭選擇 SSE 流式輸出
 
-## 路徑參數
+## 路徑引數
 
-| 參數 | 類型   | 必填 | 說明             |
+| 引數 | 型別   | 必填 | 說明             |
 | ---- | ------ | ---- | ---------------- |
-| uid  | string | 是   | Agent 的唯一識別 |
+| uid  | string | 是   | Agent 的唯一標識 |
 
-## 查詢參數（Query）
+## 查詢引數（Query）
 
-| 參數 | 類型   | 必填 | 說明                                   |
-| ---- | ------ | ---- | -------------------------------------- |
+| 引數 | 型別   | 必填 | 說明                                 |
+| ---- | ------ | ---- | ------------------------------------ |
 | mode | string | 否   | `async` 為非同步模式；省略時為同步執行 |
 
 - 同步模式：直接返回最終結果
-- 非同步模式（`mode=async`）：立即返回 `workflow_run_id`，後續透過查詢介面取得結果
+- 非同步模式（`mode=async`）：立即返回 `workflow_run_id`，後續通過查詢介面獲取結果
 
-## 請求標頭（Headers）
+## 請求頭（Headers）
 
 | Header         | 必填 | 值                                   |
 | -------------- | ---- | ------------------------------------ |
 | x-agent-key    | 是   | 你的 Agent Key                       |
 | Content-Type   | 是   | `application/json`                   |
-| Accept（可選） | 否   | `text/event-stream`（使用 SSE 串流） |
+| Accept（可選） | 否   | `text/event-stream`（使用 SSE 流式） |
 
 ## 請求體（Body）
 
-請求體為 Workflow Start 節點所需參數。示例：
+請求體為 Workflow Start 節點所需引數。示例：
 
 ```json
 {
@@ -64,9 +64,9 @@ outline: deep
 }
 ```
 
-> 實際欄位以該 Agent 在平台上的配置為準。
+> 實際欄位以該 Agent 在平臺上的配置為準。
 
-## 同步回應（JSON，預設）
+## 同步響應（JSON，預設）
 
 只返回最終結果（最後一個節點的輸出）。
 
@@ -80,7 +80,7 @@ outline: deep
     }
   },
   "status": "succeeded",
-  "workflow_run_id": 496
+  "workflow_run_id": "496"
 }
 ```
 
@@ -91,24 +91,24 @@ outline: deep
   - `status`：`succeeded` 或 `failed`
   - `workflow_run_id`：本次執行 ID
 
-## 串流回應（SSE）
+## 流式響應（SSE）
 
-當請求標頭包含 `Accept: text/event-stream` 時，使用 SSE 以事件方式推送執行過程。
+當請求頭包含 `Accept: text/event-stream` 時，使用 SSE 按事件推送執行過程。
 
-### 事件類型（event）
+### 事件型別（event）
 
 - `workflow_started`：執行開始
-- `message`：大型模型或節點輸出的增量文本
+- `message`：大模型或節點輸出的增量文本
 - `workflow_finished`：執行完成
 
 ### 事件資料（data）
 
-統一 JSON 結構（依事件不同所含欄位亦不同）：
+統一 JSON 結構（按事件不同包含的欄位不同）：
 
 ```json
 {
   "event": "workflow_started",
-  "workflow_run_id": 842,
+  "workflow_run_id": "842",
   "data": {
     "started_at": 1751553245,
     "workflow_id": 1,
@@ -118,7 +118,7 @@ outline: deep
 
 {
   "event": "message",
-  "workflow_run_id": 842,
+  "workflow_run_id": "842",
   "data": {
     "text": "……增量輸出……",
     "started_at": 1751553249
@@ -127,7 +127,7 @@ outline: deep
 
 {
   "event": "workflow_finished",
-  "workflow_run_id": 842,
+  "workflow_run_id": "842",
   "data": {
     "started_at": 1751553245,
     "workflow_id": 1,
@@ -161,13 +161,13 @@ outline: deep
 curl -X POST "https://api.longbridge.xyz/v1/babbage/api/agents/<UID>/runs" \
   -H "x-agent-key: <YOUR_AGENT_KEY>" \
   -H "Content-Type: application/json" \
-  -d '{"query":"特斯拉今日走势"}'### cURL（SSE 流式）
+  -d '{"query":"特斯拉今日走勢"}'### cURL（SSE 流式）
 
 curl -N -X POST "https://api.longbridge.xyz/v1/babbage/api/agents/<UID>/runs" \
   -H "x-agent-key: <YOUR_AGENT_KEY>" \
   -H "Content-Type: application/json" \
   -H "Accept: text/event-stream" \
-  -d '{"query":"特斯拉今日走势"}'### Go（SSE 流式）
+  -d '{"query":"特斯拉今日走勢"}'### Go（SSE 流式）
 ```
 
 ### golang
@@ -298,7 +298,7 @@ func main() {
     "x-agent-key":   "<YOUR_AGENT_KEY>",
   }
 
-  body := bytes.NewBufferString(`{"query":"特斯拉今日走势"}`)
+  body := bytes.NewBufferString(`{"query":"特斯拉今日走勢"}`)
   url := "https://api.longbridge.xyz/v1/babbage/api/agents/<UID>/runs"
 
   b, err := httpJSON(ctx, "POST", url, headers, body)
@@ -315,14 +315,14 @@ func main() {
 - 方法與路徑：`GET /api/agents/:uid/runs/:workflow_run_id`
 - 完整 URL：`{BaseURL}/api/agents/:uid/runs/:workflow_run_id`
 
-## 路徑參數
+## 路徑引數
 
-| 參數            | 類型   | 必填 | 說明                                  |
+| 引數            | 型別   | 必填 | 說明                                  |
 | --------------- | ------ | ---- | ------------------------------------- |
-| uid             | string | 是   | Agent 的唯一識別                      |
-| workflow_run_id | int64  | 是   | 執行 ID（來自 `mode=async` 或回應體） |
+| uid             | string | 是   | Agent 的唯一標識                      |
+| workflow_run_id | string | 是   | 執行 ID（來自 `mode=async` 或響應體） |
 
-## 回應（JSON）
+## 響應（JSON）
 
 ```json
 {
@@ -332,7 +332,7 @@ func main() {
   "inputs": {},
   "outputs": {},
   "status": "succeeded",
-  "workflow_run_id": 59480850550554625
+  "workflow_run_id": "59480850550554625"
 }
 ```
 
@@ -343,7 +343,7 @@ func main() {
 
 # 錯誤處理
 
-所有接口在失敗時將返回非 200 狀態碼，並在回應體中包含錯誤資訊：
+所有介面在失敗時將返回非 200 狀態碼，並在響應體中包含錯誤資訊：
 
 ```json
 {
@@ -356,8 +356,8 @@ func main() {
 
 | HTTP 狀態碼 | 錯誤場景                       |
 | ----------- | ------------------------------ |
-| 400         | 參數不合法或缺失               |
+| 400         | 引數不合法或缺失               |
 | 401         | 認證失敗（`x-agent-key` 無效） |
-| 404         | 資源不存在（Agent／執行 ID）   |
+| 404         | 資源不存在（Agent/執行 ID）    |
 | 429         | 頻率限制                       |
 | 500         | 伺服器內部錯誤                 |

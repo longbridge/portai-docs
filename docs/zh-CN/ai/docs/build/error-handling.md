@@ -1,24 +1,16 @@
 ---
-sidebar_position: 3
+title: "已迁移"
+hidden: true
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/zh-CN/ai/docs/basics/introduction"
+  - - link
+    - rel: canonical
+      href: "/zh-CN/ai/docs/basics/introduction"
+  - - meta
+    - name: robots
+      content: "noindex,nofollow"
 ---
-# 错误处理
 
-## 发布前错误校验
-
-在 Agent 发布之前，平台会对当前流程进行 **错误校验**：
-
-* 校验流程结构是否完整
-* 校验关键节点是否满足运行条件
-* 校验流程是否符合当前类型（ChatFlow / Workflow）的要求
-
-如果存在不符合发布条件的问题：
-
-* 系统会在界面上给出明确提示
-* 并引导你根据提示进行修正
-
-## 使用提示
-
-* 请在发布前认真查看界面中的校验信息
-* 确保所有错误和提示项已被正确处理
-* 建议在错误校验通过后，再进行正式发布
-
+本文档已迁移，正在跳转到 [基础功能介绍](/zh-CN/ai/docs/basics/introduction)。

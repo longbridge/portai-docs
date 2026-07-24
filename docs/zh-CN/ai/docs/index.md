@@ -15,7 +15,10 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /zh-CN/ai/docs/getting-started/introduction
+      link: /zh-CN/ai/docs/basics/introduction
+    - theme: alt
+      text: 合规上线
+      link: /zh-CN/ai/docs/compliance/
     - theme: alt
       text: API 参考
       link: /zh-CN/ai/docs/api/agent-run

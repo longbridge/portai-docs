@@ -1,19 +1,16 @@
 ---
-sidebar_position: 1
+title: "已迁移"
+hidden: true
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/zh-CN/ai/docs/tutorials/orchestration-debug"
+  - - link
+    - rel: canonical
+      href: "/zh-CN/ai/docs/tutorials/orchestration-debug"
+  - - meta
+    - name: robots
+      content: "noindex,nofollow"
 ---
-# 简单聊天机器人
 
-本教程将指导您创建一个简单的聊天机器人应用。
-
-## 概述
-
-通过本教程，您将学习如何使用 LongbridgeAI 平台构建一个基础的聊天机器人。
-
-## 步骤
-
-1. 创建新应用
-2. 添加开始节点
-3. 配置大语言模型节点
-4. 添加答案输出节点
-5. 测试和发布
-
+本文档已迁移，正在跳转到 [流程编排模式与调试技巧](/zh-CN/ai/docs/tutorials/orchestration-debug)。

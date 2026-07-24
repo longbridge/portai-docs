@@ -14,7 +14,10 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /en/ai/docs/getting-started/introduction
+      link: /en/ai/docs/basics/introduction
+    - theme: alt
+      text: Compliance & Launch
+      link: /en/ai/docs/compliance/
     - theme: alt
       text: API Reference
       link: /en/ai/docs/api/agent-run

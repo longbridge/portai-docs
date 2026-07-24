@@ -1,46 +1,16 @@
 ---
-sidebar_position: 1
+title: "已迁移"
+hidden: true
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/zh-HK/ai/docs/basics/capabilities/observability"
+  - - link
+    - rel: canonical
+      href: "/zh-HK/ai/docs/basics/capabilities/observability"
+  - - meta
+    - name: robots
+      content: "noindex,nofollow"
 ---
-# 单節點調試
 
-## 功能说明
-
-Agent Builder 支援对 **单个節點进行独立調試**，
-在不發布 Agent 的情况下，验证某一个節點的输入、執行邏輯和輸出结果。
-
-单節點調試主要用于：
-
-* 快速验证節點配置是否正确
-* 排查流程中某一步的執行问题
-* 調試複雜流程中的关键節點
-
-
-## 核心特点
-
-* **無需發布 Agent**
-* **不依赖完整流程執行**
-* 仅针对当前选中的節點进行調試
-* 使用当前畫布中可见的最新配置
-
-
-## 适合的使用场景
-
-* 調試大模型節點的 Prompt 是否符合预期
-* 验证 HTTP / 工具節點的返回结果
-* 检查参数提取、变量赋值是否正确
-* 在修改流程前，对关键節點进行验证
-
-
-## 使用建議
-
-* 在流程较複雜时，优先透過单節點調試定位问题
-* 節點配置调整后，及时重新調試确认效果
-* 单節點調試透過后，再进行整体流程調試
-
-
-## 一句话总结
-
-> **单節點調試用于“验证一步”，
-> 是定位问题和快速修正的首选方式。**
-
----
+本文档已迁移，正在跳转到 [运行调试与观测](/zh-HK/ai/docs/basics/capabilities/observability)。

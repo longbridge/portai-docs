@@ -1,49 +1,16 @@
 ---
-sidebar_position: 3
+title: "已迁移"
+hidden: true
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/zh-HK/ai/docs/basics/plans"
+  - - link
+    - rel: canonical
+      href: "/zh-HK/ai/docs/basics/plans"
+  - - meta
+    - name: robots
+      content: "noindex,nofollow"
 ---
-# 個人設置 - 工作空间邀请
 
-## 功能说明
-
-工作空间邀请用于**将其他用户加入到你的工作空间中**，实现多人协作。
-
-只有工作空间的 **Owner** 才能发起邀请。
-
-
-## 邀请方式与结果
-
-* Owner 可以邀请其他用户进入工作空间
-* 被邀请的用户将以指定角色加入：
-
-  * 编辑者（Editor）
-  * 查看者（Viewer）
-
-邀请成功后：
-
-* 被邀请用户可以在自己的账号中看到该工作空间
-* 并根据角色权限进行操作
-
-
-## 多工作空间支援
-
-* 一个用户可以同时属于 **多个工作空间**
-* 在不同工作空间中：
-
-  * 可以拥有不同角色
-  * 管理不同的 Agent
-
-用户可以在工作空间之间自由切换。
-
-
-## 权限说明
-
-* 邀请只影响当前工作空间
-* 不会影响用户的个人工作空间
-* 不会影响其他工作空间中的权限
-
-
-## 使用建議
-
-* 在邀请前明確协作目标和角色分工
-* 编辑权限建议仅授予实际参与搭建的成员
-* 使用工作空间区分不同项目或团队
+本文档已迁移，正在跳转到 [Workspace 与套餐体系](/zh-HK/ai/docs/basics/plans)。

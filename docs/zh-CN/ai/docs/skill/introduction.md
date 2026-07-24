@@ -1,66 +1,16 @@
 ---
-sidebar_position: 1
+title: "已迁移"
+hidden: true
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/zh-CN/ai/docs/basics/capabilities/skill"
+  - - link
+    - rel: canonical
+      href: "/zh-CN/ai/docs/basics/capabilities/skill"
+  - - meta
+    - name: robots
+      content: "noindex,nofollow"
 ---
 
-# Skill 简介
-
-Skill 是一种可复用的能力单元。你可以将一套完整的任务处理逻辑——包括角色定义、执行步骤、所需工具和参考资料——封装为一个 Skill，然后在一个或多个 Agent 中调用。
-
-相比将所有指令直接写在 Agent 的提示词里，Skill 的优势在于复用：同一套逻辑只需定义一次，可以跨 Agent 使用，也便于独立维护和迭代。
-
-## Skill 的典型应用场景
-
-以下是一些常见的 Skill 使用场景：
-
-**财务分析**：封装一套解读财报的分析框架，包括比较实际业绩与分析师预期、拆解收入结构、评估盈利质量。任何需要分析财报的 Agent 都可以直接挂载这个 Skill，而不需要重复编写分析逻辑。
-
-**技术面诊断**：定义一套技术指标分析流程，覆盖均线趋势、支撑压力位、MACD/RSI 等指标的判断逻辑，让 Agent 具备标准化的技术分析能力。
-
-**数据可视化**：封装图表生成逻辑和格式规范，让 Agent 在用户需要图表时自动调用正确的可视化工具和输出格式。
-
-## Skill 的组成
-
-一个完整的 Skill 包含以下几个部分：
-
-| 组成部分               | 是否必需 | 说明                                                       |
-| ---------------------- | -------- | ---------------------------------------------------------- |
-| SKILL.md               | 必需     | 核心定义文件，包含 Skill 的名称、描述和执行逻辑            |
-| 名称（name）           | 必需     | Skill 的唯一标识，仅限小写字母、数字和连字符，最大 64 字符 |
-| 描述（description）    | 必需     | 说明该 Skill 的功能及适用场景，供模型判断何时调用          |
-| 工具（tools）          | 可选     | 赋予 Skill 调用外部能力的模块，包括内置工具和 OpenAPI 工具 |
-| 参考文件（references） | 可选     | Skill 执行时可访问的背景资料、规则文档或配置文件           |
-
-## SKILL.md 的作用
-
-SKILL.md 是 Skill 的核心，它用 Markdown 格式定义了模型在执行该 Skill 时的行为规范：角色是谁、按什么流程工作、遇到什么情况如何响应。
-
-SKILL.md 文件的开头需要包含一段 YAML 格式的元数据（frontmatter），声明该 Skill 的名称和描述：
-
-```
----
-name: your-skill-name
-description: 描述此 Skill 的功能及适用场景
----
-
-# Skill 标题
-
-## 角色定义
-...
-
-## 执行流程
-...
-```
-
-## 在 Agent 中使用 Skill
-
-Skill 通过 Agent 节点的 Skills 区域挂载。在 Agent 配置面板中，点击 Skills 区域右侧的「+」，选择要挂载的 Skill 即可。
-
-Agent 支持两种挂载方式：
-
-**固定 Skill**
-
-指定一个具体的 Skill，每次运行 Agent 时始终调用该 Skill。适合 Agent 职责单一、任务类型固定的场景。
-
-**动态 Skill**
-
-通过变量值动态指定 Skill，Skill 的选择由运行时的上下文决定。适合需要根据用户输入或流程状态切换不同 Skill 的场景，例如根据用户选择的分析风格调用不同的策略 Skill。
+本文档已迁移，正在跳转到 [Skill 体系](/zh-CN/ai/docs/basics/capabilities/skill)。

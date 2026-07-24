@@ -1,24 +1,16 @@
 ---
-sidebar_position: 3
+title: "已迁移"
+hidden: true
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/zh-HK/ai/docs/basics/introduction"
+  - - link
+    - rel: canonical
+      href: "/zh-HK/ai/docs/basics/introduction"
+  - - meta
+    - name: robots
+      content: "noindex,nofollow"
 ---
-# 错误处理
 
-## 發布前错误校验
-
-在 Agent 發布之前，平台会对当前流程进行 **错误校验**：
-
-* 校验流程结构是否完整
-* 校验关键節點是否满足运行条件
-* 校验流程是否符合当前类型（ChatFlow / Workflow）的要求
-
-如果存在不符合發布条件的问题：
-
-* 系统会在界面上给出明確提示
-* 并引导你根据提示进行修正
-
-## 使用提示
-
-* 请在發布前认真查看界面中的校验信息
-* 确保所有错误和提示项已被正确处理
-* 建议在错误校验透過后，再进行正式發布
-
+本文档已迁移，正在跳转到 [基础功能介绍](/zh-HK/ai/docs/basics/introduction)。
