@@ -7,8 +7,6 @@ title: "平台概述与核心概念"
 
 LongbridgeAI Agent Platform 是长桥的 AI Agent 编排平台。你在一块**可视化画布**上拖入节点、连线、配置,即可搭建出能理解自然语言、调用工具、执行业务逻辑的 AI 应用,无需从零写代码。
 
-> **命名说明**:PortAI 是 LongbridgeAI 的前身名称,旧文档、DSL 文件(如 `PortAI-IM-ChatFlow.yaml`)中出现的 PortAI 即指本平台。
-
 ## 长桥 AI 产品全景
 
 长桥的 AI 产品由两部分构成:
