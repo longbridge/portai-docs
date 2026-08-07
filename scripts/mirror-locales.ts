@@ -30,18 +30,23 @@ function ensureDir(p: string) {
   fs.mkdirSync(path.dirname(p), { recursive: true })
 }
 
-// 清空目录内容但保留顶级 index.md（每个 locale 的 hero home 独立维护）
-function clearExceptIndex(dir: string) {
-  fs.mkdirSync(dir, { recursive: true })
-  for (const name of fs.readdirSync(dir)) {
-    if (name === 'index.md') continue
-    fs.rmSync(path.join(dir, name), { recursive: true, force: true })
-  }
+// en 占位 stub 的标记：含此标记说明尚未人工翻译，可以安全覆盖
+const EN_STUB_MARK = '🚧 English translation in progress'
+
+// en 侧边栏分组标签（目录相对路径 -> 英文 label）；未列出的目录保留已有 en 文件，缺失时才拷贝 zh 版
+const EN_CATEGORY_LABELS: Record<string, string> = {
+  basics: 'Basics',
+  tutorials: 'Tips & Examples',
+  compliance: 'Compliance',
+  api: 'API Reference',
+  appendix: 'Appendix',
+  'basics/nodes': 'Node Reference',
+  'basics/capabilities': 'Platform Capabilities',
 }
 
 function convertZhHK() {
   console.log(`\n== zh-HK simp→trad from ${SRC} ==`)
-  clearExceptIndex(HK)
+  let skippedAssets = 0
 
   walk(SRC, (abs, rel) => {
     // 跳过顶级 index.md（hero home 独立维护，link 前缀需按 locale 定制）
@@ -55,16 +60,20 @@ function convertZhHK() {
       const raw = JSON.parse(fs.readFileSync(abs, 'utf8'))
       raw.label = s2t(raw.label || '')
       fs.writeFileSync(dst, JSON.stringify(raw))
-    } else {
+    } else if (!fs.existsSync(dst)) {
+      // 图片等资源只在缺失时拷贝，避免覆盖已本地化的截图
       fs.copyFileSync(abs, dst)
+    } else {
+      skippedAssets++
     }
   })
-  console.log('  ✓ zh-HK done')
+  console.log(`  ✓ zh-HK done（保留已有资源 ${skippedAssets} 个）`)
 }
 
 function generateEnPlaceholder() {
   console.log(`\n== en placeholder mirror ==`)
-  clearExceptIndex(EN)
+  let skippedTranslated = 0
+  let skippedAssets = 0
 
   walk(SRC, (abs, rel) => {
     // 跳过顶级 index.md（en hero 独立维护）
@@ -72,6 +81,11 @@ function generateEnPlaceholder() {
     const dst = path.join(EN, rel)
     ensureDir(dst)
     if (abs.endsWith('.md')) {
+      // 已人工翻译的文件（不含 stub 标记）不再覆盖
+      if (fs.existsSync(dst) && !fs.readFileSync(dst, 'utf8').includes(EN_STUB_MARK)) {
+        skippedTranslated++
+        return
+      }
       const zhContent = fs.readFileSync(abs, 'utf8')
       // 提取 frontmatter 中的 title / sidebar_label
       const fmMatch = zhContent.match(/^---\n([\s\S]+?)\n---/)
@@ -88,18 +102,24 @@ function generateEnPlaceholder() {
         `> 🚧 English translation in progress. See the [Simplified Chinese version](${zhLink}) for the latest content.\n`
       fs.writeFileSync(dst, body)
     } else if (abs.endsWith('_category_.json')) {
-      // en 保留原 label；api 目录特殊：显示为 "API" 而非 "API 参考"
       const relDir = path.dirname(rel).replace(/\\/g, '/')
-      if (relDir === 'api') {
-        fs.writeFileSync(dst, JSON.stringify({ label: 'API' }))
-      } else {
+      if (EN_CATEGORY_LABELS[relDir]) {
+        const raw = JSON.parse(fs.readFileSync(abs, 'utf8'))
+        raw.label = EN_CATEGORY_LABELS[relDir]
+        fs.writeFileSync(dst, JSON.stringify(raw))
+      } else if (!fs.existsSync(dst)) {
+        // 新目录且映射表未收录：先拷贝 zh 版占位，并提醒补充映射
         fs.copyFileSync(abs, dst)
+        console.warn(`  ⚠ 未收录的 en 分组标签：${relDir}（已拷贝 zh 版，请在 EN_CATEGORY_LABELS 中补充英文）`)
       }
-    } else {
+    } else if (!fs.existsSync(dst)) {
+      // 图片等资源只在缺失时拷贝，避免覆盖已本地化的截图
       fs.copyFileSync(abs, dst)
+    } else {
+      skippedAssets++
     }
   })
-  console.log('  ✓ en done')
+  console.log(`  ✓ en done（保留已翻译文档 ${skippedTranslated} 个、已有资源 ${skippedAssets} 个）`)
 }
 
 function main() {
