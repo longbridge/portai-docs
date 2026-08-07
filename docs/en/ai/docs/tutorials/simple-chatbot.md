@@ -1,5 +1,5 @@
 ---
-title: "已迁移"
+title: "Moved"
 hidden: true
 head:
   - - meta
@@ -13,4 +13,4 @@ head:
       content: "noindex,nofollow"
 ---
 
-本文档已迁移，正在跳转到 [流程编排模式与调试技巧](/en/ai/docs/tutorials/orchestration-debug)。
+This document has been moved. Redirecting to [Flow Orchestration Patterns and Debugging Techniques](/en/ai/docs/tutorials/orchestration-debug).
