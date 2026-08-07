@@ -1,39 +1,44 @@
 ---
 layout: home
-title: LongbridgeAI Babbage - 企业级金融智能 Agent 构建平台
-description: LongbridgeAI Babbage 是 LongbridgeAI 旗下的 Agent Builder 平台，融合 SOTA 大模型接入、内置金融工具与多场景 Agent 构建能力，提供安全、可观测、可治理的智能 Agent 基础设施，助力 AI 在金融业务中的规模化落地。
+title: LongbridgeAI Agent Platform - 帮助文档
+description: LongbridgeAI Agent Platform 帮助文档中心，涵盖平台概述与核心概念、节点参考、平台能力、技巧和案例、合规要求与 API 参考，帮助你在可视化画布上搭建、调试、发布 AI Agent。
 head:
   - - meta
     - name: keywords
-      content: LongbridgeAI, LongbridgeAI Babbage, Agent Builder, AI Infra, 智能 Agent, 大模型平台，金融 AI, AI 治理，可观测性，安全合规
-
+      content: LongbridgeAI, LongbridgeAI Agent Platform, AI Agent, Agent 编排, Chatflow, Workflow, 帮助文档, 金融 AI, 合规, API 参考
 
 hero:
-  name: "LongbridgeAI Babbage Docs"
-  text: "企业级金融智能 Agent 构建平台"
-  tagline: 融合 SOTA 大模型、金融工具与可治理 Agent 框架的 AI Infra 底座
+  name: "LongbridgeAI Agent Platform"
+  text: "帮助文档"
+  tagline: 在可视化画布上搭建、调试、发布 AI Agent 应用，从这里找到你需要的答案
   actions:
     - theme: brand
-      text: 快速开始
-      link: /zh-CN/ai/docs/basics/introduction
+      text: 快速上手
+      link: /zh-CN/ai/docs/basics/quick-start
     - theme: alt
-      text: 合规上线
+      text: 合规要求
       link: /zh-CN/ai/docs/compliance/
     - theme: alt
       text: API 参考
       link: /zh-CN/ai/docs/api/agent-run
 
 features:
-  - title: SOTA 大模型接入
-    details: 支持接入业界领先的 SOTA 大模型，涵盖通用大语言模型与多模态模型，通过统一抽象层屏蔽模型差异，实现灵活切换与持续演进
-  - title: 丰富的内置金融工具
-    details: 内置多种金融领域工具能力，如数据查询、指标计算、规则引擎与知识检索，支持模型安全调用，增强金融场景下的业务落地能力
-  - title: 多场景 Agent 打造
-    details: 提供通用 Agent 构建框架，支持多角色、多步骤与多工具协同，灵活适配投研、风控、运营、客服等多种业务场景
-  - title: 安全与合规保障
-    details: 提供企业级安全能力，包括身份认证、权限控制、数据隔离与审计追踪，满足金融行业对数据安全与合规性的严格要求
-  - title: 全链路可观测
-    details: 覆盖模型调用、Agent 执行与工具使用的全链路监控能力，实时掌握性能、稳定性与异常情况，提升系统可运维性
-  - title: 可治理的 AI 能力
-    details: 提供模型与 Agent 的使用治理能力，支持配额管理、策略控制与成本分析，确保 AI 能力规模化应用下的可控与可持续
+  - title: 平台概述与核心概念
+    details: 了解平台定位、Agentic Chat / Chatflow / Workflow 三种应用类型的区别，以及套餐与权限体系
+    link: /zh-CN/ai/docs/basics/introduction
+  - title: 节点参考手册
+    details: 15 个节点逐一讲解，按推荐学习顺序编号，覆盖配置方法、变量引用与常见用法
+    link: /zh-CN/ai/docs/basics/nodes/
+  - title: 平台能力总览
+    details: 知识库、Skill、Guardrail、可观测、画布协作等围绕 Agent 搭建与运行的配套能力
+    link: /zh-CN/ai/docs/basics/capabilities/
+  - title: 技巧和案例
+    details: 提示词编写、变量与数据流、RAG 模式、编排调试等实战技巧与完整案例
+    link: /zh-CN/ai/docs/tutorials/prompt-writing
+  - title: 合规要求
+    details: 金融场景上线前的合规自查清单、参考 Prompt 与安全审查流程，一页读完三步做完
+    link: /zh-CN/ai/docs/compliance/
+  - title: API 参考
+    details: 通过 HTTP API 运行 Agent 工作流，支持同步 JSON 与流式 SSE，附 cURL 和 Go 示例
+    link: /zh-CN/ai/docs/api/agent-run
 ---

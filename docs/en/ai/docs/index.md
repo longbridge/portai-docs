@@ -1,44 +1,44 @@
 ---
 layout: home
-title: LongbridgeAI Babbage - Enterprise Financial Intelligent Agent Builder Platform
-description: LongbridgeAI Babbage is the Agent Builder platform under LongbridgeAI, integrating SOTA LLM access, built-in financial tools, and multi-scenario Agent construction capabilities. It provides secure, observable, and governable intelligent Agent infrastructure to help AI scale in financial businesses.
+title: LongbridgeAI Agent Platform - Help Center
+description: LongbridgeAI Agent Platform help center, covering platform overview and core concepts, node reference, platform capabilities, tips and examples, compliance requirements, and API reference, helping you build, debug, and publish AI Agents on a visual canvas.
 head:
   - - meta
     - name: keywords
-      content: LongbridgeAI, LongbridgeAI Babbage, Agent Builder, AI Infra, Intelligent Agent, LLM Platform, Financial AI, AI Governance, Observability, Security and Compliance
+      content: LongbridgeAI, LongbridgeAI Agent Platform, AI Agent, Agent Orchestration, Chatflow, Workflow, Help Center, Financial AI, Compliance, API Reference
 
 hero:
-  name: 'LongbridgeAI Babbage Docs'
-  text: 'Enterprise Financial Intelligent Agent Builder Platform'
-  tagline: AI Infra base integrating SOTA LLMs, financial tools, and a governable Agent framework
+  name: 'LongbridgeAI Agent Platform'
+  text: 'Help Center'
+  tagline: Build, debug, and publish AI Agent applications on a visual canvas — find the answers you need here
   actions:
     - theme: brand
-      text: Get Started
-      link: /en/ai/docs/basics/introduction
+      text: Quick Start
+      link: /en/ai/docs/basics/quick-start
     - theme: alt
-      text: Compliance & Launch
+      text: Compliance
       link: /en/ai/docs/compliance/
     - theme: alt
       text: API Reference
       link: /en/ai/docs/api/agent-run
 
 features:
-  - icon: ''
-    title: SOTA LLM Access
-    details: Supports access to industry-leading SOTA large models, covering general-purpose LLMs and multi-modal models. Shields model differences through a unified abstraction layer for flexible switching and continuous evolution.
-  - icon: ''
-    title: Rich Built-in Financial Tools
-    details: Built-in various financial domain tools, such as data query, indicator calculation, rule engine, and knowledge retrieval. Supports secure model calls to enhance business landing capabilities in financial scenarios.
-  - icon: ''
-    title: Multi-scenario Agent Creation
-    details: Provides a general-purpose Agent construction framework, supporting multi-role, multi-step, and multi-tool collaboration. Flexibly adapts to various business scenarios like investment research, risk control, operation, and customer service.
-  - icon: ''
-    title: Security and Compliance
-    details: Provides enterprise-grade security capabilities, including authentication, permission control, data isolation, and audit trails, meeting the strict requirements of the financial industry for data security and compliance.
-  - icon: ''
-    title: Full-chain Observability
-    details: Covers full-chain monitoring capabilities for model calls, Agent execution, and tool usage. Real-time monitoring of performance, stability, and exceptions to improve system maintainability.
-  - icon: ''
-    title: Governable AI Capabilities
-    details: Provides governance capabilities for model and Agent usage, supporting quota management, policy control, and cost analysis, ensuring controllable and sustainable AI applications at scale.
+  - title: Platform Overview & Core Concepts
+    details: Learn the platform positioning, the differences between Agentic Chat / Chatflow / Workflow application types, and the plan and permission system
+    link: /en/ai/docs/basics/introduction
+  - title: Node Reference
+    details: All 15 nodes explained one by one, numbered in recommended learning order, covering configuration, variable references, and common usage
+    link: /en/ai/docs/basics/nodes/
+  - title: Platform Capabilities
+    details: Knowledge base, Skill, Guardrail, observability, canvas collaboration, and other supporting capabilities for building and running Agents
+    link: /en/ai/docs/basics/capabilities/
+  - title: Tips & Examples
+    details: Practical techniques and complete examples for prompt writing, variables and data flow, RAG patterns, and orchestration debugging
+    link: /en/ai/docs/tutorials/prompt-writing
+  - title: Compliance Requirements
+    details: Pre-launch compliance checklist for financial scenarios, reference prompts, and the security review process — one page, three steps
+    link: /en/ai/docs/compliance/
+  - title: API Reference
+    details: Run Agent workflows via HTTP API, supporting synchronous JSON and streaming SSE responses, with cURL and Go examples
+    link: /en/ai/docs/api/agent-run
 ---
