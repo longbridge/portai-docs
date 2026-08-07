@@ -88,7 +88,7 @@
   &nbsp;&nbsp;&nbsp;<span class="badge warn">待本地化</span> 与简中文件内容相同（还是简中截图的拷贝）&nbsp;
   <span class="badge ok">已本地化</span> 内容不同（已替换为对应语言截图）&nbsp;
   <span class="badge err">缺失</span> 文件不存在；<br />
-  4. 把对应语言的新截图<b>拖拽到卡片上</b>，或点击「替换…」选择文件，即可直接写入仓库对应路径。<br /><br />
+  4. 把新截图<b>拖拽到对应语言的卡片上</b>，或点击「替换…」选择文件，即可直接写入仓库对应路径。<b>简体中文基准截图同样支持替换</b>（会二次确认）——基准更新后，繁/英状态将按新基准重新判定，旧截图未同步更新时会显示为"已本地化"，注意甄别。<br /><br />
   <b>提示</b>：替换后记得在本地预览（<code>bun run dev</code>）确认效果，再 git 提交。
 </div>
 
@@ -284,7 +284,7 @@ function renderCol(item, loc) {
   col.innerHTML = `
     <div class="col-head"><span class="loc">${loc}</span><span class="badge ${badge[0]}">${badge[1]}</span></div>
     <div class="thumb">${info ? `<img src="${info.url}" alt="${loc}" />` : '<span class="none">无文件</span>'}</div>
-    ${isBase ? '' : `<div class="col-actions"><button class="replace">替换…</button></div>`}`;
+    <div class="col-actions"><button class="replace">替换…</button></div>`;
 
   if (info) {
     col.querySelector('.thumb').addEventListener('click', () => {
@@ -294,12 +294,13 @@ function renderCol(item, loc) {
     });
   }
 
-  if (!isBase) {
+  {
     const write = async (file) => {
       if (!file || !IMG_EXT.test(file.name)) return toast('请提供图片文件');
       const extNew = file.name.split('.').pop().toLowerCase().replace('jpeg', 'jpg');
       const extOld = item.rel.split('.').pop().toLowerCase().replace('jpeg', 'jpg');
       if (extNew !== extOld && !confirm(`新文件扩展名 .${extNew} 与原文件 .${extOld} 不同，仍按原文件名写入？`)) return;
+      if (isBase && !confirm(`即将覆盖简体中文基准截图：\n${item.rel}\n\n基准更新后，繁/英版本的本地化状态将按新基准重新判定。确认替换？`)) return;
       try {
         const segs = [loc, ...SUBPATH, ...item.rel.split('/')];
         const dir = await getDirByPath(docsDir, segs.slice(0, -1), true);
@@ -311,7 +312,11 @@ function renderCol(item, loc) {
         if (item.locales[loc]?.url) URL.revokeObjectURL(item.locales[loc].url);
         item.locales[loc] = { handle: fh, hash: await hashFile(f), url: URL.createObjectURL(f) };
         render();
-        toast(`已写入 ${loc}/${SUBPATH.join('/')}/${item.rel}`);
+        if (isBase) {
+          toast(`已更新基准截图 ${loc}/${SUBPATH.join('/')}/${item.rel}——繁/英状态已按新基准重新判定，旧截图若未更新会显示为"已本地化"，请留意是否需要同步更新`, 6000);
+        } else {
+          toast(`已写入 ${loc}/${SUBPATH.join('/')}/${item.rel}`);
+        }
       } catch (e) {
         toast('写入失败：' + e.message, 5000);
       }

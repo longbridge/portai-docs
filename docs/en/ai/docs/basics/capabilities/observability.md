@@ -78,6 +78,8 @@ An Agent can be run in three ways, serving the three stages of "tune one node, t
 
 ## 6. Trace App Performance (Third-Party Tracing)
 
+> ⚠️ **Internal feature**: "Trace App Performance" is currently for internal use only and not yet available to external users.
+
 The "**Trace App Performance**" entry at the top right of the Statistics page can send the **full execution context** of the app (LLM calls, context, prompts, HTTP requests, etc.) to a third-party tracing platform for more professional debugging and performance analysis:
 
 ![Opening the "Tracing" panel from the top right of the Statistics page: disabled by default, with the configurable provider list below](./images/1.7.7-2-%E8%BF%BD%E8%B8%AA%E5%85%A5%E5%8F%A3.png)
