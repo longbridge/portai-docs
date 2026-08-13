@@ -52,4 +52,19 @@ const { llmMarkdownLink } = useLLMMarkdownLink()
 .VPSidebar .level-1.is-link {
   @apply -ml-2;
 }
+
+/* 全站 Beta 标识：文档内容仍在完善中，稳定后移除 */
+.VPNavBarTitle .title::after {
+  content: 'Beta';
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  flex-shrink: 0;
+}
 </style>

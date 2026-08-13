@@ -1,18 +1,16 @@
 ---
-sidebar_position: 1
+title: "Moved"
+hidden: true
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/en/ai/docs/tutorials/orchestration-debug"
+  - - link
+    - rel: canonical
+      href: "/en/ai/docs/tutorials/orchestration-debug"
+  - - meta
+    - name: robots
+      content: "noindex,nofollow"
 ---
-# Simple Chatbot
 
-This tutorial will guide you through creating a simple chatbot application.
-
-## Overview
-
-Through this tutorial, you will learn how to build a basic chatbot using the LongbridgeAI platform.
-
-## Steps
-
-1. Create a new application
-2. Add a Start node
-3. Configure an LLM node
-4. Add an Answer output node
-5. Test and publish
+This document has been moved. Redirecting to [Flow Orchestration Patterns and Debugging Techniques](/en/ai/docs/tutorials/orchestration-debug).

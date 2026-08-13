@@ -24,7 +24,26 @@ export default defineConfig(
     sitemap: {
       hostname: 'https://open.longportapp.com',
       transformItems(items) {
-        return items.filter((item) => !item.url.includes('migration'))
+        // 过滤重定向占位页；旧目录整体不进 sitemap
+        const OLD_DIR_PREFIXES = [
+          'nodes/',
+          'getting-started/',
+          'build/',
+          'debug/',
+          'publish/',
+          'knowledge-base/',
+          'skill/',
+          'workspace/',
+          'platform-capabilities/',
+          'tutorials/simple-chatbot',
+        ]
+        return items.filter((item) => {
+          if (item.url.includes('migration')) return false
+          return !OLD_DIR_PREFIXES.some((p) => {
+            // 匹配 /{lang}/ai/docs/{oldDir}...
+            return /\/ai\/docs\//.test(item.url) && item.url.split('/ai/docs/')[1]?.startsWith(p)
+          })
+        })
       },
     },
 
@@ -100,6 +119,19 @@ export default defineConfig(
         ...llmstxt({
           domain: 'https://longbridge.com',
           workDir: 'en/ai/docs',
+          // 排除旧目录结构下的重定向占位页
+          ignoreFiles: [
+            'nodes/**',
+            'getting-started/**',
+            'build/**',
+            'debug/**',
+            'publish/**',
+            'knowledge-base/**',
+            'skill/**',
+            'workspace/**',
+            'platform-capabilities/**',
+            'tutorials/simple-chatbot.md',
+          ],
         }),
         groupIconVitePlugin(),
         Unocss({

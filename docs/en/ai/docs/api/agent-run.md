@@ -1,74 +1,74 @@
 ---
 sidebar_position: 1
 title: Agent Run API - LongbridgeAI API Reference
-description: Run AI Agent workflows via HTTP API. Supports synchronous JSON and streaming SSE responses. Complete guide with cURL and Go code examples.
+description: Run AI Agent workflows via HTTP API. Supports synchronous JSON and streaming SSE responses. A complete guide with cURL and Go code examples.
 head:
   - - meta
     - name: keywords
-      content: LongbridgeAI, Agent API, workflow, SSE, streaming, AI agent, HTTP API, REST
+      content: LongbridgeAI, Agent API, Workflow, SSE, streaming response, AI Agent, HTTP API, REST
 outline: deep
 ---
 
 # Overview
 
-This document explains how to run an Agent’s Workflow via the HTTP API and obtain results synchronously or asynchronously. Two response modes are supported: JSON and Server-Sent Events (SSE).
+This document describes how to run an Agent's Workflow via HTTP API and retrieve synchronous/asynchronous execution results. Both JSON and Server-Sent Events (SSE) response modes are supported.
 
 - Authentication
-  - Include `x-agent-key` in the request headers (available on the Agent detail page)
+  - The request header must carry `x-agent-key` (available on the Agent details page)
 - Response formats
   - Synchronous: JSON (default)
-  - Streaming: SSE (set `Accept: text/event-stream` in the request header)
+  - Streaming: SSE (set the request header `Accept: text/event-stream`)
 
-> Tip: The request body fields must match the parameters of the Agent’s Start node. The examples below use a `query` field.
+> Tip: The request body fields must match the parameters of the Agent's **Start node**. The examples below use the `query` field for demonstration.
 
 ## Run an Agent
 
-Run the published Workflow for a specified Agent.
+Runs the published Workflow of the specified Agent.
 
-- Method & path: `POST /api/agents/:uid/runs`
+- Method and path: `POST /api/agents/:uid/runs`
 - Full URL: `{BaseURL}/api/agents/:uid/runs`
 - Response modes:
-  - Default: synchronous JSON
-  - Choose SSE streaming via request headers
+  - Synchronous JSON by default
+  - Select SSE streaming output via the request header
 
-## Path parameters
+## Path Parameters
 
-| Name | Type   | Required | Description             |
-| ---- | ------ | -------- | ----------------------- |
-| uid  | string | Yes      | Agent unique identifier |
+| Parameter | Type   | Required | Description             |
+| ---- | ------ | ---- | ---------------- |
+| uid  | string | Yes  | The Agent's unique identifier |
 
-## Query parameters (Query)
+## Query Parameters
 
-| Name | Type   | Required | Description                                         |
-| ---- | ------ | -------- | --------------------------------------------------- |
-| mode | string | No       | `async` for asynchronous mode; omit for synchronous |
+| Parameter | Type   | Required | Description                                 |
+| ---- | ------ | ---- | ------------------------------------ |
+| mode | string | No   | `async` for asynchronous mode; omit for synchronous execution |
 
 - Synchronous mode: returns the final result directly
-- Asynchronous mode (`mode=async`): returns `workflow_run_id` immediately; fetch the result later via the query API
+- Asynchronous mode (`mode=async`): returns `workflow_run_id` immediately; retrieve the result later via the query endpoint
 
-## Headers
+## Request Headers
 
-| Header            | Required | Value                                      |
-| ----------------- | -------- | ------------------------------------------ |
-| x-agent-key       | Yes      | Your Agent Key                             |
-| Content-Type      | Yes      | `application/json`                         |
-| Accept (optional) | No       | `text/event-stream` (to use SSE streaming) |
+| Header         | Required | Value                                   |
+| -------------- | ---- | ------------------------------------ |
+| x-agent-key    | Yes  | Your Agent Key                       |
+| Content-Type   | Yes  | `application/json`                   |
+| Accept (optional) | No   | `text/event-stream` (for SSE streaming) |
 
-## Request body
+## Request Body
 
-Provide the inputs required by the Workflow Start node. Example:
+The request body contains the parameters required by the Workflow's Start node. Example:
 
 ```json
 {
-  "query": "Tesla price action today"
+  "query": "Tesla's price movement today"
 }
 ```
 
-> Actual fields depend on how the Agent is configured on the platform.
+> The actual fields depend on the Agent's configuration on the platform.
 
-## Synchronous response (JSON, default)
+## Synchronous Response (JSON, Default)
 
-Returns only the final result (the last node’s output).
+Only the final result (the output of the last node) is returned.
 
 ```json
 {
@@ -76,39 +76,39 @@ Returns only the final result (the last node’s output).
   "error": "",
   "outputs": {
     "output": {
-      "text": "…final output text…"
+      "text": "...final result text..."
     }
   },
   "status": "succeeded",
-  "workflow_run_id": 496
+  "workflow_run_id": "496"
 }
 ```
 
-- Field reference
-- `elapsed_time`: execution duration in seconds
-- `error`: error message if failed
-- `outputs`: final output (shape depends on the Workflow configuration)
-- `status`: `succeeded` or `failed`
-- `workflow_run_id`: ID of this run
+- Field descriptions
+  - `elapsed_time`: execution time (seconds)
+  - `error`: error message on failure
+  - `outputs`: final output (structure depends on the Workflow configuration)
+  - `status`: `succeeded` or `failed`
+  - `workflow_run_id`: ID of this run
 
-## Streaming response (SSE)
+## Streaming Response (SSE)
 
-When the request header includes `Accept: text/event-stream`, the server streams progress via events.
+When the request header contains `Accept: text/event-stream`, the execution process is pushed as SSE events.
 
-### Event types (event)
+### Event Types (event)
 
 - `workflow_started`: execution started
-- `message`: incremental text from the LLM or a node
-- `workflow_finished`: execution completed
+- `message`: incremental text output from the LLM or a node
+- `workflow_finished`: execution finished
 
-### Event payload (data)
+### Event Data (data)
 
-Unified JSON structure (fields vary by event):
+A unified JSON structure (fields vary by event type):
 
 ```json
 {
   "event": "workflow_started",
-  "workflow_run_id": 842,
+  "workflow_run_id": "842",
   "data": {
     "started_at": 1751553245,
     "workflow_id": 1,
@@ -118,16 +118,16 @@ Unified JSON structure (fields vary by event):
 
 {
   "event": "message",
-  "workflow_run_id": 842,
+  "workflow_run_id": "842",
   "data": {
-    "text": "…streaming delta…",
+    "text": "...incremental output...",
     "started_at": 1751553249
   }
 }
 
 {
   "event": "workflow_finished",
-  "workflow_run_id": 842,
+  "workflow_run_id": "842",
   "data": {
     "started_at": 1751553245,
     "workflow_id": 1,
@@ -135,44 +135,44 @@ Unified JSON structure (fields vary by event):
     "error": "",
     "outputs": {
       "output": {
-        "text": "…final output text…"
+        "text": "...final result text..."
       }
     }
   }
 }
 ```
 
-- Field reference
-- `workflow_run_id`: run ID
-- `event`: event name (see above)
-- `data.started_at`: Unix timestamp (seconds)
-- `data.workflow_id`: Workflow ID
-- `data.inputs`: inputs used for this run
-- `data.text`: incremental text (for `message` events)
-- `data.outputs`: final outputs (for `workflow_finished`)
-- `data.status`: `succeeded` or `failed`
-- `data.error`: error message when failed
+- Field descriptions
+  - `workflow_run_id`: run ID
+  - `event`: event name (see above)
+  - `data.started_at`: Unix timestamp (seconds)
+  - `data.workflow_id`: Workflow ID
+  - `data.inputs`: inputs of this run
+  - `data.text`: incremental text (`message` event)
+  - `data.outputs`: final output (`workflow_finished` event)
+  - `data.status`: `succeeded` or `failed`
+  - `data.error`: error message (present on failure)
 
-## Request examples
+## Request Examples
 
-### cURL (synchronous JSON)
+### cURL (Synchronous JSON)
 
 ```bash
 curl -X POST "https://api.longbridge.xyz/v1/babbage/api/agents/<UID>/runs" \
   -H "x-agent-key: <YOUR_AGENT_KEY>" \
   -H "Content-Type: application/json" \
-  -d '{"query":"Tesla price action today"}'### cURL (SSE streaming)
+  -d '{"query":"Tesla price movement today"}'### cURL (SSE streaming)
 
 curl -N -X POST "https://api.longbridge.xyz/v1/babbage/api/agents/<UID>/runs" \
   -H "x-agent-key: <YOUR_AGENT_KEY>" \
   -H "Content-Type: application/json" \
   -H "Accept: text/event-stream" \
-  -d '{"query":"Tesla price action today"}'### Go (SSE streaming)
+  -d '{"query":"Tesla price movement today"}'### Go (SSE streaming)
 ```
 
 ### golang
 
-#### SSE Request Method
+#### SSE Request
 
 ```go
 package main
@@ -196,7 +196,7 @@ func streamSSE(ctx context.Context, method, urlStr string, headers map[string]st
   }
 
   client := &http.Client{
-    Timeout: 0, // For SSE, prefer no overall timeout; let ctx control it
+    Timeout: 0, // For SSE, avoid setting an overall timeout; let the caller's ctx control it
   }
 
   resp, err := client.Do(req)
@@ -252,7 +252,7 @@ func main() {
 }
 ```
 
-#### Synchronous JSON Response
+#### Direct JSON Response
 
 ```go
 package main
@@ -298,29 +298,33 @@ func main() {
     "x-agent-key":   "<YOUR_AGENT_KEY>",
   }
 
-  body := bytes.NewBufferString(`{"query":"Tesla price action today"}`)
+  body := bytes.NewBufferString(`{"query":"Tesla price movement today"}`)
   url := "https://api.longbridge.xyz/v1/babbage/api/agents/<UID>/runs"
 
   b, err := httpJSON(ctx, "POST", url, headers, body)
   if err != nil {
-    fmt.Printf("request failed: %v\n", err)
+    fmt.Printf("Request failed: %v\n", err)
     return
   }
   fmt.Println(string(b))
-}## Retrieve a WorkflowRun result
+}
+```
 
-- Method & path: `GET /api/agents/:uid/runs/:workflow_run_id`
+## Query a WorkflowRun Result
+
+- Method and path: `GET /api/agents/:uid/runs/:workflow_run_id`
 - Full URL: `{BaseURL}/api/agents/:uid/runs/:workflow_run_id`
 
-## Path parameters
+## Path Parameters
 
-| Name | Type | Required | Description |
-| --- | --- | --- | --- |
-| uid | string | Yes | Agent unique identifier |
-| workflow_run_id | int64 | Yes | Run ID (from `mode=async` or response body) |
+| Parameter            | Type   | Required | Description                                  |
+| --------------- | ------ | ---- | ------------------------------------- |
+| uid             | string | Yes  | The Agent's unique identifier                      |
+| workflow_run_id | string | Yes  | Run ID (from `mode=async` or the response body) |
 
 ## Response (JSON)
 
+```json
 {
   "created_at": 1760630949,
   "elapsed_time": 98,
@@ -328,18 +332,18 @@ func main() {
   "inputs": {},
   "outputs": {},
   "status": "succeeded",
-  "workflow_run_id": 59480850550554625
+  "workflow_run_id": "59480850550554625"
 }
 ```
 
-- Field reference
-- `status`: `succeeded`, `failed`, or `running`
+- Field descriptions
+- `status`: `succeeded`, `failed`, `running`
 
 ---
 
 # Error Handling
 
-All endpoints return a non‑200 status code on failure and include an error message in the response body:
+All endpoints return a non-200 status code on failure, with error details in the response body:
 
 ```json
 {
@@ -350,10 +354,10 @@ All endpoints return a non‑200 status code on failure and include an error mes
 
 Common errors:
 
-| HTTP Status | Scenario                                      |
-| ----------- | --------------------------------------------- |
-| 400         | Invalid or missing parameters                 |
-| 401         | Authentication failed (`x-agent-key` invalid) |
-| 404         | Resource not found (Agent/run ID)             |
-| 429         | Rate limited                                  |
-| 500         | Internal server error                         |
+| HTTP Status Code | Error Scenario                       |
+| ----------- | ------------------------------ |
+| 400         | Invalid or missing parameters               |
+| 401         | Authentication failed (invalid `x-agent-key`) |
+| 404         | Resource not found (Agent / run ID)    |
+| 429         | Rate limited                       |
+| 500         | Internal server error                 |

@@ -1,81 +1,16 @@
 ---
-sidebar_position: 12
----
-# 模板转换（Template Transformer）
-
-## 是什麼
-
-模板转换節點用于**按照预设模板，将变量和内容转换成指定格式的輸出**。
-
-它不负责推理，也不做业务判斷，只做一件事：
-
-> **“把已有内容，整理成你想要的样子。”**
-
-## 您可以用它做什麼
-
-#### 1. 统一輸出格式
-
-模板转换可以：
-
-* 将多个变量組合成一段文本
-* 輸出统一格式的内容
-* 保证不同分支的结果结构一致
-
-例如：
-
-```text
-标题：{{title}}
-内容：{{content}}
-总结：{{summary}}
-```
-
+title: "已迁移"
+hidden: true
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/zh-HK/ai/docs/basics/nodes/variables-transformer"
+  - - link
+    - rel: canonical
+      href: "/zh-HK/ai/docs/basics/nodes/variables-transformer"
+  - - meta
+    - name: robots
+      content: "noindex,nofollow"
 ---
 
-#### 2. 生成结构化结果
-
-你可以使用模板：
-
-* 生成 JSON
-* 生成固定字段的文本结构
-* 为 API 或下游系统准备标准化数据
-
----
-
-#### 3. 解耦“内容生成”和“内容展示”
-
-常见做法是：
-
-* 用 LLM / Agent 负责生成内容
-* 用模板转换负责整理和輸出
-
-这样流程更清晰，也更易维护。
-
-## 输入与輸出
-
-* **输入**：
-
-  * 任意流程变量
-* **輸出**：
-
-  * 按模板生成的内容
-  * 可作為 Answer 或 End 的输入
-
-## 使用規則
-
-* 模板中引用的变量必须已存在
-* 模板转换不修改变量值，只生成新内容
-* 不进行条件判斷或邏輯处理
-
-## 使用建議
-
-* 模板尽量簡單、清晰
-* 複雜邏輯不要写在模板中
-* 对外輸出建议统一经过模板转换
-
-## 典型場景
-
-* 對話回覆整理
-* API 返回结构统一
-* 多分支结果格式对齐
-
----
+本文档已迁移，正在跳转到 [模板转换（原 Template）](/zh-HK/ai/docs/basics/nodes/variables-transformer)。

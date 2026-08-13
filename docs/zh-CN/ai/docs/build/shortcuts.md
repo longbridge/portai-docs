@@ -1,50 +1,16 @@
 ---
-sidebar_position: 1
+title: "已迁移"
+hidden: true
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/zh-CN/ai/docs/basics/introduction"
+  - - link
+    - rel: canonical
+      href: "/zh-CN/ai/docs/basics/introduction"
+  - - meta
+    - name: robots
+      content: "noindex,nofollow"
 ---
-# Agent Builder 画布快捷键说明
 
-## 画布级快捷操作
-
-### 画布缩放
-
-* **鼠标滚轮**
-
-  * 向上滚动：放大画布
-  * 向下滚动：缩小画布
-
-用于在复杂流程中快速查看整体结构或局部细节。
-
-
-## 画布空白区域右键菜单
-
-在**画布空白区域**点击鼠标右键，可打开画布操作菜单，支持以下功能：
-
-* **新增节点**
-
-  * 在当前画布位置快速添加节点
-* **新增备注**
-
-  * 用于标注流程说明、业务含义或协作信息
-* **运行流程**
-
-  * 直接在画布中触发当前 Agent 的运行
-* **导入 DSL**
-
-  * 将已有流程定义导入到画布中
-* **导出 DSL**
-
-  * 将当前流程导出为 DSL，用于复用或迁移
-
-
-## 节点右键快捷操作
-
-在**节点上**点击鼠标右键，可打开该节点的快捷操作菜单。
-
-该菜单会：
-
-* 展示该节点支持的快捷操作
-* 提供节点相关的快速编辑和管理能力
-* 不同节点类型可能显示不同的快捷选项
-
-这是进行节点级操作的主要入口方式。
-
+本文档已迁移，正在跳转到 [基础功能介绍](/zh-CN/ai/docs/basics/introduction)。

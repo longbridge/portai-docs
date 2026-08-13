@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>截图本地化管理工具 - LongbridgeAI Docs</title>
+<style>
+  :root {
+    --brand: #33cdcd;
+    --bg: #f6f8fa;
+    --card: #fff;
+    --border: #e1e4e8;
+    --text: #24292f;
+    --muted: #656d76;
+    --ok: #1a7f37;
+    --warn: #bf8700;
+    --err: #cf222e;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); }
+  header { background: var(--card); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; position: sticky; top: 0; z-index: 10; }
+  header h1 { font-size: 17px; margin: 0; }
+  header h1 span { color: var(--brand); }
+  button { cursor: pointer; border: 1px solid var(--border); background: var(--card); border-radius: 6px; padding: 6px 14px; font-size: 13px; color: var(--text); }
+  button.primary { background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 600; }
+  button:hover { filter: brightness(0.96); }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  #stats { display: flex; gap: 14px; font-size: 13px; color: var(--muted); flex-wrap: wrap; }
+  #stats b { color: var(--text); }
+  #toolbar { padding: 12px 24px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  #toolbar input[type="search"] { padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; width: 260px; }
+  .filter-btn.active { background: var(--text); color: #fff; border-color: var(--text); }
+  #hint { margin: 40px auto; max-width: 640px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px 32px; font-size: 14px; line-height: 1.9; }
+  #hint code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+  #grid { padding: 0 24px 60px; display: grid; gap: 16px; }
+  .item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  .item-path { font-family: ui-monospace, monospace; font-size: 12.5px; font-weight: 600; word-break: break-all; }
+  .item-refs { font-size: 12px; color: var(--muted); margin-bottom: 10px; word-break: break-all; }
+  .item-refs code { background: var(--bg); padding: 1px 5px; border-radius: 4px; }
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .col { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+  .col-head { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; font-size: 12px; background: var(--bg); border-bottom: 1px solid var(--border); }
+  .col-head .loc { font-weight: 700; }
+  .badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+  .badge.ok { background: #dafbe1; color: var(--ok); }
+  .badge.warn { background: #fff8c5; color: var(--warn); }
+  .badge.err { background: #ffebe9; color: var(--err); }
+  .badge.base { background: #ddf4ff; color: #0969da; }
+  .thumb { height: 150px; display: flex; align-items: center; justify-content: center; background: repeating-conic-gradient(#fafbfc 0 25%, #f0f1f3 0 50%) 0 0/16px 16px; cursor: zoom-in; position: relative; }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .thumb .none { color: var(--muted); font-size: 12px; cursor: default; }
+  .col-actions { padding: 6px 10px; display: flex; gap: 8px; border-top: 1px solid var(--border); }
+  .col-actions button { font-size: 12px; padding: 3px 10px; flex: 1; }
+  .drop-active { outline: 3px dashed var(--brand); outline-offset: -3px; }
+  #lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.82); display: none; align-items: center; justify-content: center; z-index: 100; cursor: zoom-out; flex-direction: column; gap: 10px; }
+  #lightbox img { max-width: 92vw; max-height: 86vh; }
+  #lightbox .cap { color: #fff; font-size: 13px; font-family: ui-monospace, monospace; }
+  #toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--text); color: #fff; padding: 9px 18px; border-radius: 8px; font-size: 13px; display: none; z-index: 200; }
+  @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1><span>■</span> 截图本地化管理</h1>
+  <button class="primary" id="pick">选择仓库 docs 目录</button>
+  <button id="rescan" disabled>重新扫描</button>
+  <button id="export" disabled>复制待办清单</button>
+  <div id="stats"></div>
+</header>
+
+<div id="toolbar" style="display:none">
+  <span style="font-size:13px;color:var(--muted)">筛选：</span>
+  <button class="filter-btn active" data-f="all">全部</button>
+  <button class="filter-btn" data-f="pending-en">待本地化 EN</button>
+  <button class="filter-btn" data-f="pending-hk">待本地化 繁體</button>
+  <button class="filter-btn" data-f="done">已全部本地化</button>
+  <input type="search" id="search" placeholder="按路径 / 引用文档搜索…" />
+</div>
+
+<div id="hint">
+  <b>用途</b>：以简体中文截图为基准，检查繁体（zh-HK）和英文（en）版本的截图是否已本地化，并支持直接替换。<br /><br />
+  <b>使用步骤</b>：<br />
+  1. 用 <b>Chrome / Edge</b> 打开本页面（依赖 File System Access API，Safari / Firefox 不支持写入）；<br />
+  2. 点击「选择仓库 docs 目录」，选中 <code>portai-docs/docs</code> 目录并授权读写；<br />
+  3. 工具会扫描 <code>zh-CN/ai/docs</code> 下的全部截图，与 <code>zh-HK</code> / <code>en</code> 同路径文件逐字节比对：<br />
+  &nbsp;&nbsp;&nbsp;<span class="badge warn">待本地化</span> 与简中文件内容相同（还是简中截图的拷贝）&nbsp;
+  <span class="badge ok">已本地化</span> 内容不同（已替换为对应语言截图）&nbsp;
+  <span class="badge err">缺失</span> 文件不存在；<br />
+  4. 把新截图<b>拖拽到对应语言的卡片上</b>，或点击「替换…」选择文件，即可直接写入仓库对应路径。<b>简体中文基准截图同样支持替换</b>（会二次确认）——基准更新后，繁/英状态将按新基准重新判定，旧截图未同步更新时会显示为"已本地化"，注意甄别。<br /><br />
+  <b>提示</b>：替换后记得在本地预览（<code>bun run dev</code>）确认效果，再 git 提交。
+</div>
+
+<div id="grid"></div>
+
+<div id="lightbox"><img /><div class="cap"></div></div>
+<div id="toast"></div>
+
+<script>
+const LOCALES = { base: 'zh-CN', targets: ['zh-HK', 'en'] };
+const SUBPATH = ['ai', 'docs'];
+const IMG_EXT = /\.(png|jpe?g|webp|gif|svg)$/i;
+
+let docsDir = null;        // FileSystemDirectoryHandle of docs/
+let items = [];            // { rel, refs[], locales: { 'zh-CN': {handle,hash,url}, ... } }
+let filter = 'all';
+let query = '';
+
+const $ = (s) => document.querySelector(s);
+const grid = $('#grid');
+
+function toast(msg, ms = 2600) {
+  const t = $('#toast');
+  t.textContent = msg;
+  t.style.display = 'block';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => (t.style.display = 'none'), ms);
+}
+
+async function getDirByPath(root, segs, create = false) {
+  let dir = root;
+  for (const s of segs) dir = await dir.getDirectoryHandle(s, { create });
+  return dir;
+}
+
+async function getFileByPath(root, segs) {
+  try {
+    const dir = await getDirByPath(root, segs.slice(0, -1));
+    return await dir.getFileHandle(segs.at(-1));
+  } catch { return null; }
+}
+
+async function hashFile(file) {
+  const buf = await file.arrayBuffer();
+  const digest = await crypto.subtle.digest('SHA-256', buf);
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function* walkImages(dir, prefix = []) {
+  for await (const [name, handle] of dir.entries()) {
+    if (handle.kind === 'directory') {
+      yield* walkImages(handle, [...prefix, name]);
+    } else if (IMG_EXT.test(name)) {
+      yield { segs: [...prefix, name], handle };
+    }
+  }
+}
+
+async function* walkMarkdown(dir, prefix = []) {
+  for await (const [name, handle] of dir.entries()) {
+    if (handle.kind === 'directory') {
+      yield* walkMarkdown(handle, [...prefix, name]);
+    } else if (name.endsWith('.md')) {
+      yield { segs: [...prefix, name], handle };
+    }
+  }
+}
+
+// 扫描 zh-CN md，建立 图片相对路径 -> 引用它的文档列表
+// 注意：alt 文本可能含嵌套方括号（如 array[string]），用惰性 .*? 匹配到 "](" 为止；
+// 引用路径通常是 URL 编码的中文文件名，需 decode 后再与磁盘文件名比对（统一 NFC 规范化）
+const REF_PATTERNS = [
+  /!\[.*?\]\(([^)\s]+)[^)]*\)/g,        // markdown: ![alt](path "title")
+  /<img[^>]+src=["']([^"']+)["']/g,      // html: <img src="path">
+];
+
+async function buildRefIndex(baseDir) {
+  const refs = new Map();
+  for await (const { segs, handle } of walkMarkdown(baseDir)) {
+    const text = await (await handle.getFile()).text();
+    const docDir = segs.slice(0, -1);
+    for (const re of REF_PATTERNS) {
+      re.lastIndex = 0;
+      let m;
+      while ((m = re.exec(text))) {
+        let p = m[1];
+        if (/^(https?:)?\/\//.test(p) || p.startsWith('data:')) continue;
+        try { p = decodeURIComponent(p.split('#')[0].split('?')[0]); } catch {}
+        p = p.replace(/^\.\//, '');
+        const start = p.startsWith('/') ? [] : docDir;   // 以 / 开头视为 docs 根下的绝对路径
+        const joined = [...start, ...p.split('/')].reduce((acc, seg) => {
+          if (seg === '..') acc.pop(); else if (seg !== '.' && seg !== '') acc.push(seg);
+          return acc;
+        }, []);
+        let key = joined.join('/').normalize('NFC');
+        // 绝对路径形如 /zh-CN/ai/docs/... ，去掉 locale 前缀落到 baseDir 相对路径
+        key = key.replace(new RegExp(`^${LOCALES.base}/${SUBPATH.join('/')}/`), '');
+        if (!refs.has(key)) refs.set(key, []);
+        refs.get(key).push(segs.join('/'));
+      }
+    }
+  }
+  return refs;
+}
+
+async function scan() {
+  if (!docsDir) return;
+  grid.innerHTML = '';
+  $('#hint').style.display = 'none';
+  toast('扫描中…', 60000);
+  items.forEach((it) => Object.values(it.locales).forEach((l) => l?.url && URL.revokeObjectURL(l.url)));
+  items = [];
+
+  const baseDir = await getDirByPath(docsDir, [LOCALES.base, ...SUBPATH]);
+  const refIndex = await buildRefIndex(baseDir);
+
+  for await (const { segs, handle } of walkImages(baseDir)) {
+    const rel = segs.join('/');
+    const baseFile = await handle.getFile();
+    const item = {
+      rel,
+      refs: refIndex.get(rel.normalize('NFC')) || [],
+      locales: { [LOCALES.base]: { handle, hash: await hashFile(baseFile), url: URL.createObjectURL(baseFile) } },
+    };
+    for (const loc of LOCALES.targets) {
+      const fh = await getFileByPath(docsDir, [loc, ...SUBPATH, ...segs]);
+      if (!fh) { item.locales[loc] = null; continue; }
+      const f = await fh.getFile();
+      item.locales[loc] = { handle: fh, hash: await hashFile(f), url: URL.createObjectURL(f) };
+    }
+    items.push(item);
+  }
+  items.sort((a, b) => a.rel.localeCompare(b.rel));
+  render();
+  toast(`扫描完成：${items.length} 张基准截图`);
+  $('#rescan').disabled = $('#export').disabled = false;
+  $('#toolbar').style.display = 'flex';
+}
+
+function statusOf(item, loc) {
+  const base = item.locales[LOCALES.base];
+  const t = item.locales[loc];
+  if (!t) return 'missing';
+  return t.hash === base.hash ? 'pending' : 'done';
+}
+
+function matchesFilter(item) {
+  if (query) {
+    const hay = (item.rel + ' ' + item.refs.join(' ')).toLowerCase();
+    if (!hay.includes(query)) return false;
+  }
+  if (filter === 'pending-en') return statusOf(item, 'en') !== 'done';
+  if (filter === 'pending-hk') return statusOf(item, 'zh-HK') !== 'done';
+  if (filter === 'done') return LOCALES.targets.every((l) => statusOf(item, l) === 'done');
+  return true;
+}
+
+function render() {
+  const shown = items.filter(matchesFilter);
+  const pend = (loc) => items.filter((it) => statusOf(it, loc) !== 'done').length;
+  $('#stats').innerHTML =
+    `共 <b>${items.length}</b> 张 · 显示 <b>${shown.length}</b> 张 · ` +
+    `待本地化 EN <b style="color:var(--warn)">${pend('en')}</b> · ` +
+    `待本地化 繁體 <b style="color:var(--warn)">${pend('zh-HK')}</b>`;
+
+  grid.innerHTML = '';
+  for (const item of shown) {
+    const card = document.createElement('div');
+    card.className = 'item';
+    const refsHtml = item.refs.length
+      ? `引用于 ${item.refs.map((r) => `<code>${r}</code>`).join(' ')}`
+      : '<span style="color:var(--err)">未被任何 zh-CN 文档引用（可能已废弃）</span>';
+    card.innerHTML = `
+      <div class="item-head"><div class="item-path">${item.rel}</div></div>
+      <div class="item-refs">${refsHtml}</div>
+      <div class="cols"></div>`;
+    const cols = card.querySelector('.cols');
+    for (const loc of [LOCALES.base, ...LOCALES.targets]) {
+      cols.appendChild(renderCol(item, loc));
+    }
+    grid.appendChild(card);
+  }
+}
+
+function renderCol(item, loc) {
+  const isBase = loc === LOCALES.base;
+  const info = item.locales[loc];
+  const st = isBase ? 'base' : statusOf(item, loc);
+  const badge = { base: ['base', '基准'], done: ['ok', '已本地化'], pending: ['warn', '待本地化'], missing: ['err', '缺失'] }[st];
+
+  const col = document.createElement('div');
+  col.className = 'col';
+  col.innerHTML = `
+    <div class="col-head"><span class="loc">${loc}</span><span class="badge ${badge[0]}">${badge[1]}</span></div>
+    <div class="thumb">${info ? `<img src="${info.url}" alt="${loc}" />` : '<span class="none">无文件</span>'}</div>
+    <div class="col-actions"><button class="replace">替换…</button></div>`;
+
+  if (info) {
+    col.querySelector('.thumb').addEventListener('click', () => {
+      $('#lightbox img').src = info.url;
+      $('#lightbox .cap').textContent = `${loc} / ${item.rel}`;
+      $('#lightbox').style.display = 'flex';
+    });
+  }
+
+  {
+    const write = async (file) => {
+      if (!file || !IMG_EXT.test(file.name)) return toast('请提供图片文件');
+      const extNew = file.name.split('.').pop().toLowerCase().replace('jpeg', 'jpg');
+      const extOld = item.rel.split('.').pop().toLowerCase().replace('jpeg', 'jpg');
+      if (extNew !== extOld && !confirm(`新文件扩展名 .${extNew} 与原文件 .${extOld} 不同，仍按原文件名写入？`)) return;
+      if (isBase && !confirm(`即将覆盖简体中文基准截图：\n${item.rel}\n\n基准更新后，繁/英版本的本地化状态将按新基准重新判定。确认替换？`)) return;
+      try {
+        const segs = [loc, ...SUBPATH, ...item.rel.split('/')];
+        const dir = await getDirByPath(docsDir, segs.slice(0, -1), true);
+        const fh = await dir.getFileHandle(segs.at(-1), { create: true });
+        const w = await fh.createWritable();
+        await w.write(file);
+        await w.close();
+        const f = await fh.getFile();
+        if (item.locales[loc]?.url) URL.revokeObjectURL(item.locales[loc].url);
+        item.locales[loc] = { handle: fh, hash: await hashFile(f), url: URL.createObjectURL(f) };
+        render();
+        if (isBase) {
+          toast(`已更新基准截图 ${loc}/${SUBPATH.join('/')}/${item.rel}——繁/英状态已按新基准重新判定，旧截图若未更新会显示为"已本地化"，请留意是否需要同步更新`, 6000);
+        } else {
+          toast(`已写入 ${loc}/${SUBPATH.join('/')}/${item.rel}`);
+        }
+      } catch (e) {
+        toast('写入失败：' + e.message, 5000);
+      }
+    };
+
+    col.querySelector('.replace').addEventListener('click', async () => {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+      input.onchange = () => write(input.files[0]);
+      input.click();
+    });
+    col.addEventListener('dragover', (e) => { e.preventDefault(); col.classList.add('drop-active'); });
+    col.addEventListener('dragleave', () => col.classList.remove('drop-active'));
+    col.addEventListener('drop', (e) => {
+      e.preventDefault();
+      col.classList.remove('drop-active');
+      write(e.dataTransfer.files[0]);
+    });
+  }
+  return col;
+}
+
+$('#pick').addEventListener('click', async () => {
+  if (!window.showDirectoryPicker) return toast('当前浏览器不支持 File System Access API，请使用 Chrome 或 Edge', 6000);
+  try {
+    const dir = await showDirectoryPicker({ mode: 'readwrite' });
+    // 允许用户选 repo 根目录或 docs 目录
+    try { await dir.getDirectoryHandle(LOCALES.base); docsDir = dir; }
+    catch { docsDir = await dir.getDirectoryHandle('docs'); }
+    await scan();
+  } catch (e) {
+    if (e.name !== 'AbortError') toast('打开目录失败：' + e.message, 5000);
+  }
+});
+
+$('#rescan').addEventListener('click', scan);
+
+$('#export').addEventListener('click', async () => {
+  const lines = ['# 截图本地化待办清单', ''];
+  for (const loc of LOCALES.targets) {
+    const pend = items.filter((it) => statusOf(it, loc) !== 'done');
+    lines.push(`## ${loc}（${pend.length} 张）`, '');
+    for (const it of pend) {
+      lines.push(`- [ ] \`${it.rel}\`${statusOf(it, loc) === 'missing' ? '（缺失）' : ''}${it.refs.length ? ' — ' + it.refs.join(', ') : ''}`);
+    }
+    lines.push('');
+  }
+  await navigator.clipboard.writeText(lines.join('\n'));
+  toast('待办清单（Markdown）已复制到剪贴板');
+});
+
+document.querySelectorAll('.filter-btn').forEach((btn) =>
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    filter = btn.dataset.f;
+    render();
+  })
+);
+
+$('#search').addEventListener('input', (e) => { query = e.target.value.trim().toLowerCase(); render(); });
+$('#lightbox').addEventListener('click', () => ($('#lightbox').style.display = 'none'));
+</script>
+</body>
+</html>
