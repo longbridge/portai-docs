@@ -5,7 +5,7 @@ description: LongbridgeAI Agent Platform 幫助文檔中心，涵蓋平臺概述
 head:
   - - meta
     - name: keywords
-      content: LongbridgeAI, LongbridgeAI Agent Platform, AI Agent, Agent 編排, Chatflow, Workflow, 幫助文檔, 金融 AI, 合規, API 參考
+      content: LongbridgeAI, LongbridgeAI Agent Platform, AI Agent, Agent 編排，Chatflow, Workflow, 幫助文檔，金融 AI, 合規，API 參考
 
 hero:
   name: "LongbridgeAI Agent Platform"
