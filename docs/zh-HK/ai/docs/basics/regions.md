@@ -20,7 +20,7 @@ title: "分地區服務說明"
 | **中國香港 (HK)** | Longbridge AI Technologies Limited | LBHK App + Web | 已上線 |
 | **新加坡 (SG)** | Longbridge AI Technologies Pte. Ltd  | LBSG App + Web | 已上線 |
 
-- Web 端統一入口為 longbridge.com/ai,系統根據你的**註冊地區**自動路由到對應服務主體，不支援手動切換
+- Web 端統一入口為 longbridge.com/ai，系統根據你的**註冊地區**自動路由到對應服務主體，不支援手動切換
 - 產品介面和使用者協議中會標註你的服務提供方 (如 HK 使用者可見 "Provided by Longbridge AI Technologies Limited");Usage 頁面也會展示每筆消費由哪個主體收取 (charged by)
 
 ## 定價、幣種與支付

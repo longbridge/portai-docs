@@ -23,7 +23,7 @@ Skill 是面向 Agent 的**動態上下文管理與能力擴充套件機制**:�
 
 **第一步**:預設為上傳方式，支援 `.zip` 或 `.skill` 檔案 (需包含 `SKILL.md`);下方「其他建立方式」可切換為**搜尋 Skill** 或**建立空 Skill**:
 
-![建立 Skill 第一步：上傳 .zip/.skill,或切換搜尋 Skill / 建立空 Skill](./images/02-2-%E5%88%9B%E5%BB%BASkill%E4%B8%8A%E4%BC%A0.png)
+![建立 Skill 第一步：上傳 .zip/.skill，或切換搜尋 Skill / 建立空 Skill](./images/02-2-%E5%88%9B%E5%BB%BASkill%E4%B8%8A%E4%BC%A0.png)
 
 選擇「搜尋 Skill」可**聯網搜尋 GitHub 上的社群 Skill**,按關鍵詞檢索 (如 superpowers 系列),點選即可匯入：
 
