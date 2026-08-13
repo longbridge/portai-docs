@@ -5,7 +5,7 @@ title: "Workspace & Plans"
 
 > This article answers three questions: **where do my things live (Workspace), what can I use and how much (plan), and who pays for the usage (Charged By)**. Once you understand this system, every "why can't I see / use this feature, or why was I blocked" question on the platform becomes self-explanatory.
 
-## 1. The Big Picture: One-Sentence Version
+## The Big Picture: One-Sentence Version
 
 ```
 Workspace (the container) ── bound to → Plan (feature scope + usage quota)
@@ -16,7 +16,7 @@ Workspace (the container) ── bound to → Plan (feature scope + usage quota)
 
 Let's break it down layer by layer.
 
-## 2. Role: Who You Are
+## Role: Who You Are
 
 Roles describe a user's identity origin and usage context. The platform has two:
 
@@ -27,7 +27,7 @@ Roles describe a user's identity origin and usage context. The platform has two:
 
 Note: roles only distinguish **identity background**—they do not directly determine feature scope or usage limits. Those are decided by the plan of the Workspace you are in.
 
-## 3. Workspace: Where Everything Happens
+## Workspace: Where Everything Happens
 
 A Workspace is the platform's basic unit for containing usage activity:
 
@@ -56,11 +56,11 @@ A Workspace is the platform's basic unit for containing usage activity:
 
 Note the distinction: the roles in Section 2 (community/official user) describe **platform identity**, while Owner/Editor/Viewer here are member permissions **within a single Workspace**. The two are independent.
 
-## 4. Plan: What You Can Use, and How Much
+## Plan: What You Can Use, and How Much
 
 A plan is a **commercial object** on the platform that can be purchased or granted, determining the feature scope and usage quota of the current Workspace.
 
-### 4.1 The Three Plans
+### The Three Plans
 
 | Plan | Type | Positioning | Price (USD baseline)* | How to Get It |
 |------|------|------|--------------|---------|
@@ -70,7 +70,7 @@ A plan is a **commercial object** on the platform that can be purchased or grant
 
 > \* Prices may be **adjusted dynamically**; actual charges prevail.
 
-### 4.2 Plan Benefits Quick Reference
+### Plan Benefits Quick Reference
 
 | Benefit | Starter | Pro | Premium |
 |------|---------|-----|---------|
@@ -87,7 +87,7 @@ A plan is a **commercial object** on the platform that can be purchased or grant
 
 > **⚠️ Actual plan benefits prevail**: this help documentation may lag behind updates, and the pricing and benefits in this section may differ **significantly** from actual benefits—the in-product plan page's live display is always authoritative. When operations adjusts plan configurations, existing users are unaffected within their current billing cycle.
 
-### 4.3 Subscription Rules Essentials
+### Subscription Rules Essentials
 
 - **Monthly recurring subscription only**—no single-month purchases (consistent with mainstream AI products)
 - Payment channels: iOS uses Apple IAP; Android/Web uses Stripe. A Workspace can have only one active subscription channel at a time
@@ -97,11 +97,11 @@ A plan is a **commercial object** on the platform that can be purchased or grant
 - **Unsubscribe**: auto-renewal can be restored before expiry; after expiry, the Workspace falls back to Starter
 - The currency is locked at first purchase; for regional pricing, see [1.6 Regional Services](regions)
 
-## 5. Usage: How It's Metered and Deducted
+## Usage: How It's Metered and Deducted
 
 > **Usage is shared across Longbridge AI products**: the same user's quota **applies to both the official Chatbot (the LongbridgeAI chat client) and the Agent Platform**—chatting in the Chatbot and running Agents on the platform draw from the same quota.
 
-### 5.1 What Consumes Usage
+### What Consumes Usage
 
 The system collects five billing units in real time and converts them all to USD:
 
@@ -113,7 +113,7 @@ The system collects five billing units in real time and converts them all to USD
 | Sandbox runs (Code node, etc.) | By runtime, rounded up to the minute |
 | Search/crawler tools | By call count (only specific search and crawler tools are billed; OpenAPI tools and the like are not) |
 
-### 5.2 How Quota Is Released: Monthly Total + Weekly Rolling Release
+### How Quota Is Released: Monthly Total + Weekly Rolling Release
 
 - **Monthly total quota**: each billing cycle (month) allocates a total quota; it resets to zero at cycle end and is re-allocated in the new cycle—**no carryover**
 - **Weekly rolling release**: the monthly quota is released on a rolling 7-day basis, so weekly availability ≈ monthly total ÷ 4. If you use up the week's quota, you must wait for the next rolling week; unused weekly quota **does not roll over** either
@@ -122,7 +122,7 @@ The system collects five billing units in real time and converts them all to USD
 
 > Design intent: prevent burning a whole month's quota in a day, keeping the consumption pace under control.
 
-### 5.3 What Happens When You Exceed Quota
+### What Happens When You Exceed Quota
 
 Once you exceed quota, actions are blocked. Whether advance usage warnings (e.g. 80%/90% alerts) are provided **depends on the actual live behavior**:
 
@@ -132,7 +132,7 @@ Once you exceed quota, actions are blocked. Whether advance usage warnings (e.g.
 | Knowledge base over capacity | New files blocked; over-limit files are marked **disabled** (excluded from retrieval) **starting from the oldest by upload time**, not auto-deleted—delete files or upgrade to restore |
 | Skill count over limit | Creating new Skills is blocked, with a prompt to delete existing ones or upgrade; if the overage was caused by a benefit card expiring, existing content is kept—you just can't add more (see [1.8](hksg-benefits)) |
 
-### 5.4 Who Pays for Usage (Charged By)
+### Who Pays for Usage (Charged By)
 
 Whose account a run's consumption is charged to depends on the Agent's ownership and your membership relation to that Workspace:
 
@@ -153,7 +153,7 @@ Some concrete scenarios:
 | Context compression, long-term memory reads/writes | Same as conversation runs |
 | AI-assisted Agent creation, compliance checks | The platform |
 
-### 5.5 Configuration Time vs. Runtime: An Easy Point of Confusion
+### Configuration Time vs. Runtime: An Easy Point of Confusion
 
 **A user's plan only affects usage quota—it does not affect the capabilities an Agent already has.**
 
@@ -164,13 +164,13 @@ Some concrete scenarios:
 
 Example: if a Premium developer configures a third-party MCP tool in an Agent, a Starter user using that Agent **can still use** the tool—they just consume their own Workspace's quota (if the user-pays rule applies).
 
-## 6. Model Tiers and Usage
+## Model Tiers and Usage
 
 - Models come in two tiers: **Mainstream** and **SOTA**. SOTA models are clearly labeled and consume more per unit
 - Chatflow/Workflow supports **node-level model configuration**: use Mainstream models for simple tasks (classification, formatting) and SOTA for core reasoning—the most effective way to control usage
 - Some models are restricted by vendor terms and available only to platform officials; they will not appear in the model selector on regular plans
 
-## 7. FAQ
+## FAQ
 
 | Question | Answer |
 |------|------|

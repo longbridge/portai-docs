@@ -6,7 +6,7 @@ title: "Disaster Recovery"
 > **Location**: model configuration and node exception handling settings
 > A production Agent cannot go entirely unavailable just because one model vendor hiccups or a single call fails. The platform provides a set of disaster recovery capabilities that keep the Agent producing stable output under abnormal conditions.
 
-## 1. Cross-Vendor Model Calls
+## Cross-Vendor Model Calls
 
 **What it is**: the same model (same model name) is often deployed under multiple vendors/accounts. With **cross-vendor calls** enabled, when a model call fails and triggers a retry, the system can **switch to an account with the same model name under another enabled vendor** to continue the call.
 
@@ -16,7 +16,7 @@ title: "Disaster Recovery"
 
 **When to use**: recommended for customer-facing production Agents, so a single-vendor outage is no longer a single point of failure.
 
-## 2. Model Combinations
+## Model Combinations
 
 **What it is**: the system provides **preset model combination plans** (such as a **cost-effective combination** and a **high-performance combination**), and you can also select a single model yourself.
 
@@ -24,14 +24,14 @@ title: "Disaster Recovery"
 
 **Pairing tip**: use it together with **node-level model configuration** (different models for different nodes), spreading critical and non-critical paths across different models to further isolate risk.
 
-## 3. Retry on Failure
+## Retry on Failure
 
 **What it is**: when a model or tool call fails, the system supports **automatic retries** instead of terminating on the first failure.
 
 - Retries work in tandem with cross-vendor calls: with cross-vendor enabled, retries can switch vendor accounts instead of repeatedly hitting the failing vendor
 - Usage billing is based on calls that actually happen: requests already sent to the model are billed by actual token consumption; unsent ones are not billed
 
-## 4. Exception Handling
+## Exception Handling
 
 What happens to the flow after a failed call is determined by the exception handling mechanism:
 

@@ -5,7 +5,7 @@ title: "Security Review"
 
 > Before an Agent is published (especially before being listed on the marketplace), it goes through the platform's **security review**. Agents that fail the review cannot be published or listed; Agents found in violation after listing will be delisted by the platform. This page explains what is reviewed and what will not pass.
 
-## 1. What Is Reviewed
+## What Is Reviewed
 
 An Agent's **outward-facing presentation and behavior definitions** are all within scope:
 
@@ -19,7 +19,7 @@ An Agent's **outward-facing presentation and behavior definitions** are all with
 - The review takes place at the **publish / marketplace listing** stage (listing on the marketplace requires passing a security scan; Pro plan and above)
 - Republishing after modifying any of the above content will **trigger the review again**
 
-## 2. Scenarios That Will Fail the Review
+## Scenarios That Will Fail the Review
 
 The following scenarios fail the review upon identification (each corresponds to one of the six principles in [3.1 Compliance Requirements](index)):
 
@@ -37,7 +37,7 @@ The following scenarios fail the review upon identification (each corresponds to
 
 > The above is a list of common scenarios, not an exhaustive one; the platform reserves the right to reject any other illegal or non-compliant content, and the actual review result shall prevail.
 
-## 3. What to Do If the Review Fails
+## What to Do If the Review Fails
 
 1. **Fix according to the feedback**: Locate the issue against the table above, modify the name/avatar/description/prompt, and resubmit
 2. **Implement the same need compliantly**: Many rejections are actually wording issues — for example, if you want an indicator-analysis Agent, change "golden cross buy alert" to "neutral interpretation of the golden cross pattern" (descriptive language, see the [3.1 Reference Prompt](index)) and it can launch compliantly

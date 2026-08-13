@@ -5,7 +5,7 @@ title: "Planning & Execution"
 
 Complex tasks have three big pain points — no structure, no control, and results that aren't directly usable — and the platform solves each with a dedicated capability.
 
-## 1. Agent Todo Planning
+## Agent Todo Planning
 
 **Solves: complex tasks lacking structure.**
 
@@ -13,7 +13,7 @@ Complex tasks have three big pain points — no structure, no control, and resul
 - **Agent node**: with planning enabled, it automatically produces a **To-do list** and executes item by item according to the plan; at runtime you can watch the Agent progress through the plan
 - Suited to multi-step, complex problems that need decomposition, making execution organized and trackable
 
-## 2. Human in the Loop
+## Human in the Loop
 
 **Solves: fully automatic execution being uncontrollable.**
 
@@ -25,7 +25,7 @@ Previously, an Agent in fully automatic mode ran straight to the end — mid-run
 
 > Recommendation for financial scenarios: for any flow involving write operations on account data or sending content externally, prefer HITL mode — consistent with the principle of [Staying Within the Execution-Only Positioning](../../compliance/index) that "AI does not make decisions for the customer."
 
-## 3. Agent Answer Mode
+## Agent Answer Mode
 
 **Solves: answers that are merely "thought through" but not directly usable.**
 

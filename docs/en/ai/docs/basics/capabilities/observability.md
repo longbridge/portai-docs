@@ -5,7 +5,7 @@ title: "Running, Debugging & Observability"
 
 From "run once" to "run in batch" to "see how it performs," the platform provides a complete running and observability chain.
 
-## 1. Three Ways to Run
+## Three Ways to Run
 
 An Agent can be run in three ways, serving the three stages of "tune one node, test the whole flow, serve real users":
 
@@ -37,25 +37,25 @@ An Agent can be run in three ways, serving the three stages of "tune one node, t
 
 > Usage accounting across the three modes: both test-run modes consume **the developer's own Workspace** quota ("you debug, you pay"); only production runs follow the charged-by attribution rules.
 
-## 2. Workflow GUI Runs & Batch Runs
+## Workflow GUI Runs & Batch Runs
 
 - Workflows can be run directly in the **GUI**, without relying on API calls
 - **Batch runs via CSV upload** are supported: one column per input variable, one row per run — ideal for batch evaluation and data processing
 
 > Example: prepare a CSV of 50 test questions and run them in one batch to quickly assess the overall effect of a prompt change — far more efficient than trial-running one by one.
 
-## 3. Trial Run Enhancements
+## Trial Run Enhancements
 
 - **Automatic input parameter parsing**: input parameter formats are parsed automatically during trial runs, eliminating manual construction of test data structures and significantly speeding up debugging
 - **Single-node debugging supports array and object**: complex-typed data can also be debugged at the single-node level, pairing well with the "configure a node, try it once" workflow in [2.3 Debugging Tips](../../tutorials/orchestration-debug)
 
-## 4. Logs
+## Logs
 
 - View each Agent run's **inputs/outputs, execution path, and failure causes** — the first place to look when diagnosing production issues
 - Routine practice after launch: periodically review real conversations in Logs and add bad cases as ❌ examples in your prompt (see Section 6 of [2.1](../../tutorials/prompt-writing))
 - For customer-facing Agents, log retention is also a compliance requirement (see [Compliance Requirements](../../compliance/index))
 
-## 5. Statistics
+## Statistics
 
 ![Statistics page: trend charts for six metrics (total conversations / active users / average interactions per conversation / average time to first token / token output speed / user satisfaction), time-range filter at top left, "Trace App Performance" entry at top right](./images/1.7.7-1-%E7%BB%9F%E8%AE%A1.png)
 
@@ -76,7 +76,7 @@ An Agent can be run in three ways, serving the three stages of "tune one node, t
 2. **Compare before and after changes**: after a major prompt/flow change, watch the trends in conversation count, satisfaction, and latency to validate the change
 3. **Statistics for trends, Logs for individual cases**: spot a metric anomaly on the Statistics page → go to Logs and find the failed records in the corresponding time window to locate the cause
 
-## 6. Trace App Performance (Third-Party Tracing)
+## Trace App Performance (Third-Party Tracing)
 
 > ⚠️ **Internal feature**: "Trace App Performance" is currently for internal use only and not yet available to external users.
 
@@ -101,7 +101,7 @@ Click "Configure" for Langfuse and fill in the three required fields to complete
 
 > Note: tracing sends the app's execution context to a **third-party platform**; for production Agents involving customer data, assess data compliance before enabling (see [Compliance Requirements](../../compliance/index)).
 
-## 7. DSL Import Validation
+## DSL Import Validation
 
 When importing a DSL file into the canvas, the platform automatically **validates LLM availability** — if a DSL exported from another environment/account references a model unavailable in the current Workspace, you are warned at import time instead of hitting an error at runtime.
 

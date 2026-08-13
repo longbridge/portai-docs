@@ -5,7 +5,7 @@ title: "Variables and Data Flow Design Techniques"
 
 > The nodes are connected, but the variables don't flow — this is where beginners most often get stuck. This guide explains how data moves and transforms through a flow.
 
-## 1. Sketch the Data Flow First, Then Place the Nodes
+## Sketch the Data Flow First, Then Place the Nodes
 
 Before building, answer three questions:
 
@@ -19,7 +19,7 @@ Write this chain out as a single line, then place nodes against it:
 User message → Classification result → (Market branch) Ticker → Market data JSON → Formatted text → Reply
 ```
 
-## 2. Structured Output: Making LLM Results Usable Downstream
+## Structured Output: Making LLM Results Usable Downstream
 
 By default the LLM outputs free-form text `text` (String), from which downstream nodes can hardly extract values precisely. When downstream nodes need to make decisions or pick out fields, **turn on the LLM node's structured output switch**:
 
@@ -29,7 +29,7 @@ By default the LLM outputs free-form text `text` (String), from which downstream
 
 > Principle: **use `text` for humans, use `structured_output` for machines.**
 
-## 3. Division of Labor Among the Three Variable Nodes
+## Division of Labor Among the Three Variable Nodes
 
 | Node | What it does | When to use |
 |------|--------------|-------------|
@@ -39,7 +39,7 @@ By default the LLM outputs free-form text `text` (String), from which downstream
 
 **Order of preference**: use a Transformer instead of Code whenever possible (templates are easier to maintain than code); Code is the fallback.
 
-## 4. Merging Branch Data: Branch Aggregator
+## Merging Branch Data: Branch Aggregator
 
 When the multiple branches split off by IF Else / Question Classifier each produce different output variables, and a downstream node (such as Answer) only wants to reference "one" result, use the **Branch Aggregator**:
 
@@ -48,13 +48,13 @@ When the multiple branches split off by IF Else / Question Classifier each produ
 
 **Anti-pattern**: attaching a separate Answer node to each branch and duplicating the same reply template. Instead, use branches → aggregator → a single Answer, so the template is maintained in one place.
 
-## 5. Passing Data in Loops
+## Passing Data in Loops
 
 - **Iteration**: takes a list as input, runs the internal sub-flow once for each element, and produces a list of results. Supports **parallel mode** for speedup and configurable **error handling** (a single failed element does not affect the whole). Suitable for batch tasks like "generate a summary for every news article"
 - **Loop**: executes repeatedly by count or condition, **updating variables each round and passing them to the next**; a special "End Loop" node inside controls the exit. Suitable for tasks like "keep refining until a condition is met"
 - Neither can contain Start / End nodes inside; the sub-flow begins from the internal Home node
 
-## 6. Troubleshooting Common Data Flow Issues
+## Troubleshooting Common Data Flow Issues
 
 | Symptom | Common cause | Fix |
 |---------|--------------|-----|

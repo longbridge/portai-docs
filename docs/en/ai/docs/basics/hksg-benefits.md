@@ -6,7 +6,7 @@ title: "HK/SG Benefit Cards"
 > **Applicable regions**: HK / SG · **Nature**: a time-limited higher-tier trial card (a service usage benefit—not a cash rebate, not a securities reward)
 > Specific eligibility conditions, tiers, and validity periods are governed by **the in-product Benefit Center display and the corresponding campaign terms**.
 
-## 1. What Is a Benefit Card
+## What Is a Benefit Card
 
 A benefit card is a **time-limited card for experiencing a higher plan tier**: once activated, for its validity period you enjoy **that tier's feature benefits and usage quota** (e.g. a Pro trial card → Pro-tier features and quota).
 
@@ -18,7 +18,7 @@ Three core principles:
 | **Changes the plan benefits you enjoy** | During the validity period, feature permissions follow the **higher of** your current subscription tier and the card tier—Skill count limits, knowledge base capacity, third-party MCP, etc. are all judged at the higher tier |
 | **Usage stacks** | Paid users: remaining weekly quota + the card tier's weekly quota; Starter users: quota allocated directly at the card tier |
 
-## 2. How to Get One and How to Activate It
+## How to Get One and How to Activate It
 
 **How to get one**: benefit cards are not publicly sold and cannot be purchased. They are issued through the following channels—
 
@@ -37,7 +37,7 @@ Receive a benefit card → open the Usage page and see the "You have 1 unused be
 - **Validity is counted in days** (e.g. 7 / 30 / 90 days), starting from activation
 - A card you never activate **expires automatically** after the unused-expiry window (180 days by default; the terms prevail)
 
-## 3. Usage Rules
+## Usage Rules
 
 | # | Rule | Description |
 |---|------|------|
@@ -48,13 +48,13 @@ Receive a benefit card → open the Usage page and see the "You have 1 unused be
 | 5 | **Fallback at expiry** | Features fall back to your original plan tier; the card's remaining usage is **reclaimed outright**; content created over the limit (e.g. Skills) is not deleted, but no more can be added |
 | 6 | **Non-redeemable, non-transferable** | Benefit cards are service usage benefits; the platform reserves the right of interpretation for campaigns (the terms prevail) |
 
-## 4. Where to Check
+## Where to Check
 
 - **Usage page**: a benefit card status card at the top—trial tier + remaining days + the stacked weekly available quota; an entry prompt is shown when you have unused cards
 - **Plan page**: shows the current trial tier, remaining days, and your original subscription status
 - **Benefit Center**: view all benefit cards and their status (unused / in use / used / expired)
 
-## 5. FAQ Quick Reference
+## FAQ Quick Reference
 
 | Question | Answer |
 |------|------|
@@ -66,7 +66,7 @@ Receive a benefit card → open the Usage page and see the "You have 1 unused be
 | What if I never use a card I received? | It expires automatically after the unused-expiry window (180 days by default) |
 | How do I get a benefit card? | Watch platform campaigns and the Task Center, or wait for a targeted platform grant; purchase is not supported |
 
-## 6. Compliance Notes
+## Compliance Notes
 
 - Benefit cards are **service usage benefits** and do not constitute cash rebates or securities rewards
 - Each campaign's terms spell out eligibility rules, benefit content, validity, and the non-redeemable/non-transferable clauses

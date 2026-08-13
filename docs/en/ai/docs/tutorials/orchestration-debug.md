@@ -5,7 +5,7 @@ title: "Flow Orchestration Patterns and Debugging Techniques"
 
 > Six reusable orchestration patterns + a standard debugging process. When building a new Agent, first check which pattern your requirement matches — don't start from a blank canvas.
 
-## 1. Six Common Orchestration Patterns
+## Six Common Orchestration Patterns
 
 ### Pattern 1: Direct Q&A (Minimal Chatflow)
 ```
@@ -45,7 +45,7 @@ Start ─▶ Iteration (parallel) [ sub-flow: LLM / Code ] ─▶ LLM (summarize
 ```
 Suitable for: processing a list item by item and then summarizing. For large volumes, enable Iteration's parallel mode and configure error handling so a single failed item doesn't drag down the whole run.
 
-## 2. Orchestration Principles
+## Orchestration Principles
 
 1. **Get the minimal chain working first, then add nodes section by section** — trial-run after each node you add, so problems are always located in the most recently added segment
 2. **One node, one responsibility** — a single LLM node that classifies, generates, and formats is worse than splitting into classifier + generator + Transformer, each independently testable
@@ -53,7 +53,7 @@ Suitable for: processing a list item by item and then summarizing. For large vol
 4. **Write comments on nodes** — in complex flows, each node's comment should state "what comes in, what it does, what goes out"; your teammates, and your future self three months from now, will thank you
 5. **Control cost** — LLM/Agent nodes are the main cost source: use IF Else/Code instead of an LLM for decisions whenever possible; set the memory window to the minimum that suffices; estimate call counts for batch tasks
 
-## 3. Standard Debugging Process
+## Standard Debugging Process
 
 ### 1. Single-Node Trial Runs
 Apart from pure routing/aggregation nodes such as IF Else and Branch Aggregator, processing nodes (LLM, Agent, Tool, Code, Iteration, Loop, Parameter Extractor, etc.) can be tested individually by clicking the run button on the node (whether the run button appears on the node is the definitive indicator). Trial-run each node right after configuring it — don't save it all up for the end.

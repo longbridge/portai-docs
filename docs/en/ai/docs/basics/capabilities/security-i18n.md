@@ -3,7 +3,7 @@ sidebar_position: 8
 title: "Security Verification & Localization"
 ---
 
-## 1. Trading Password Verification
+## Trading Password Verification
 
 **What it is**: when a flow contains tools that **access user asset data** (account information, positions, P&L, etc.), running the Workflow or chatting with such a Chatflow automatically pops up a **trading password verification dialog**; asset data is returned only after verification passes.
 
@@ -15,7 +15,7 @@ title: "Security Verification & Localization"
 
 **Compliance significance**: asset data is sensitive data, and trading password verification guarantees that "data is only given to the identity-verified owner" — it is also the prerequisite for using the account/positions/P&L MCP tools (see [1.7.10 Model & Tool Ecosystem](model-tool-ecosystem)).
 
-## 2. Automatic Simplified/Traditional Conversion for Answer Output
+## Automatic Simplified/Traditional Conversion for Answer Output
 
 **What it is**: with **Chinese Simplified/Traditional conversion** enabled in the Chatflow canvas backend, the content output by the Answer node is automatically converted between Simplified and Traditional Chinese based on **the user's system language**.
 

@@ -3,14 +3,14 @@ sidebar_position: 10
 title: "Model & Tool Ecosystem"
 ---
 
-## 1. Model Pool: SOTA Models Continuously Onboarded
+## Model Pool: SOTA Models Continuously Onboarded
 
 - Mainstream and SOTA large language models from multiple vendors are integrated; **the model selector's real-time display is the source of truth** for availability
 - Models are tiered into "Mainstream" and "SOTA"; SOTA models are clearly labeled in the selector and consume more units
 - Some models are restricted by plan or region; anything not shown in the selector is currently unavailable
 - Different nodes can be configured with different models (node-level model configuration): mainstream models for simple tasks, SOTA for core reasoning — the most effective lever for controlling usage
 
-## 2. Account & Community MCP Tools
+## Account & Community MCP Tools
 
 Five MCP tools deeply integrated with Longbridge's business, enabling Agents to serve users based on **real account data**:
 
@@ -26,7 +26,7 @@ Five MCP tools deeply integrated with Longbridge's business, enabling Agents to 
 
 **Compliance reminder**: account data may only be used for **neutral display and statistical analysis** — it must not be used to generate personalized buy/sell advice. See [No Investment Advice](../../compliance/index) and [Staying Within the Execution-Only Positioning](../../compliance/index).
 
-## 3. Time Zone Optimization for Market Data / Fundamentals Tools
+## Time Zone Optimization for Market Data / Fundamentals Tools
 
 - Some tools' `start_date` / `end_date` parameter descriptions now include **US ET and Hong Kong HKT time zone notes**
 - All returned time fields are unified to **ISO8601 format with UTC+0 time zone**, with a timestamp of the API call time attached

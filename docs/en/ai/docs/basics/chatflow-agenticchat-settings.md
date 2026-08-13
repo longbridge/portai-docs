@@ -5,7 +5,7 @@ title: "Chatflow & Agentic Chat Settings"
 
 > Beyond the canvas/prompt itself, every Agent application also has a set of **application-level settings** that shape its public identity, conversational behavior, and safety boundaries. This article covers the settings for the three modes—Chatflow, Agentic Chat, and Workflow—separately. Exact entry points and options follow the current product version.
 
-## 1. Settings Overview for the Two Modes
+## Settings Overview for the Two Modes
 
 | Setting Category | Chatflow | Agentic Chat |
 |---------|----------|--------------|
@@ -20,7 +20,7 @@ title: "Chatflow & Agentic Chat Settings"
 
 > The core difference: **Chatflow's capability configuration is distributed across nodes** (which node uses which model and which tools, each independently); **Agentic Chat's capability configuration is centralized in the application settings** (one prompt + one set of tools, with the model scheduling them autonomously).
 
-## 2. Chatflow Settings
+## Chatflow Settings
 
 Entry: the settings icon in the top right of the canvas opens the "Settings" sidebar:
 
@@ -43,7 +43,7 @@ Entry: the settings icon in the top right of the canvas opens the "Settings" sid
 | Guardrail | The two-way input/output compliance interception switch; **must be enabled** for customer-facing Agents (see [Guardrail](capabilities/guardrail)) |
 | Publish | Publish as a usable version; publishing to the Marketplace requires a security scan (Pro plan or above) |
 
-## 3. Agentic Chat Settings
+## Agentic Chat Settings
 
 ![Agentic Chat settings: human-in-the-loop, to-do list, spawning Subagents, Agent permissions, Simplified/Traditional conversion, Allow Fork](./images/1.10-2-AgenticChat%E8%AE%BE%E7%BD%AE.png)
 
@@ -64,7 +64,7 @@ Entry: the settings icon in the top right of the canvas opens the "Settings" sid
 | Guardrail | Same as Chatflow; Agentic Chat is more autonomous, so guardrails matter even more |
 | Opening message & suggested questions | Same as Chatflow |
 
-## 4. Workflow Settings
+## Workflow Settings
 
 Workflow has no chat client, so its settings are the most minimal:
 
@@ -77,7 +77,7 @@ Workflow has no chat client, so its settings are the most minimal:
 | Simplified/Traditional Chinese conversion | Same as Chatflow |
 | Environment variables | Same as Chatflow; no session variables (Workflow is single-execution, with no session concept) |
 
-## 5. How Settings Relate to Plans
+## How Settings Relate to Plans
 
 The available range of some settings is determined by the current Workspace's plan; options you can't select during configuration are usually not included in your plan:
 

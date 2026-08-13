@@ -5,7 +5,7 @@ title: "Main Pages Overview"
 
 > This article walks you through the platform's 8 main pages: what each page is for, where to find it, and the common operations on it. Use the screenshots to quickly build an overall picture of the platform; for detailed rules, see each page's dedicated documentation.
 
-## 1. Agent List
+## Agent List
 
 ![Agent list](./images/1.2-1-Agent%E5%88%97%E8%A1%A8.png)
 
@@ -16,7 +16,7 @@ The management entry point for all Agents in the current Workspace:
 - Management operations such as creating a new Agent, entering the editor, duplicating, and deleting
 - Note: Agents and the list contents are **scoped to the Workspace**—switching Workspaces changes the list accordingly (see [1.5](plans))
 
-## 2. Create Agent
+## Create Agent
 
 ![Create Agent](./images/1.2-2-%E5%88%9B%E5%BB%BAAgent.png)
 
@@ -30,7 +30,7 @@ The creation entry supports two modes; choose based on your needs:
 - Supports **AI-assisted creation**: describe your need and the AI generates the initial configuration (this consumption is covered by the platform)
 - For a hands-on tutorial, see [1.3 Quick Start](quick-start); for mode selection tips, see [2.5 Tip 1](../tutorials/mode-model-selection)
 
-## 3. Knowledge Base Management
+## Knowledge Base Management
 
 ![Knowledge base management](./images/1.2-3-%E7%9F%A5%E8%AF%86%E5%BA%93%E7%AE%A1%E7%90%86.png)
 
@@ -41,7 +41,7 @@ Manage the knowledge files that Agents can retrieve and cite:
 - When capacity is exceeded, new uploads are blocked; over-limit files are marked **disabled** (excluded from retrieval) **starting from the oldest by upload time**, but are not deleted automatically
 - For a deep dive into knowledge base capabilities, see [1.7 Platform Capabilities · Knowledge Base](capabilities/knowledge-base)
 
-## 4. Skill Management
+## Skill Management
 
 ![Skill management](./images/1.2-4-Skill%E7%AE%A1%E7%90%86.png)
 
@@ -52,7 +52,7 @@ Manage the Skills that can be attached to Agents:
 - When the Skill count limit is reached, creation is blocked—delete existing Skills or upgrade your plan
 - For a deep dive into the Skill system, see [1.7 Platform Capabilities · Skill System](capabilities/skill)
 
-## 5. Workspace Member Management
+## Workspace Member Management
 
 ![Workspace member management](./images/1.2-5-%E7%A9%BA%E9%97%B4%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.png)
 
@@ -63,7 +63,7 @@ Manage the members and permissions of the current Workspace:
 - Only the Owner can perform commercial operations such as subscription purchases/upgrades
 - For member role rules in detail, see [1.5 · Workspace Member Roles](plans)
 
-## 6. Usage
+## Usage
 
 > 💡 **How to get there**: the Usage, Plan, and Orders pages share one entry point—click your **profile avatar** in the bottom left to open the menu, select **Workspace Plan**, then use the expanded submenu to open "Usage", "Plan", or "Orders":
 
@@ -78,7 +78,7 @@ View your quota balance and consumption details:
 - Consumption details show the source of each charge and which service entity collected it (charged by)
 - For billing units and deduction rules, see [1.5 · Usage](plans)
 
-## 7. Plan
+## Plan
 
 > Entry: profile avatar menu → Workspace Plan → Plan (see the [entry note in Section 6](#6-usage))
 
@@ -91,7 +91,7 @@ View and manage the current Workspace's plan:
 - Upgrades take effect immediately with a prorated charge; downgrades take effect the following month; after unsubscribing, the Workspace falls back to Starter at expiry
 - Pricing currency is fixed by your registration region; for SG users, page prices exclude tax (GST is collected separately by the payment channel)—see [1.6](regions)
 
-## 8. Orders
+## Orders
 
 > Entry: profile avatar menu → Workspace Plan → Orders (see the [entry note in Section 6](#6-usage))
 

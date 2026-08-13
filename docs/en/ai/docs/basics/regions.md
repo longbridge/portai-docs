@@ -5,7 +5,7 @@ title: "Regional Services"
 
 > The platform serves multiple regions, each operated by an **independent legal entity** and governed by local laws and regulations. This article explains what directly affects you: who your service entity is, how prices and currency are determined, how regions differ, and the **scope of use for Agents**.
 
-## 1. Agent Scope-of-Use Statement
+## Agent Scope-of-Use Statement
 
 > **Please understand the following terms before using the platform:**
 
@@ -13,7 +13,7 @@ title: "Regional Services"
 2. **Agents in the Agent Marketplace are for learning and exchange only**: the listing, display, use, and Fork of Marketplace Agents **do not constitute any commercial activity**, nor **any recommendation by the platform or the creator** (including but not limited to any investment advice or product recommendation).
 3. All AI-generated content on the platform is labeled per the requirements of the applicable region; for the unified constraints on financial content, see [03 Compliance Requirements](../compliance/index).
 
-## 2. Service Regions Overview
+## Service Regions Overview
 
 | Region | Service Entity | Client | Status |
 |------|---------|--------|------|
@@ -23,7 +23,7 @@ title: "Regional Services"
 - The unified Web entry point is longbridge.com/ai; the system automatically routes you to the corresponding service entity based on your **registration region**—manual switching is not supported
 - The product UI and user agreements indicate your service provider (e.g. HK users see "Provided by Longbridge AI Technologies Limited"); the Usage page also shows which entity collected each charge (charged by)
 
-## 3. Pricing, Currency, and Payment
+## Pricing, Currency, and Payment
 
 | Channel | Platform | Subscription Type |
 |------|-----|---------|
@@ -36,7 +36,7 @@ title: "Regional Services"
 - **Currency is locked at first purchase**; to change it, unsubscribe and purchase again
 - A Workspace can have only one active subscription channel at a time
 
-## 4. Regional Differences and Isolation
+## Regional Differences and Isolation
 
 1. **Data localization**: data is stored in compliant data centers permitted for your region
 2. **Entities cannot be switched**: your service entity is determined by your registration region and cannot be switched across regions (e.g. an HK user cannot switch to the SG entity)
@@ -44,7 +44,7 @@ title: "Regional Services"
 4. **Region-specific client distribution**: the LBHK / LBSG Apps are distributed through their respective regional app stores
 5. **A globally unified compliance baseline**: all regions follow core constraints such as "no investment advice"—just follow the platform's unified compliance requirements when building Agents, with no need to differentiate by region
 
-## 5. FAQ Quick Reference
+## FAQ Quick Reference
 
 | Your Question | Answer |
 |---------|------|

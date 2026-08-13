@@ -5,7 +5,7 @@ title: "Chatflow 与 Agentic Chat 设置项"
 
 > 除了画布/提示词本体，每个 Agent 应用还有一组**应用级设置项**,决定它的对外形象、对话行为与安全边界。本篇分别说明 Chatflow、Agentic Chat、Workflow 三种模式的设置项。具体入口与选项以产品当前版本为准。
 
-## 一、两种模式的设置项概览
+## 两种模式的设置项概览
 
 | 设置类别 | Chatflow | Agentic Chat |
 |---------|----------|--------------|
@@ -20,7 +20,7 @@ title: "Chatflow 与 Agentic Chat 设置项"
 
 > 核心区别：**Chatflow 的能力配置分散在节点里**(哪个节点用什么模型、挂什么工具，各自独立);**Agentic Chat 的能力配置集中在应用设置里**(一份提示词 + 一组工具，模型自主调度)。
 
-## 二、Chatflow 设置项
+## Chatflow 设置项
 
 入口：画布右上角设置图标，打开「设置」侧栏：
 
@@ -43,7 +43,7 @@ title: "Chatflow 与 Agentic Chat 设置项"
 | Guardrail | 输入/输出双向合规拦截开关，面向客户的 Agent **必须开启**(见 [Guardrail](capabilities/guardrail)) |
 | 发布 | 发布为可用版本;发布到广场需通过安全扫描 (Pro 及以上套餐) |
 
-## 三、Agentic Chat 设置项
+## Agentic Chat 设置项
 
 ![AgenticChat 设置项：人机交互、待办事项、派生 Subagent 与 Agent 权限、简繁转换、允许 Fork](./images/1.10-2-AgenticChat%E8%AE%BE%E7%BD%AE.png)
 
@@ -64,7 +64,7 @@ title: "Chatflow 与 Agentic Chat 设置项"
 | Guardrail | 同 Chatflow;Agentic Chat 自主性更强，更要配合护栏 |
 | 开场白与推荐问题 | 同 Chatflow |
 
-## 四、Workflow 设置项
+## Workflow 设置项
 
 Workflow 没有对话端，设置项最精简：
 
@@ -77,7 +77,7 @@ Workflow 没有对话端，设置项最精简：
 | 中文简/繁体转换 | 同 Chatflow |
 | 环境变量 | 同 Chatflow;无会话变量 (Workflow 单次执行，无会话概念) |
 
-## 五、设置项与套餐的关系
+## 设置项与套餐的关系
 
 部分设置项的可选范围由当前 Workspace 的套餐决定，配置时选不到的选项通常是套餐不含：
 

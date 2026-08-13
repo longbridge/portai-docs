@@ -5,7 +5,7 @@ title: "Agent Permission Management"
 
 > From creation to publishing, an Agent involves four permission questions: **who can edit it, who can see it, who can use it, and who can copy it**. This article covers all four in one place.
 
-## 1. The Permission Landscape
+## The Permission Landscape
 
 ```
 Who can edit    → Workspace member roles (Owner / Editor / Viewer) + workflow locking
@@ -14,9 +14,9 @@ Who can copy    → The "Allow Fork" switch
 At runtime      → Capabilities are inherited from the Agent's Workspace; sensitive data has separate content-layer authentication
 ```
 
-## 2. Who Can Edit: Edit Permissions
+## Who Can Edit: Edit Permissions
 
-### 2.1 Workspace Member Roles
+### Workspace Member Roles
 
 An Agent's edit permissions follow the member roles of its Workspace (see [1.5 Workspace & Plans](plans)):
 
@@ -28,11 +28,11 @@ An Agent's edit permissions follow the member roles of its Workspace (see [1.5 W
 
 The Workspace owner can switch members between **Editor / Viewer** on the member management page (see [1.2 Main Pages Overview](pages-overview)).
 
-### 2.2 Workflow Locking
+### Workflow Locking
 
 When collaborating, **lock** the workflow of an Agent that has been debugged and is stable, so other members can't accidentally modify the canvas. Changes follow the "unlock → edit → test → lock again" process (see [Canvas & Collaboration](capabilities/canvas-collaboration)).
 
-## 3. Who Can See and Use: Three Usage-Permission Tiers
+## Who Can See and Use: Three Usage-Permission Tiers
 
 Each Agent's usage permission can be set to one of three tiers, from lowest to highest:
 
@@ -66,7 +66,7 @@ When an Agent uses a **restricted model** (a model limited by vendor terms and a
 
 The platform also warns when you select a restricted model: "With a restricted model, this Agent cannot be publicly viewed or published to the Marketplace" (the exact wording is whatever the product shows).
 
-## 4. Who Can Copy: Fork Permission
+## Who Can Copy: Fork Permission
 
 - Other users can Fork your Agent only if the publisher turns on the **"Allow Fork" switch**
 - What a Fork **copies**: the Agent configuration + associated Skills; it does **not copy** knowledge bases or Secrets (the forker must create their own knowledge base and configure their own credentials)
@@ -74,20 +74,20 @@ The platform also warns when you select a restricted model: "With a restricted m
 
 > Decision guide: want others to "use your Agent"? Just open up the usage permission. Want others to "build on top of yours"? Then also enable Allow Fork. If you don't want to expose your prompts and orchestration design, keep Fork off.
 
-## 5. Runtime Permissions: The User's Perspective
+## Runtime Permissions: The User's Perspective
 
 - **Capability inheritance**: the capabilities available to a user are determined by the **plan of the Agent's Workspace**, regardless of the user's own plan (the user's plan only affects usage quota)—see [1.5 §5.5 Configuration Time vs. Runtime](plans)
 - **Content-layer authentication is independent of Agent permissions**: for tools that touch user asset data (accounts, positions, P&L), no matter how the Agent's permissions are configured, a trading password verification is triggered at runtime for **the current user themselves**—data is only given to the identity-verified person (see [Security Verification & Localization](capabilities/security-i18n))
 - **Usage attribution**: whether the user is a member of the Agent's Workspace determines who is charged (developer pays / user pays)—see [1.5 §5.4](plans)
 
-## 6. Red Lines on Scope of Use
+## Red Lines on Scope of Use
 
 Regardless of how permissions are configured, the following always applies (see [1.6 Regional Services](regions)):
 
 1. Agents you create are **for your personal use only**; you may not provide commercial services to others in any form
 2. Marketplace Agents are **for learning and exchange only**; their listing, display, use, and Fork do not constitute any commercial activity or recommendation
 
-## 7. FAQ
+## FAQ
 
 | Question | Answer |
 |------|------|

@@ -6,7 +6,7 @@ title: "Compliance Requirements"
 > **One page to read, three steps to finish**: (1) Copy the reference Prompt below into your System Prompt → (2) Turn on the Guardrail switches → (3) Run through the pre-launch checklist.
 > There is only one core rule: **your Agent must not provide investment advice**. The platform is an execution-only broker; the moment AI output constitutes a "recommendation", it triggers an entirely different set of regulatory obligations (Reg BI, suitability obligations, etc.).
 
-## 1. Reference Prompt (Copy Directly)
+## Reference Prompt (Copy Directly)
 
 Paste the following block in full **at the end of the System Prompt** of your LLM / Agent node to satisfy the prompt-level compliance requirements:
 
@@ -54,7 +54,7 @@ Paste the following block in full **at the end of the System Prompt** of your LL
 
 > After pasting the Prompt, remember to also **turn on the Guardrail switches** (Chatflow input node: PII masking, block harmful content, block harmful financial content; LLM/Agent output node: output compliance check) — the Prompt ensures "the model doesn't say it", and Guardrail ensures "it gets blocked even if said" — double protection. See the [Guardrail capability guide](../basics/capabilities/guardrail) for details.
 
-## 2. Red-Line Quick Reference
+## Red-Line Quick Reference
 
 Four common scenarios — what you can and cannot do, in one table:
 
@@ -67,7 +67,7 @@ Four common scenarios — what you can and cannot do, in one table:
 
 **Applies to all scenarios**: attach a disclaimer to outputs; data sources must be traceable; use neutral, probabilistic language; never adopt an "advisor tone".
 
-## 3. Pre-Launch Checklist (10 Items)
+## Pre-Launch Checklist (10 Items)
 
 Before publishing a customer-facing Agent, check off each item:
 
