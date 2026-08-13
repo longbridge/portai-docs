@@ -35,7 +35,7 @@ Configure automatic triggering for a Workflow so it no longer needs manual runs 
 2. Scheduled and Webhook triggers **can be enabled at the same time** without interfering with each other
 3. Webhook runs are **asynchronous**: the external request immediately receives the configured response while the Workflow runs in the background — external systems should not rely on the response body for run results
 4. **The trial-run URL differs from the production URL after publishing**; always use the production URL when integrating with external systems
-5. Automatically triggered runs also consume the Workspace usage quota; before launching a scheduled task, estimate frequency × cost per run to avoid silently draining your quota (see [1.5](../plans))
+5. Automatically triggered runs also consume the Workspace usage quota; before launching a scheduled task, estimate frequency × cost per run to avoid silently draining your quota (see [Workspace & Plans](../plans))
 
 ## Related Reading
 

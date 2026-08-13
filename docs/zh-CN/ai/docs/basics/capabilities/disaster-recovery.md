@@ -52,6 +52,6 @@ title: "容灾能力"
 
 ## 关联阅读
 
-- [1.7.10 模型与工具生态](model-tool-ecosystem) — 模型池与节点级模型配置
-- [1.7.7 运行调试与观测](observability) — 通过 Logs 定位失败原因
-- [2.3 流程编排模式与调试技巧](../../tutorials/orchestration-debug) — 兜底分支设计
+- [模型与工具生态](model-tool-ecosystem) — 模型池与节点级模型配置
+- [运行调试与观测](observability) — 通过 Logs 定位失败原因
+- [流程编排模式与调试技巧](../../tutorials/orchestration-debug) — 兜底分支设计

@@ -28,7 +28,7 @@ title: "提示詞編寫技巧"
 
 ## 金融場景必寫的合規約束
 
-面向客戶的 Agent,System Prompt 中必須包含以下護欄 (依據見 [03-合規要求](../compliance/index)):
+面向客戶的 Agent,System Prompt 中必須包含以下護欄 (依據見 [合規要求](../compliance/index)):
 
 ```
 合規紅線(任何情況下不得違反):

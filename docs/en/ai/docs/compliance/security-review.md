@@ -21,7 +21,7 @@ An Agent's **outward-facing presentation and behavior definitions** are all with
 
 ## Scenarios That Will Fail the Review
 
-The following scenarios fail the review upon identification (each corresponds to one of the six principles in [3.1 Compliance Requirements](index)):
+The following scenarios fail the review upon identification (each corresponds to one of the six principles in [Compliance Requirements](index)):
 
 | # | Scenario | Typical Examples |
 |---|------|---------|
@@ -40,11 +40,11 @@ The following scenarios fail the review upon identification (each corresponds to
 ## What to Do If the Review Fails
 
 1. **Fix according to the feedback**: Locate the issue against the table above, modify the name/avatar/description/prompt, and resubmit
-2. **Implement the same need compliantly**: Many rejections are actually wording issues — for example, if you want an indicator-analysis Agent, change "golden cross buy alert" to "neutral interpretation of the golden cross pattern" (descriptive language, see the [3.1 Reference Prompt](index)) and it can launch compliantly
+2. **Implement the same need compliantly**: Many rejections are actually wording issues — for example, if you want an indicator-analysis Agent, change "golden cross buy alert" to "neutral interpretation of the golden cross pattern" (descriptive language, see the [Reference Prompt](index)) and it can launch compliantly
 3. **If your listed Agent was delisted**: You may resubmit for review after remediation
 
 ## Related Reading
 
-- [3.1 Compliance Requirements](index) — Reference Prompt, red-line quick reference, and pre-launch checklist
+- [Compliance Requirements](index) — Reference Prompt, red-line quick reference, and pre-launch checklist
 - [Guardrail](../basics/capabilities/guardrail) — The review governs "before launch"; Guardrail governs "at runtime"
-- [1.6 · Agent Scope-of-Use Statement](../basics/regions) — Marketplace Agents are for learning and exchange only
+- [Agent Scope-of-Use Statement](../basics/regions) — Marketplace Agents are for learning and exchange only

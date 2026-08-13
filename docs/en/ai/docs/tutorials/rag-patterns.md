@@ -24,7 +24,7 @@ Start ─▶ Agent (generate a set of query keywords, output an array)
 1. **Keyword generation node**: the prompt should require a **structured array** as output (e.g. a JSON array), with each keyword covering a different angle — synonym rewrites, broader/narrower concepts, technical terms, Chinese/English counterparts; keep the count to 3-5 sets, as too many dilute per-query retrieval quality and drive up cost
 2. **Enable Iteration's parallel mode**: batch queries fire simultaneously, far faster than serial one-by-one; configure error handling so a single failed query doesn't drag down the whole run
 3. **The summarization node answers only from retrieval results**: state explicitly in the prompt that "the data must come from the retrieval results; do not fabricate", and perform deduplication and merging
-4. **Cost pairing**: keyword generation is a simple task — a small model suffices; use a large model only for the final summarization and answering (see the tiered model strategy in [2.5 Technique 2](mode-model-selection))
+4. **Cost pairing**: keyword generation is a simple task — a small model suffices; use a large model only for the final summarization and answering (see the tiered model strategy in [Technique 2](mode-model-selection))
 
 > The essence of this pattern: **trade one cheap "query expansion" for multi-path recall** — far more cost-effective than forcing a single retrieval to carry the accuracy burden.
 
@@ -32,5 +32,5 @@ Start ─▶ Agent (generate a set of query keywords, output an array)
 
 - [Iteration Node Documentation](../basics/nodes/iteration) — parallel mode and error handling
 - [Tool Node Documentation](../basics/nodes/tools) — retrieval and data fetching
-- [1.7.1 Knowledge Base](../basics/capabilities/knowledge-base) — the data source for retrieval
-- [2.3 Flow Orchestration Patterns and Debugging Techniques](orchestration-debug) — Pattern 3 "Tool Augmentation", Pattern 6 "Batch Processing"
+- [Knowledge Base](../basics/capabilities/knowledge-base) — the data source for retrieval
+- [Flow Orchestration Patterns and Debugging Techniques](orchestration-debug) — Pattern 3 "Tool Augmentation", Pattern 6 "Batch Processing"

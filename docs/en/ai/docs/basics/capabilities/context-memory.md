@@ -34,9 +34,9 @@ A set of mechanisms that keep information flowing correctly between nodes and be
 
 ## Recommendations
 
-1. **Set the memory window to the smallest sufficient value**: an oversized window wastes tokens and lets history derail the model; see [2.1 Prompt Writing Tips](../../tutorials/prompt-writing)
-2. Context compression itself consumes usage (borne by the same party as the conversation run); factor it into cost estimates for long-conversation scenarios, see [1.5](../plans)
-3. If an LLM node has context configured but the corresponding variable is not inserted in the prompt, you get the error "Please fill in the context variable in the prompt"; see [2.2 Variables & Data Flow](../../tutorials/variables-dataflow)
+1. **Set the memory window to the smallest sufficient value**: an oversized window wastes tokens and lets history derail the model; see [Prompt Writing Tips](../../tutorials/prompt-writing)
+2. Context compression itself consumes usage (borne by the same party as the conversation run); factor it into cost estimates for long-conversation scenarios, see [Workspace & Plans](../plans)
+3. If an LLM node has context configured but the corresponding variable is not inserted in the prompt, you get the error "Please fill in the context variable in the prompt"; see [Variables & Data Flow](../../tutorials/variables-dataflow)
 
 ## Related Reading
 

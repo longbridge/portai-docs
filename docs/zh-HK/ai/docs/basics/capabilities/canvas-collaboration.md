@@ -25,8 +25,8 @@ title: "畫布與協作效率"
 
 1. 團隊協作的 Workspace，主幹流程調穩後**及時上鎖**,修改走"解鎖 → 改 → 測 → 再上鎖"的流程
 2. 團隊內沉澱一個"公共元件 Agent",存放調優過的常用節點 (合規話術 LLM、標準分類器等),需要時跨 Agent 複製
-3. 給節點寫註釋的習慣 (見 [2.3 編排原則](../../tutorials/orchestration-debug)) 在可複製、多人協作的畫布上更加重要
+3. 給節點寫註釋的習慣 (見 [編排原則](../../tutorials/orchestration-debug)) 在可複製、多人協作的畫布上更加重要
 
 ## 關聯閱讀
 
-- [1.5 Workspace 與套餐體系](../plans) — Workspace 成員與 Owner 的操作邊界
+- [Workspace 與套餐體系](../plans) — Workspace 成員與 Owner 的操作邊界

@@ -29,7 +29,7 @@ title: "Chatflow 与 Agentic Chat 设置项"
 | 设置项 | 说明 |
 |--------|------|
 | 基本信息 | 应用名称、图标、描述 —— 用户在对话端和广场看到的形象 |
-| Agent 权限 | **编辑权限**(如：空间用户) 与**使用权限**(如：仅工作空间用户可用),支持复制链接分享 (详见 [1.11 Agent 权限管理](permissions)) |
+| Agent 权限 | **编辑权限**(如：空间用户) 与**使用权限**(如：仅工作空间用户可用),支持复制链接分享 (详见 [Agent 权限管理](permissions)) |
 | Agent 预设问题 | 展示给用户的引导问题，支持 **EN / 简 / 繁 三种语言分别配置**,降低首轮提问门槛 |
 | 开场白 | 对话开始时的欢迎语，建议说明 Agent 的能力边界 |
 | 输入变量 | 由 Start 节点定义的自定义字段 (见 [Start 节点](nodes/start)) |
@@ -50,7 +50,7 @@ title: "Chatflow 与 Agentic Chat 设置项"
 | 设置项 | 说明 |
 |--------|------|
 | 基本信息 | 应用名称、图标、描述 |
-| System Prompt | 应用级提示词：角色设定、行为准则、输出格式、合规红线 (写法见 [2.1 提示词技巧](../tutorials/prompt-writing)) |
+| System Prompt | 应用级提示词：角色设定、行为准则、输出格式、合规红线 (写法见 [提示词技巧](../tutorials/prompt-writing)) |
 | 模型选择 | 应用级统一模型;主流 / SOTA 分级，SOTA 单位消耗更高 |
 | 工具 | 挂载内置工具、第三方 MCP(需 Premium)、OpenAPI 工具，由模型自主决定调用 |
 | Skill | 挂载自定义 / 官方 Skill，按需加载能力包 |
@@ -58,7 +58,7 @@ title: "Chatflow 与 Agentic Chat 设置项"
 | 人机交互 | 允许模型在执行过程中向用户提问并等待回答 |
 | 开启待办事项 | 开启后 AI 自动识别对话中的任务并拆解执行 (见 [规划与执行](capabilities/planning-execution)) |
 | 派生 Subagent (Beta) | 允许 Agent 通过 `spawn_subagent` 派生独立 Subagent 处理子任务，适合可分解/可并行的工作;Subagent 运行在隔离上下文，完成后返回摘要 |
-| Agent 权限 | 使用权限 (如：任何获得链接的用户可用)+ 复制链接;可**发布到 Agent 广场**(详见 [1.11 Agent 权限管理](permissions)) |
+| Agent 权限 | 使用权限 (如：任何获得链接的用户可用)+ 复制链接;可**发布到 Agent 广场**(详见 [Agent 权限管理](permissions)) |
 | 中文简/繁体转换 | 开启后按用户语言偏好自动转换简繁体输出 |
 | 允许 Fork | 开启后其他用户可复制该 Agent 的配置自行修改使用 |
 | Guardrail | 同 Chatflow;Agentic Chat 自主性更强，更要配合护栏 |
@@ -84,10 +84,10 @@ Workflow 没有对话端，设置项最精简：
 - **第三方 MCP 工具**:需 Premium 及以上
 - **官方内置 Skill**:需 Pro 及以上;自定义 Skill 数量随套餐 (3 / 20 / 100)
 - **部分模型**:受套餐或地区限制的模型不在选择器中展示
-- 完整规则见 [1.5 · 配置时 vs 运行时](plans)
+- 完整规则见 [配置时 vs 运行时](plans)
 
 ## 关联阅读
 
-- [2.5 技巧一:Agentic Chat 与 Chatflow 怎么选](../tutorials/mode-model-selection)
-- [1.7 运行调试与观测](capabilities/observability) — 配好设置后怎么测试运行
-- [1.7.4 Guardrail 安全护栏](capabilities/guardrail) — 面向客户必开
+- [技巧一:Agentic Chat 与 Chatflow 怎么选](../tutorials/mode-model-selection)
+- [运行调试与观测](capabilities/observability) — 配好设置后怎么测试运行
+- [Guardrail 安全护栏](capabilities/guardrail) — 面向客户必开

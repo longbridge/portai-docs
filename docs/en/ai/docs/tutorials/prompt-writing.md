@@ -28,7 +28,7 @@ title: "Prompt Writing Techniques"
 
 ## Compliance Constraints Required for Financial Scenarios
 
-For customer-facing Agents, the System Prompt must include the following guardrails (see [03 Compliance Requirements](../compliance/index) for the rationale):
+For customer-facing Agents, the System Prompt must include the following guardrails (see [Compliance Requirements](../compliance/index) for the rationale):
 
 ```
 Compliance red lines (must never be violated under any circumstances):

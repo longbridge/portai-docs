@@ -3,7 +3,7 @@ sidebar_position: 5
 title: "模式與模型選型技巧"
 ---
 
-> 來自實戰的選型技巧：什麼時候用 Agentic Chat、什麼時候換大模型、什麼時候把計算從模型手裡拿走。選型選對了事半功倍;選錯了，再怎麼調提示詞都救不回來。本篇持續補充。(RAG 檢索範式已獨立成篇，見 [2.4](rag-patterns);搜 Skill 擴充套件能力已獨立成篇，見 [2.6](skill-extension))
+> 來自實戰的選型技巧：什麼時候用 Agentic Chat、什麼時候換大模型、什麼時候把計算從模型手裡拿走。選型選對了事半功倍;選錯了，再怎麼調提示詞都救不回來。本篇持續補充。(RAG 檢索範式已獨立成篇，見 [RAG 檢索範式技巧](rag-patterns);搜 Skill 擴充套件能力已獨立成篇，見 [用 Skill 快速擴充套件 Agent 能力](skill-extension))
 
 ## 技巧一：傻瓜化搭建 Agent，首選 Agentic Chat 模式
 
@@ -51,8 +51,8 @@ K 線資料從 Tool 節點直接流向 Code 節點，不經過模型上下文;LL
 
 ## 關聯閱讀
 
-- [1.7 規劃與執行能力](../basics/capabilities/planning-execution) — Agentic Chat 的能力定位
+- [規劃與執行能力](../basics/capabilities/planning-execution) — Agentic Chat 的能力定位
 - [Code 節點幫助文件](../basics/nodes/code) — Python/JavaScript 程式碼執行
 - [Tool 節點幫助文件](../basics/nodes/tools) — 工具取數
-- [2.3 流程編排模式與除錯技巧](orchestration-debug) — 模式 3「工具增強」、模式 4「自主 Agent」
-- [2.6 從網上"搜 Skill"](skill-extension) — 快速給 Agent 添置專業能力 (原技巧四)
+- [流程編排模式與除錯技巧](orchestration-debug) — 模式 3「工具增強」、模式 4「自主 Agent」
+- [從網上"搜 Skill"](skill-extension) — 快速給 Agent 添置專業能力 (原技巧四)

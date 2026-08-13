@@ -18,7 +18,7 @@ At runtime      → Capabilities are inherited from the Agent's Workspace; sensi
 
 ### Workspace Member Roles
 
-An Agent's edit permissions follow the member roles of its Workspace (see [1.5 Workspace & Plans](plans)):
+An Agent's edit permissions follow the member roles of its Workspace (see [Workspace & Plans](plans)):
 
 | Member Role | Permissions on Agents |
 |---------|----------------|
@@ -26,7 +26,7 @@ An Agent's edit permissions follow the member roles of its Workspace (see [1.5 W
 | **Editor** (count limited by plan) | Create, edit, and publish Agents in the Workspace |
 | **Viewer** (count limited by plan) | View and use only; cannot edit |
 
-The Workspace owner can switch members between **Editor / Viewer** on the member management page (see [1.2 Main Pages Overview](pages-overview)).
+The Workspace owner can switch members between **Editor / Viewer** on the member management page (see [Main Pages Overview](pages-overview)).
 
 ### Workflow Locking
 
@@ -53,7 +53,7 @@ Set usage permission to "Anyone with the link"
 ```
 
 - When usage permission is "Workspace users only", the Marketplace publishing entry is **not shown**
-- For content review and security requirements for Marketplace publishing, see [3.1 Compliance Requirements](../compliance/index)
+- For content review and security requirements for Marketplace publishing, see [Compliance Requirements](../compliance/index)
 
 ### Restricted Models and Publishing Interlock
 
@@ -76,13 +76,13 @@ The platform also warns when you select a restricted model: "With a restricted m
 
 ## Runtime Permissions: The User's Perspective
 
-- **Capability inheritance**: the capabilities available to a user are determined by the **plan of the Agent's Workspace**, regardless of the user's own plan (the user's plan only affects usage quota)—see [1.5 §5.5 Configuration Time vs. Runtime](plans)
+- **Capability inheritance**: the capabilities available to a user are determined by the **plan of the Agent's Workspace**, regardless of the user's own plan (the user's plan only affects usage quota)—see [Configuration Time vs. Runtime](plans)
 - **Content-layer authentication is independent of Agent permissions**: for tools that touch user asset data (accounts, positions, P&L), no matter how the Agent's permissions are configured, a trading password verification is triggered at runtime for **the current user themselves**—data is only given to the identity-verified person (see [Security Verification & Localization](capabilities/security-i18n))
-- **Usage attribution**: whether the user is a member of the Agent's Workspace determines who is charged (developer pays / user pays)—see [1.5 §5.4](plans)
+- **Usage attribution**: whether the user is a member of the Agent's Workspace determines who is charged (developer pays / user pays)—see [Who Pays for Usage](plans)
 
 ## Red Lines on Scope of Use
 
-Regardless of how permissions are configured, the following always applies (see [1.6 Regional Services](regions)):
+Regardless of how permissions are configured, the following always applies (see [Regional Services](regions)):
 
 1. Agents you create are **for your personal use only**; you may not provide commercial services to others in any form
 2. Marketplace Agents are **for learning and exchange only**; their listing, display, use, and Fork do not constitute any commercial activity or recommendation

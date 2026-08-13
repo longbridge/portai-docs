@@ -31,7 +31,7 @@ Node orchestration is only the skeleton of the platform. Around building, runnin
 
 ## Recommendations
 
-- **Before building your first Agent**: no need to read everything — start with [1.3 Quick Start](../quick-start)
+- **Before building your first Agent**: no need to read everything — start with [Quick Start](../quick-start)
 - **Agent needs private knowledge** → 01 Knowledge Base; **needs professional capability packages** → 02 Skill
 - **Workflow should run automatically** → 03 Triggers; **Agent is customer-facing** → 04 Guardrail (must-read)
 - **Multi-turn conversations forget earlier context / context grows too large** → 05 Context & Memory

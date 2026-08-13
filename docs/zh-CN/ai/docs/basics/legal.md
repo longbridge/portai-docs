@@ -12,10 +12,10 @@ title: "法务协议"
 ## 阅读提示
 
 - 协议在**注册及首次使用**时需阅读并同意;协议更新时，产品内会提示重新确认
-- HK 用户的服务提供方为 Longbridge AI Technologies Limited,SG 用户为 Longbridge AI Technologies Pte. Ltd(见 [1.6 分地区服务说明](regions))
-- Agent 的使用范围约定 (仅限本人使用、广场 Agent 仅供学习交流) 见 [1.6 · Agent 使用范围声明](regions)
+- HK 用户的服务提供方为 Longbridge AI Technologies Limited,SG 用户为 Longbridge AI Technologies Pte. Ltd(见 [分地区服务说明](regions))
+- Agent 的使用范围约定 (仅限本人使用、广场 Agent 仅供学习交流) 见 [Agent 使用范围声明](regions)
 
 ## 关联阅读
 
-- [1.6 分地区服务说明](regions) — 服务主体、地区隔离与使用范围声明
-- [03-合规要求](../compliance/index) — 搭建 Agent 的合规义务
+- [分地区服务说明](regions) — 服务主体、地区隔离与使用范围声明
+- [合规要求](../compliance/index) — 搭建 Agent 的合规义务

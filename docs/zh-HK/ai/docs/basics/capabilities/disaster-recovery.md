@@ -52,6 +52,6 @@ title: "容災能力"
 
 ## 關聯閱讀
 
-- [1.7.10 模型與工具生態](model-tool-ecosystem) — 模型池與節點級模型配置
-- [1.7.7 執行除錯與觀測](observability) — 通過 Logs 定位失敗原因
-- [2.3 流程編排模式與除錯技巧](../../tutorials/orchestration-debug) — 兜底分支設計
+- [模型與工具生態](model-tool-ecosystem) — 模型池與節點級模型配置
+- [執行除錯與觀測](observability) — 通過 Logs 定位失敗原因
+- [流程編排模式與除錯技巧](../../tutorials/orchestration-debug) — 兜底分支設計

@@ -12,10 +12,10 @@ Click your **profile avatar** in the bottom left to open the menu, then select *
 ## Reading Notes
 
 - Agreements must be read and accepted **at registration and first use**; when agreements are updated, the product will prompt you to re-confirm
-- The service provider for HK users is Longbridge AI Technologies Limited, and for SG users it is Longbridge AI Technologies Pte. Ltd (see [1.6 Regional Services](regions))
-- For the Agent scope-of-use terms (personal use only; Marketplace Agents for learning and exchange only), see [1.6 · Agent Scope-of-Use Statement](regions)
+- The service provider for HK users is Longbridge AI Technologies Limited, and for SG users it is Longbridge AI Technologies Pte. Ltd (see [Regional Services](regions))
+- For the Agent scope-of-use terms (personal use only; Marketplace Agents for learning and exchange only), see [Agent Scope-of-Use Statement](regions)
 
 ## Related Reading
 
-- [1.6 Regional Services](regions) — service entities, regional isolation, and the scope-of-use statement
-- [03 Compliance Requirements](../compliance/index) — your compliance obligations when building Agents
+- [Regional Services](regions) — service entities, regional isolation, and the scope-of-use statement
+- [Compliance Requirements](../compliance/index) — your compliance obligations when building Agents

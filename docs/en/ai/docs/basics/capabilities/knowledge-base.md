@@ -70,7 +70,7 @@ The right side shows the matched **recalled chunks**: each chunk displays its in
 
 Two mounting points; in both, the Agent **automatically retrieves** from the selected knowledge bases when needed:
 
-**① Agentic Chat**: in the "Knowledge Base" section of the Agent configuration page, click "+ Add Knowledge Base" to mount one (adjacent to the Skills section; see the configuration page screenshot in [1.7.2 Skill System](skill)).
+**① Agentic Chat**: in the "Knowledge Base" section of the Agent configuration page, click "+ Add Knowledge Base" to mount one (adjacent to the Skills section; see the configuration page screenshot in [Skill System](skill)).
 
 **② Agent node in Chatflow / Workflow**: turn on the "Knowledge Base" switch in the node editing panel and click `+` to select the knowledge bases to mount:
 
@@ -100,11 +100,11 @@ The prompt should explicitly state "answer only based on retrieved content, and 
 
 ## Notes
 
-1. **Storage scales with plan**: Starter 50MB / Pro 5GB / Premium 20GB; once over the limit, new uploads are blocked, and over-limit files are marked disabled starting from the oldest by upload time (excluded from retrieval); delete files or upgrade to restore — see [1.5 Workspace & Plans](../plans)
+1. **Storage scales with plan**: Starter 50MB / Pro 5GB / Premium 20GB; once over the limit, new uploads are blocked, and over-limit files are marked disabled starting from the oldest by upload time (excluded from retrieval); delete files or upgrade to restore — see [Workspace & Plans](../plans)
 2. **Embedding billing**: document vectorization consumes usage quota by token
 3. **Compliance**: content in customer-facing knowledge bases must come from compliant sources and must not contain PII or undisclosed material information; see [Data Usage & Privacy Restrictions](../../compliance/index)
 4. Before going live, run recall tests on typical questions to confirm retrieval quality before publishing
 
 ## Related Reading
 
-- [2.2 Variables & Data Flow Design](../../tutorials/variables-dataflow) — how retrieval results flow through the pipeline
+- [Variables & Data Flow Design](../../tutorials/variables-dataflow) — how retrieval results flow through the pipeline

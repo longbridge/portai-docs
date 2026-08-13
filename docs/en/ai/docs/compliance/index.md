@@ -95,4 +95,4 @@ The requirements above derive from six compliance principles, summarized as foll
 | 5. Supervision and explainability | Log retention, explainable and traceable results, model changes require approval (logging and audit capabilities are built into the platform layer) |
 | 6. Customer interaction guardrails | Aggregate-level statements, neutral probabilistic language, prominent disclaimers |
 
-> Note: An Agent's **name, avatar, description, and Prompt** also go through the platform's **security review** before publishing / listing on the marketplace. Common rejection scenarios (money laundering, market manipulation, promising returns, etc.) are covered in [3.2 Security Review](security-review).
+> Note: An Agent's **name, avatar, description, and Prompt** also go through the platform's **security review** before publishing / listing on the marketplace. Common rejection scenarios (money laundering, market manipulation, promising returns, etc.) are covered in [Security Review](security-review).

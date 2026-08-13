@@ -52,6 +52,6 @@ What happens to the flow after a failed call is determined by the exception hand
 
 ## Related Reading
 
-- [1.7.10 Model & Tool Ecosystem](model-tool-ecosystem) — model pool and node-level model configuration
-- [1.7.7 Running, Debugging & Observability](observability) — locating failure causes via Logs
-- [2.3 Orchestration Patterns & Debugging Tips](../../tutorials/orchestration-debug) — fallback branch design
+- [Model & Tool Ecosystem](model-tool-ecosystem) — model pool and node-level model configuration
+- [Running, Debugging & Observability](observability) — locating failure causes via Logs
+- [Orchestration Patterns & Debugging Tips](../../tutorials/orchestration-debug) — fallback branch design

@@ -14,7 +14,7 @@ An Agent can be run in three ways, serving the three stages of "tune one node, t
 | **Scope** | A single node | The entire flow | The published Agent |
 | **Requires publishing** | No | No | Yes |
 | **Entry** | Run button on the node | Full trial run inside the editor | Chat client / Marketplace |
-| **Usage borne by** | The developer | The developer | Per attribution rules (see [1.5 · Charged By](../plans)) |
+| **Usage borne by** | The developer | The developer | Per attribution rules (see [Charged By](../plans)) |
 | **Typical use** | Configure a node and try it once | Full-flow regression before launch | Real usage |
 
 ### 1. Node Test Run
@@ -26,7 +26,7 @@ An Agent can be run in three ways, serving the three stages of "tune one node, t
 ### 2. Agent Test Run (Full Trial Run)
 
 - Run the entire flow inside the editor without publishing the app, verifying node chaining, branch routing, and fallback logic
-- Before launch, prepare **normal / boundary / out-of-bounds** test cases per [2.3 Debugging Tips](../../tutorials/orchestration-debug) for a full regression
+- Before launch, prepare **normal / boundary / out-of-bounds** test cases per [Debugging Tips](../../tutorials/orchestration-debug) for a full regression
 - After any prompt or flow change, do a full trial run first, then republish
 
 ### 3. Agent Production Run
@@ -47,12 +47,12 @@ An Agent can be run in three ways, serving the three stages of "tune one node, t
 ## Trial Run Enhancements
 
 - **Automatic input parameter parsing**: input parameter formats are parsed automatically during trial runs, eliminating manual construction of test data structures and significantly speeding up debugging
-- **Single-node debugging supports array and object**: complex-typed data can also be debugged at the single-node level, pairing well with the "configure a node, try it once" workflow in [2.3 Debugging Tips](../../tutorials/orchestration-debug)
+- **Single-node debugging supports array and object**: complex-typed data can also be debugged at the single-node level, pairing well with the "configure a node, try it once" workflow in [Debugging Tips](../../tutorials/orchestration-debug)
 
 ## Logs
 
 - View each Agent run's **inputs/outputs, execution path, and failure causes** — the first place to look when diagnosing production issues
-- Routine practice after launch: periodically review real conversations in Logs and add bad cases as ❌ examples in your prompt (see Section 6 of [2.1](../../tutorials/prompt-writing))
+- Routine practice after launch: periodically review real conversations in Logs and add bad cases as ❌ examples in your prompt (see Section 6 of [Prompt Writing Techniques](../../tutorials/prompt-writing))
 - For customer-facing Agents, log retention is also a compliance requirement (see [Compliance Requirements](../../compliance/index))
 
 ## Statistics
@@ -107,6 +107,6 @@ When importing a DSL file into the canvas, the platform automatically **validate
 
 ## Related Reading
 
-- [2.3 Orchestration Patterns & Debugging Tips](../../tutorials/orchestration-debug) — standard debugging process and test case design
-- [1.5 Workspace & Plans](../plans) — who bears the usage of trial runs and batch runs
-- [1.10 Chatflow & Agentic Chat Settings](../chatflow-agenticchat-settings) — app-level configuration before publishing
+- [Orchestration Patterns & Debugging Tips](../../tutorials/orchestration-debug) — standard debugging process and test case design
+- [Workspace & Plans](../plans) — who bears the usage of trial runs and batch runs
+- [Chatflow & Agentic Chat Settings](../chatflow-agenticchat-settings) — app-level configuration before publishing

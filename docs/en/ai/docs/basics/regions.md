@@ -11,7 +11,7 @@ title: "Regional Services"
 
 1. **Agents you create are for your personal use only**; you may not provide commercial services to others in any form.
 2. **Agents in the Agent Marketplace are for learning and exchange only**: the listing, display, use, and Fork of Marketplace Agents **do not constitute any commercial activity**, nor **any recommendation by the platform or the creator** (including but not limited to any investment advice or product recommendation).
-3. All AI-generated content on the platform is labeled per the requirements of the applicable region; for the unified constraints on financial content, see [03 Compliance Requirements](../compliance/index).
+3. All AI-generated content on the platform is labeled per the requirements of the applicable region; for the unified constraints on financial content, see [Compliance Requirements](../compliance/index).
 
 ## Service Regions Overview
 

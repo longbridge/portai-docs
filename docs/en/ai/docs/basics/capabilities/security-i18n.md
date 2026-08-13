@@ -13,13 +13,13 @@ title: "Security Verification & Localization"
 - Tools requiring user authentication in Chatflow are **available on all plans**; authentication is independent of plan tier, and users simply complete authorization on demand at runtime
 - Workflow is an automated-run scenario and cannot complete interactive authentication at runtime, so the Workflow editor **does not show tools that require user authentication**
 
-**Compliance significance**: asset data is sensitive data, and trading password verification guarantees that "data is only given to the identity-verified owner" — it is also the prerequisite for using the account/positions/P&L MCP tools (see [1.7.10 Model & Tool Ecosystem](model-tool-ecosystem)).
+**Compliance significance**: asset data is sensitive data, and trading password verification guarantees that "data is only given to the identity-verified owner" — it is also the prerequisite for using the account/positions/P&L MCP tools (see [Model & Tool Ecosystem](model-tool-ecosystem)).
 
 ## Automatic Simplified/Traditional Conversion for Answer Output
 
 **What it is**: with **Chinese Simplified/Traditional conversion** enabled in the Chatflow canvas backend, the content output by the Answer node is automatically converted between Simplified and Traditional Chinese based on **the user's system language**.
 
-**Why it matters**: the platform serves users across Hong Kong, Singapore, and other regions (see [1.6 Regional Service Notes](../regions)); once enabled, there is no need to maintain two sets of prompts or two Agents for Simplified and Traditional — one flow adapts automatically.
+**Why it matters**: the platform serves users across Hong Kong, Singapore, and other regions (see [Regional Service Notes](../regions)); once enabled, there is no need to maintain two sets of prompts or two Agents for Simplified and Traditional — one flow adapts automatically.
 
 **Recommendation**: enable it by default for Chatflows targeting HK users; after enabling, test the output once under each of the Simplified and Traditional system languages.
 

@@ -36,7 +36,7 @@ Agentic Chat 無需畫布，**描述需求 → AI 生成 → 測試 → 釋出**
 
 ![Agentic 第 4 步：提交發布，進入稽核](./images/1.3-agentic-step4-publish.png)
 
-> 想進一步瞭解 Agentic Chat 有哪些可配置項，見 [1.10 Chatflow 與 Agentic Chat 設定項](chatflow-agenticchat-settings)。下面的教程將換用 Chatflow，帶你掌握畫布編排。
+> 想進一步瞭解 Agentic Chat 有哪些可配置項，見 [Chatflow 與 Agentic Chat 設定項](chatflow-agenticchat-settings)。下面的教程將換用 Chatflow，帶你掌握畫布編排。
 
 ## 建立 Chatflow 應用
 
@@ -67,7 +67,7 @@ Agentic Chat 無需畫布，**描述需求 → AI 生成 → 測試 → 釋出**
 4. **User Prompt**(具體任務指令):插入 Start 節點的使用者輸入變數，讓模型基於使用者訊息作答
 5. (可選) 開啟**短期記憶功能**開關，並設定記憶視窗數量，讓 AI 記住最近幾輪對話上下文
 
-> 💡 System Prompt 裡的合規約束不是可選項 —— 面向客戶的 Agent 必須內建「不提供投資建議」的護欄，詳見 [03-合規要求](../compliance/index)。
+> 💡 System Prompt 裡的合規約束不是可選項 —— 面向客戶的 Agent 必須內建「不提供投資建議」的護欄，詳見 [合規要求](../compliance/index)。
 
 完成後如下圖:LLM 面板中配好了模型與 System Prompt,User Prompt 引用了 `開始 / sys.query`;下方的長期/短期記憶、輸出內容合法合規檢查、引用等開關預設全部關閉：
 
@@ -107,7 +107,7 @@ Agentic Chat 無需畫布，**描述需求 → AI 生成 → 測試 → 釋出**
 
 試執行全部符合預期後，點選右上角**釋出**按鈕，釋出流程分三步：
 
-1. **提交稽核**:點擊發布後進入稽核，彈窗顯示「稽核中」—— 預計等待約 1 分鐘，稽核通過後**自動釋出**;彈窗中可確認本次釋出的提交時間、編輯許可權與使用許可權 (稽核規則見 [3.2 安全稽核](../compliance/security-review)):
+1. **提交稽核**:點擊發布後進入稽核，彈窗顯示「稽核中」—— 預計等待約 1 分鐘，稽核通過後**自動釋出**;彈窗中可確認本次釋出的提交時間、編輯許可權與使用許可權 (稽核規則見 [安全稽核](../compliance/security-review)):
 
 ![第 5 步：提交發布後的「稽核中」彈窗](./images/1.3-step5-review.png)
 
@@ -127,7 +127,7 @@ Agentic Chat 無需畫布，**描述需求 → AI 生成 → 測試 → 釋出**
 
 | 想實現 | 用什麼 | 看哪篇 |
 |--------|--------|--------|
-| 不同型別的問題走不同處理邏輯 | Question Classifier 意圖分類 | [2.3 模式 2 · 意圖路由](../tutorials/orchestration-debug) |
-| 查詢即時行情等外部資料 | Tool / Http Request 節點 | [2.3 模式 3 · 工具增強](../tutorials/orchestration-debug) |
-| 讓 AI 輸出規範的 JSON | LLM 節點的結構化輸出 | [2.2 變數與資料流設計技巧](../tutorials/variables-dataflow) |
-| 批次處理一組資料 | Iteration / Loop 節點 | [2.3 模式 6 · 批次處理](../tutorials/orchestration-debug) |
+| 不同型別的問題走不同處理邏輯 | Question Classifier 意圖分類 | [模式 2 · 意圖路由](../tutorials/orchestration-debug) |
+| 查詢即時行情等外部資料 | Tool / Http Request 節點 | [模式 3 · 工具增強](../tutorials/orchestration-debug) |
+| 讓 AI 輸出規範的 JSON | LLM 節點的結構化輸出 | [變數與資料流設計技巧](../tutorials/variables-dataflow) |
+| 批次處理一組資料 | Iteration / Loop 節點 | [模式 6 · 批次處理](../tutorials/orchestration-debug) |

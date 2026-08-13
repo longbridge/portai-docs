@@ -28,7 +28,7 @@ title: "提示词编写技巧"
 
 ## 金融场景必写的合规约束
 
-面向客户的 Agent,System Prompt 中必须包含以下护栏 (依据见 [03-合规要求](../compliance/index)):
+面向客户的 Agent,System Prompt 中必须包含以下护栏 (依据见 [合规要求](../compliance/index)):
 
 ```
 合规红线(任何情况下不得违反):

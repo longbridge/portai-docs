@@ -99,9 +99,9 @@ Skill 详情页开启「**用户可调用**」后，用户在与 Agent 对话时
 
 ## 注意事项
 
-1. **数量随套餐**:自定义 Skill 上限 Starter 3 / Pro 20 / Premium 100，超限需删除或升级 —— 见 [1.5 Workspace 与套餐体系](../plans)
-2. Skill 内容写法与提示词同理：结论前置、规则可执行、附正反示例，参考 [2.1 提示词编写技巧](../../tutorials/prompt-writing)
-3. 从 GitHub 导入的社区 Skill 用于面向客户的 Agent 前，需自行审查内容是否符合 [03-合规要求](../../compliance/index)
+1. **数量随套餐**:自定义 Skill 上限 Starter 3 / Pro 20 / Premium 100，超限需删除或升级 —— 见 [Workspace 与套餐体系](../plans)
+2. Skill 内容写法与提示词同理：结论前置、规则可执行、附正反示例，参考 [提示词编写技巧](../../tutorials/prompt-writing)
+3. 从 GitHub 导入的社区 Skill 用于面向客户的 Agent 前，需自行审查内容是否符合 [合规要求](../../compliance/index)
 
 ## 关联阅读
 

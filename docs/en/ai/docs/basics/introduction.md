@@ -18,8 +18,8 @@ Longbridge's AI offering consists of two parts:
 
 How they relate:
 - Agents you build on the Agent Platform reach end users through entry points such as the official Chatbot after publishing
-- **Usage quota is shared**: the same user's usage quota **applies to both tools**—chatting in the Chatbot and running flows on the Agent Platform draw from the same quota (see [1.5 Workspace & Plans](plans))
-- For capabilities on the official Chatbot side (conversation charts, voice input, long-term memory, etc.), see [1.7-11 Chat Experience](capabilities/chat-experience)
+- **Usage quota is shared**: the same user's usage quota **applies to both tools**—chatting in the Chatbot and running flows on the Agent Platform draw from the same quota (see [Workspace & Plans](plans))
+- For capabilities on the official Chatbot side (conversation charts, voice input, long-term memory, etc.), see [Chat Experience](capabilities/chat-experience)
 
 ## Three Application Types: Agentic Chat, Chatflow, and Workflow
 
@@ -43,7 +43,7 @@ This is the platform's most important concept—it determines how you build, whi
 ## Core Concepts
 
 ### Node
-A single processing step in a flow. Each node does one thing: call a large language model, evaluate a condition, send an HTTP request, execute code, and so on. The platform currently provides 15 nodes; see the full list in the [1.4 Node Reference](capabilities/index).
+A single processing step in a flow. Each node does one thing: call a large language model, evaluate a condition, send an HTTP request, execute code, and so on. The platform currently provides 15 nodes; see the full list in the [Node Reference](capabilities/index).
 
 UI elements common to every node:
 - **Icon + name**: the default name is generated in the current language and can be edited
@@ -69,32 +69,32 @@ Run a single node or the entire flow directly on the canvas without publishing, 
 Models for LLM-related nodes are selected from **service settings**, centrally initialized by Longbridge with test accounts provided. **Some input parameters can be adjusted** (the adjustable parameters are whatever the node configuration panel actually shows); model management is not yet available. Models come in two tiers, **Mainstream** and **SOTA**; SOTA consumes more usage.
 
 ### Workspace
-Everything you do on the platform happens inside a Workspace: Agents, Workflows, knowledge bases, and usage consumption are all scoped to a Workspace. Each Workspace is bound to a **plan**, which determines what features are available in that space and how much quota you get. The same person may see different features in different Workspaces. See the detailed breakdown in [1.5 Workspace & Plans](plans).
+Everything you do on the platform happens inside a Workspace: Agents, Workflows, knowledge bases, and usage consumption are all scoped to a Workspace. Each Workspace is bound to a **plan**, which determines what features are available in that space and how much quota you get. The same person may see different features in different Workspaces. See the detailed breakdown in [Workspace & Plans](plans).
 
 ### Plan and Usage
-The platform offers three plans: Starter (free) / Pro / Premium. They differ in **monthly usage quota** (LLM calls and other consumption are metered in USD) and **fine-grained feature switches** (tool scope, Skill count, knowledge base capacity, publishing permissions, etc.). Starter is activated automatically upon registration. Quota is allocated monthly and released on a rolling 7-day basis; runs are blocked once you exceed your quota. See [1.5 Workspace & Plans](plans) for details.
+The platform offers three plans: Starter (free) / Pro / Premium. They differ in **monthly usage quota** (LLM calls and other consumption are metered in USD) and **fine-grained feature switches** (tool scope, Skill count, knowledge base capacity, publishing permissions, etc.). Starter is activated automatically upon registration. Quota is allocated monthly and released on a rolling 7-day basis; runs are blocked once you exceed your quota. See [Workspace & Plans](plans) for details.
 
 ### Regional Services
-The platform is operated by independent legal entities in Hong Kong, Singapore, and the United States (in preparation). Pricing currency, regulatory requirements, and available capabilities vary by region, and users cannot switch service entities across regions. See [1.6 Regional Services](regions) for details.
+The platform is operated by independent legal entities in Hong Kong, Singapore, and the United States (in preparation). Pricing currency, regulatory requirements, and available capabilities vary by region, and users cannot switch service entities across regions. See [Regional Services](regions) for details.
 
 ## Beyond Nodes: The Full Capability Landscape
 
-Node orchestration is the skeleton; the platform also provides a full suite of capabilities around Agents, each with its own documentation (index at [1.7 Platform Capabilities](capabilities/index)):
+Node orchestration is the skeleton; the platform also provides a full suite of capabilities around Agents, each with its own documentation (index at [Platform Capabilities](capabilities/index)):
 
 | Capability | Problem It Solves | Docs |
 |------|-------------|------|
-| **Knowledge Base** | Agents only know general knowledge, not your private documents | [1.7.1 Knowledge Base](capabilities/knowledge-base) |
-| **Skill System** | Reuse specialized capabilities without bloating the System Prompt | [1.7.2 Skill System](capabilities/skill) |
-| **Workflow Triggers** | Tasks need to run on a schedule or be triggered by external systems | [1.7.3 Workflow Triggers](capabilities/workflow-triggers) |
-| **Guardrail** | Compliance risks in inputs/outputs need mechanism-level interception | [1.7.4 Guardrail](capabilities/guardrail) |
-| **Context & Memory Management** | Multi-turn conversations lose memory; context keeps growing | [1.7.5 Context & Memory Management](capabilities/context-memory) |
-| **Planning & Execution** | Complex tasks lack structure; full automation is uncontrollable | [1.7.6 Planning & Execution](capabilities/planning-execution) |
-| **Debugging & Observability** | Validate results in batches; track run quality after launch | [1.7.7 Debugging & Observability](capabilities/observability) |
-| **Security Verification & Localization** | Asset data authentication; Simplified/Traditional Chinese adaptation | [1.7.8 Security Verification & Localization](capabilities/security-i18n) |
-| **Canvas & Collaboration** | Prevent accidental edits in team collaboration; reuse nodes | [1.7.9 Canvas & Collaboration](capabilities/canvas-collaboration) |
-| **Model & Tool Ecosystem** | SOTA model selection; account/market-data tool integration | [1.7.10 Model & Tool Ecosystem](capabilities/model-tool-ecosystem) |
-| **Chat Experience** | Understand how your Agent is presented to users after publishing | [1.7.11 Chat Experience](capabilities/chat-experience) |
-| **Disaster Recovery** | Keep Agents stable when vendors fail or calls error out | [1.7.12 Disaster Recovery](capabilities/disaster-recovery) |
+| **Knowledge Base** | Agents only know general knowledge, not your private documents | [Knowledge Base](capabilities/knowledge-base) |
+| **Skill System** | Reuse specialized capabilities without bloating the System Prompt | [Skill System](capabilities/skill) |
+| **Workflow Triggers** | Tasks need to run on a schedule or be triggered by external systems | [Workflow Triggers](capabilities/workflow-triggers) |
+| **Guardrail** | Compliance risks in inputs/outputs need mechanism-level interception | [Guardrail](capabilities/guardrail) |
+| **Context & Memory Management** | Multi-turn conversations lose memory; context keeps growing | [Context & Memory Management](capabilities/context-memory) |
+| **Planning & Execution** | Complex tasks lack structure; full automation is uncontrollable | [Planning & Execution](capabilities/planning-execution) |
+| **Debugging & Observability** | Validate results in batches; track run quality after launch | [Debugging & Observability](capabilities/observability) |
+| **Security Verification & Localization** | Asset data authentication; Simplified/Traditional Chinese adaptation | [Security Verification & Localization](capabilities/security-i18n) |
+| **Canvas & Collaboration** | Prevent accidental edits in team collaboration; reuse nodes | [Canvas & Collaboration](capabilities/canvas-collaboration) |
+| **Model & Tool Ecosystem** | SOTA model selection; account/market-data tool integration | [Model & Tool Ecosystem](capabilities/model-tool-ecosystem) |
+| **Chat Experience** | Understand how your Agent is presented to users after publishing | [Chat Experience](capabilities/chat-experience) |
+| **Disaster Recovery** | Keep Agents stable when vendors fail or calls error out | [Disaster Recovery](capabilities/disaster-recovery) |
 
 ## The 15 Nodes at a Glance
 
@@ -113,4 +113,4 @@ Start ──▶ LLM ──▶ Answer
 (receive user message)  (call the LLM to generate a reply)  (output the reply to the chat window)
 ```
 
-Next step: follow [1.3 Quick Start](quick-start) and build it yourself.
+Next step: follow [Quick Start](quick-start) and build it yourself.

@@ -5,7 +5,7 @@ title: "节点参考手册"
 
 平台当前提供 **15 个节点**,本手册每个节点一篇文档，按推荐学习顺序编号。建议先掌握「基础节点 + LLM」跑通最小流程，再按需学习其余节点。
 
-> 节点用于 **Chatflow / Workflow** 的画布编排;**Agentic Chat**(Chatflow 简化版) 底层是固定的 **Start → Agent → Answer** 三节点链路，画布被隐藏、无需自行编排，见 [1.1 应用类型](../introduction)。学完 Start、Agent、Answer 三个节点，你也就理解了 Agentic Chat 的工作原理。
+> 节点用于 **Chatflow / Workflow** 的画布编排;**Agentic Chat**(Chatflow 简化版) 底层是固定的 **Start → Agent → Answer** 三节点链路，画布被隐藏、无需自行编排，见 [应用类型](../introduction)。学完 Start、Agent、Answer 三个节点，你也就理解了 Agentic Chat 的工作原理。
 
 ## 节点索引
 

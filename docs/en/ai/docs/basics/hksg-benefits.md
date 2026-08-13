@@ -70,9 +70,9 @@ Receive a benefit card → open the Usage page and see the "You have 1 unused be
 
 - Benefit cards are **service usage benefits** and do not constitute cash rebates or securities rewards
 - Each campaign's terms spell out eligibility rules, benefit content, validity, and the non-redeemable/non-transferable clauses
-- When sharing AI content through social sharing, communities, or other channels, you must still comply with [03 Compliance Requirements](../compliance/index) (AI-generated labeling, disclaimers, sensitive data masking)
+- When sharing AI content through social sharing, communities, or other channels, you must still comply with [Compliance Requirements](../compliance/index) (AI-generated labeling, disclaimers, sensitive data masking)
 
 ## Related Reading
 
-- [1.5 Workspace & Plans](plans) — plan tiers, usage, and the weekly rolling release rules
-- [1.6 Regional Services](regions) — benefit cards apply to the HK/SG regions
+- [Workspace & Plans](plans) — plan tiers, usage, and the weekly rolling release rules
+- [Regional Services](regions) — benefit cards apply to the HK/SG regions

@@ -3,7 +3,7 @@ sidebar_position: 5
 title: "Mode and Model Selection Techniques"
 ---
 
-> Selection techniques drawn from real-world practice: when to use Agentic Chat, when to switch to a larger model, and when to take computation out of the model's hands. Choose right and you get twice the result for half the effort; choose wrong, and no amount of prompt tuning will save you. This guide is continuously updated. (RAG retrieval patterns now have their own guide, see [2.4](rag-patterns); extending capabilities via Skill search also has its own guide, see [2.6](skill-extension))
+> Selection techniques drawn from real-world practice: when to use Agentic Chat, when to switch to a larger model, and when to take computation out of the model's hands. Choose right and you get twice the result for half the effort; choose wrong, and no amount of prompt tuning will save you. This guide is continuously updated. (RAG retrieval patterns now have their own guide, see [RAG Retrieval Pattern Techniques](rag-patterns); extending capabilities via Skill search also has its own guide, see [Quickly Extending Agent Capabilities with Skills](skill-extension))
 
 ## Technique 1: For Effortless Agent Building, Choose Agentic Chat First
 
@@ -51,8 +51,8 @@ The candlestick data flows directly from the Tool node to the Code node without 
 
 ## Related Reading
 
-- [1.7 Planning and Execution Capabilities](../basics/capabilities/planning-execution) — where Agentic Chat fits capability-wise
+- [Planning and Execution Capabilities](../basics/capabilities/planning-execution) — where Agentic Chat fits capability-wise
 - [Code Node Documentation](../basics/nodes/code) — Python/JavaScript code execution
 - [Tool Node Documentation](../basics/nodes/tools) — fetching data with tools
-- [2.3 Flow Orchestration Patterns and Debugging Techniques](orchestration-debug) — Pattern 3 "Tool Augmentation", Pattern 4 "Autonomous Agent"
-- [2.6 Finding Skills Online](skill-extension) — quickly equipping your Agent with specialized capabilities (formerly Technique 4)
+- [Flow Orchestration Patterns and Debugging Techniques](orchestration-debug) — Pattern 3 "Tool Augmentation", Pattern 4 "Autonomous Agent"
+- [Finding Skills Online](skill-extension) — quickly equipping your Agent with specialized capabilities (formerly Technique 4)

@@ -36,7 +36,7 @@ Once you are happy with the results, click **Publish** in the top right corner t
 
 ![Agentic Step 4: submit for publishing and enter review](./images/1.3-agentic-step4-publish.png)
 
-> To learn more about the configurable options in Agentic Chat, see [1.10 Chatflow & Agentic Chat Settings](chatflow-agenticchat-settings). The tutorial below switches to Chatflow to teach you canvas orchestration.
+> To learn more about the configurable options in Agentic Chat, see [Chatflow & Agentic Chat Settings](chatflow-agenticchat-settings). The tutorial below switches to Chatflow to teach you canvas orchestration.
 
 ## Create a Chatflow Application
 
@@ -67,7 +67,7 @@ Rules of behavior:
 4. **User Prompt** (the specific task instruction): insert the user input variable from the Start node so the model answers based on the user's message
 5. (Optional) Turn on the **short-term memory** switch and set the memory window size so the AI remembers the context of the last few turns
 
-> 💡 The compliance constraints in the System Prompt are not optional—any customer-facing Agent must have a built-in "no investment advice" guardrail. See [03 Compliance Requirements](../compliance/index).
+> 💡 The compliance constraints in the System Prompt are not optional—any customer-facing Agent must have a built-in "no investment advice" guardrail. See [Compliance Requirements](../compliance/index).
 
 When done, it should look like the screenshot below: the LLM panel has the model and System Prompt configured, the User Prompt references `Start / sys.query`, and the switches below (long/short-term memory, output compliance check, citations, etc.) are all off by default:
 
@@ -107,7 +107,7 @@ A successful test run looks like this: after clicking the **run button** at the 
 
 Once all test runs meet expectations, click the **Publish** button in the top right. Publishing happens in three steps:
 
-1. **Submit for review**: after clicking Publish, review begins and the dialog shows "Under review"—expect to wait about 1 minute; once approved it **publishes automatically**. The dialog also shows this release's submission time, edit permissions, and usage permissions (for review rules, see [3.2 Security Review](../compliance/security-review)):
+1. **Submit for review**: after clicking Publish, review begins and the dialog shows "Under review"—expect to wait about 1 minute; once approved it **publishes automatically**. The dialog also shows this release's submission time, edit permissions, and usage permissions (for review rules, see [Security Review](../compliance/security-review)):
 
 ![Step 5: the "Under review" dialog after submitting for publishing](./images/1.3-step5-review.png)
 
@@ -127,7 +127,7 @@ Once all test runs meet expectations, click the **Publish** button in the top ri
 
 | What You Want | What to Use | Where to Read |
 |--------|--------|--------|
-| Route different question types through different logic | Question Classifier intent classification | [2.3 Pattern 2: Intent Routing](../tutorials/orchestration-debug) |
-| Query external data such as real-time quotes | Tool / Http Request nodes | [2.3 Pattern 3: Tool Augmentation](../tutorials/orchestration-debug) |
-| Get the AI to output well-formed JSON | Structured output on the LLM node | [2.2 Variables & Data Flow Design Tips](../tutorials/variables-dataflow) |
-| Batch-process a collection of data | Iteration / Loop nodes | [2.3 Pattern 6: Batch Processing](../tutorials/orchestration-debug) |
+| Route different question types through different logic | Question Classifier intent classification | [Pattern 2: Intent Routing](../tutorials/orchestration-debug) |
+| Query external data such as real-time quotes | Tool / Http Request nodes | [Pattern 3: Tool Augmentation](../tutorials/orchestration-debug) |
+| Get the AI to output well-formed JSON | Structured output on the LLM node | [Variables & Data Flow Design Tips](../tutorials/variables-dataflow) |
+| Batch-process a collection of data | Iteration / Loop nodes | [Pattern 6: Batch Processing](../tutorials/orchestration-debug) |

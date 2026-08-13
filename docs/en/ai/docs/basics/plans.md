@@ -95,7 +95,7 @@ A plan is a **commercial object** on the platform that can be purchased or grant
 - **Upgrade**: takes effect immediately, with the price difference charged per channel rules
 - **Downgrade**: takes effect the following month and can be revoked before then; the current usage cycle keeps the original quota, and the next cycle follows the new plan
 - **Unsubscribe**: auto-renewal can be restored before expiry; after expiry, the Workspace falls back to Starter
-- The currency is locked at first purchase; for regional pricing, see [1.6 Regional Services](regions)
+- The currency is locked at first purchase; for regional pricing, see [Regional Services](regions)
 
 ## Usage: How It's Metered and Deducted
 
@@ -118,7 +118,7 @@ The system collects five billing units in real time and converts them all to USD
 - **Monthly total quota**: each billing cycle (month) allocates a total quota; it resets to zero at cycle end and is re-allocated in the new cycle—**no carryover**
 - **Weekly rolling release**: the monthly quota is released on a rolling 7-day basis, so weekly availability ≈ monthly total ÷ 4. If you use up the week's quota, you must wait for the next rolling week; unused weekly quota **does not roll over** either
 - The usage cycle rolls independently and is unrelated to the subscription cycle (renewal date)
-- Beyond plan quota, you may also hold a **benefit card** (a time-limited boost to a higher tier's feature benefits plus stacked usage, without changing your subscription)—see [1.8 HK/SG Benefit Cards](hksg-benefits)
+- Beyond plan quota, you may also hold a **benefit card** (a time-limited boost to a higher tier's feature benefits plus stacked usage, without changing your subscription)—see [HK/SG Benefit Cards](hksg-benefits)
 
 > Design intent: prevent burning a whole month's quota in a day, keeping the consumption pace under control.
 
@@ -130,7 +130,7 @@ Once you exceed quota, actions are blocked. Whether advance usage warnings (e.g.
 |------|---------|
 | Runs such as conversations/Workflows/test runs | Remaining quota is checked before running; if insufficient, the run is blocked with a prompt to upgrade |
 | Knowledge base over capacity | New files blocked; over-limit files are marked **disabled** (excluded from retrieval) **starting from the oldest by upload time**, not auto-deleted—delete files or upgrade to restore |
-| Skill count over limit | Creating new Skills is blocked, with a prompt to delete existing ones or upgrade; if the overage was caused by a benefit card expiring, existing content is kept—you just can't add more (see [1.8](hksg-benefits)) |
+| Skill count over limit | Creating new Skills is blocked, with a prompt to delete existing ones or upgrade; if the overage was caused by a benefit card expiring, existing content is kept—you just can't add more (see [HK/SG Benefit Cards](hksg-benefits)) |
 
 ### Who Pays for Usage (Charged By)
 

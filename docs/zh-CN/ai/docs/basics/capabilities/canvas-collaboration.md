@@ -25,8 +25,8 @@ title: "画布与协作效率"
 
 1. 团队协作的 Workspace，主干流程调稳后**及时上锁**,修改走"解锁 → 改 → 测 → 再上锁"的流程
 2. 团队内沉淀一个"公共组件 Agent",存放调优过的常用节点 (合规话术 LLM、标准分类器等),需要时跨 Agent 复制
-3. 给节点写注释的习惯 (见 [2.3 编排原则](../../tutorials/orchestration-debug)) 在可复制、多人协作的画布上更加重要
+3. 给节点写注释的习惯 (见 [编排原则](../../tutorials/orchestration-debug)) 在可复制、多人协作的画布上更加重要
 
 ## 关联阅读
 
-- [1.5 Workspace 与套餐体系](../plans) — Workspace 成员与 Owner 的操作边界
+- [Workspace 与套餐体系](../plans) — Workspace 成员与 Owner 的操作边界

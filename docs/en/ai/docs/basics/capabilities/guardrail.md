@@ -38,9 +38,9 @@ The platform's built-in **mechanism-level compliance interception** capability, 
 | Coverage | Tone, phrasing, business rules | PII, high-risk content, financial crime, output compliance |
 | Failure scenarios | Prompt gets bypassed, model goes off track | Unaffected by prompts |
 
-**Conclusion: it is not either/or — customer-facing Agents should enable both.** For writing prompt red lines, see Section 3 of [2.1 Prompt Writing Tips](../../tutorials/prompt-writing).
+**Conclusion: it is not either/or — customer-facing Agents should enable both.** For writing prompt red lines, see Section 3 of [Prompt Writing Tips](../../tutorials/prompt-writing).
 
 ## Notes
 
-1. Guardrail intercepts **clearly high-risk content**; business-level compliance such as "do not provide investment advice" still relies on prompts and flow design (e.g. fixed refusal scripts) — see [03 Compliance Requirements](../../compliance/index)
+1. Guardrail intercepts **clearly high-risk content**; business-level compliance such as "do not provide investment advice" still relies on prompts and flow design (e.g. fixed refusal scripts) — see [Compliance Requirements](../../compliance/index)
 2. When testing before launch, run a pass of boundary-crossing cases (attempts to induce violations, inputs containing PII) to confirm interception works — see the [Pre-launch Checklist](../../compliance/index)

@@ -22,7 +22,7 @@ Five MCP tools deeply integrated with Longbridge's business, enabling Agents to 
 | Get P&L detail data | P&L for a given security by time and stock code |
 | Get P&L analysis summary | P&L summary by currency and time range |
 
-**Prerequisite**: calls involving asset data automatically trigger **trading password verification** (see [1.7.8 Security Verification & Localization](security-i18n)); data is returned only after verification passes.
+**Prerequisite**: calls involving asset data automatically trigger **trading password verification** (see [Security Verification & Localization](security-i18n)); data is returned only after verification passes.
 
 **Compliance reminder**: account data may only be used for **neutral display and statistical analysis** — it must not be used to generate personalized buy/sell advice. See [No Investment Advice](../../compliance/index) and [Staying Within the Execution-Only Positioning](../../compliance/index).
 
@@ -37,4 +37,4 @@ Five MCP tools deeply integrated with Longbridge's business, enabling Agents to 
 ## Related Reading
 
 - [Tool Node Documentation](../nodes/tools) — tool mounting and authorization
-- [1.5 Workspace & Plans](../plans) — how tool tiers relate to plans
+- [Workspace & Plans](../plans) — how tool tiers relate to plans

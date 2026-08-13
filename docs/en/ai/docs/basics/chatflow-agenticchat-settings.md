@@ -29,7 +29,7 @@ Entry: the settings icon in the top right of the canvas opens the "Settings" sid
 | Setting | Description |
 |--------|------|
 | Basic info | Application name, icon, description—the identity users see in the chat client and the Marketplace |
-| Agent permissions | **Edit permission** (e.g. Workspace users) and **usage permission** (e.g. Workspace users only), with copy-link sharing supported (see [1.11 Agent Permission Management](permissions)) |
+| Agent permissions | **Edit permission** (e.g. Workspace users) and **usage permission** (e.g. Workspace users only), with copy-link sharing supported (see [Agent Permission Management](permissions)) |
 | Agent preset questions | Guiding questions shown to users, configurable **separately in EN / Simplified / Traditional Chinese**, lowering the barrier for the first question |
 | Opening message | The welcome message at the start of a conversation; recommended to state the Agent's capability boundaries |
 | Input variables | Custom fields defined by the Start node (see the [Start node](nodes/start)) |
@@ -50,7 +50,7 @@ Entry: the settings icon in the top right of the canvas opens the "Settings" sid
 | Setting | Description |
 |--------|------|
 | Basic info | Application name, icon, description |
-| System Prompt | The application-level prompt: role definition, rules of behavior, output format, compliance red lines (for writing tips, see [2.1 Prompt Writing](../tutorials/prompt-writing)) |
+| System Prompt | The application-level prompt: role definition, rules of behavior, output format, compliance red lines (for writing tips, see [Prompt Writing](../tutorials/prompt-writing)) |
 | Model selection | One application-level model; Mainstream / SOTA tiers, with SOTA costing more per unit |
 | Tools | Attach built-in tools, third-party MCP (requires Premium), and OpenAPI tools; the model decides when to call them |
 | Skill | Attach custom / official Skills as on-demand capability packs |
@@ -58,7 +58,7 @@ Entry: the settings icon in the top right of the canvas opens the "Settings" sid
 | Human-in-the-loop | Allows the model to ask the user questions mid-execution and wait for answers |
 | Enable to-do list | When enabled, the AI automatically identifies tasks in the conversation and breaks them down for execution (see [Planning & Execution](capabilities/planning-execution)) |
 | Spawn Subagent (Beta) | Allows the Agent to spawn independent Subagents via `spawn_subagent` to handle subtasks—suited to decomposable/parallelizable work; Subagents run in isolated contexts and return a summary when done |
-| Agent permissions | Usage permission (e.g. anyone with the link) + copy link; can **publish to the Agent Marketplace** (see [1.11 Agent Permission Management](permissions)) |
+| Agent permissions | Usage permission (e.g. anyone with the link) + copy link; can **publish to the Agent Marketplace** (see [Agent Permission Management](permissions)) |
 | Simplified/Traditional Chinese conversion | When enabled, output is automatically converted between Simplified and Traditional per the user's language preference |
 | Allow Fork | When enabled, other users can copy this Agent's configuration and adapt it for their own use |
 | Guardrail | Same as Chatflow; Agentic Chat is more autonomous, so guardrails matter even more |
@@ -84,10 +84,10 @@ The available range of some settings is determined by the current Workspace's pl
 - **Third-party MCP tools**: require Premium or above
 - **Official built-in Skills**: require Pro or above; custom Skill counts vary by plan (3 / 20 / 100)
 - **Some models**: models restricted by plan or region are not shown in the selector
-- For the complete rules, see [1.5 · Configuration Time vs. Runtime](plans)
+- For the complete rules, see [Configuration Time vs. Runtime](plans)
 
 ## Related Reading
 
-- [2.5 Tip 1: Choosing Between Agentic Chat and Chatflow](../tutorials/mode-model-selection)
-- [1.7 Debugging & Observability](capabilities/observability) — how to test after your settings are in place
-- [1.7.4 Guardrail](capabilities/guardrail) — a must-enable for customer-facing Agents
+- [Tip 1: Choosing Between Agentic Chat and Chatflow](../tutorials/mode-model-selection)
+- [Debugging & Observability](capabilities/observability) — how to test after your settings are in place
+- [Guardrail](capabilities/guardrail) — a must-enable for customer-facing Agents

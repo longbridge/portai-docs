@@ -99,9 +99,9 @@ The platform provides high-quality official Skills, available on **Pro and above
 
 ## Notes
 
-1. **Quantity scales with plan**: custom Skill limits are Starter 3 / Pro 20 / Premium 100; delete or upgrade when over the limit — see [1.5 Workspace & Plans](../plans)
-2. Skill content follows the same principles as prompts: conclusions first, actionable rules, positive and negative examples attached; see [2.1 Prompt Writing Tips](../../tutorials/prompt-writing)
-3. Before using community Skills imported from GitHub in customer-facing Agents, review their content yourself against the [03 Compliance Requirements](../../compliance/index)
+1. **Quantity scales with plan**: custom Skill limits are Starter 3 / Pro 20 / Premium 100; delete or upgrade when over the limit — see [Workspace & Plans](../plans)
+2. Skill content follows the same principles as prompts: conclusions first, actionable rules, positive and negative examples attached; see [Prompt Writing Tips](../../tutorials/prompt-writing)
+3. Before using community Skills imported from GitHub in customer-facing Agents, review their content yourself against the [Compliance Requirements](../../compliance/index)
 
 ## Related Reading
 

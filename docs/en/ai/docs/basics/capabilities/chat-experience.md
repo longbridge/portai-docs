@@ -25,10 +25,10 @@ title: "Chat Client Experience"
 | Personalized question recommendations | Recommended questions are generated from real technicals/news/community buzz for a pool of trending stocks — the hotter the stock, the faster the refresh |
 | Suggested questions & follow-ups | Suggested questions support **refresh for more**; follow-ups are generated dynamically from the last few rounds of Q&A |
 
-> Note: "Personalized question recommendations" and "Suggested questions & follow-ups" **only take effect in the official Chatbot and are unrelated to Agents you build** — the guiding questions your Agent shows users are configured yourself via the **Agent preset questions** setting (see [1.10 Settings](../chatflow-agenticchat-settings)).
+> Note: "Personalized question recommendations" and "Suggested questions & follow-ups" **only take effect in the official Chatbot and are unrelated to Agents you build** — the guiding questions your Agent shows users are configured yourself via the **Agent preset questions** setting (see [Settings](../chatflow-agenticchat-settings)).
 
 ## Takeaways for Builders
 
-1. **Structured data output pays off**: output core data in structured form, and the consumer side automatically renders it as charts/Widgets — a far better experience than plain text (see [2.2 Structured Output](../../tutorials/variables-dataflow))
-2. **Answer style: conclusions first, no filler** — the same principles apply to your Agent's prompts (see [2.1](../../tutorials/prompt-writing))
+1. **Structured data output pays off**: output core data in structured form, and the consumer side automatically renders it as charts/Widgets — a far better experience than plain text (see [Structured Output](../../tutorials/variables-dataflow))
+2. **Answer style: conclusions first, no filler** — the same principles apply to your Agent's prompts (see [Prompt Writing Techniques](../../tutorials/prompt-writing))
 3. **Personalization is handled at the platform layer**: user tags and history memory take effect at the platform level, so Agents don't need to build their own user profiles — and **should not**; see [Data Usage & Privacy Restrictions](../../compliance/index)

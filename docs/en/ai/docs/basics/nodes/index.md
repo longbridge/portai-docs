@@ -5,7 +5,7 @@ title: "Node Reference Manual"
 
 The platform currently provides **15 nodes**. This manual devotes one document to each node, numbered in the recommended learning order. We suggest mastering the **basic nodes + LLM** first to get a minimal flow running, then learning the remaining nodes as needed.
 
-> Nodes are used for canvas orchestration in **Chatflow / Workflow**; **Agentic Chat** (a simplified version of Chatflow) is powered under the hood by a fixed **Start → Agent → Answer** three-node chain, with the canvas hidden and no manual orchestration required—see [1.1 Application Types](../introduction). Once you have learned the Start, Agent, and Answer nodes, you will also understand how Agentic Chat works.
+> Nodes are used for canvas orchestration in **Chatflow / Workflow**; **Agentic Chat** (a simplified version of Chatflow) is powered under the hood by a fixed **Start → Agent → Answer** three-node chain, with the canvas hidden and no manual orchestration required—see [Application Types](../introduction). Once you have learned the Start, Agent, and Answer nodes, you will also understand how Agentic Chat works.
 
 ## Node Index
 

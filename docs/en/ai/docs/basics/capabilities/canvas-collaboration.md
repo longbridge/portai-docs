@@ -25,8 +25,8 @@ A set of efficiency capabilities around canvas operations and team collaboration
 
 1. In team-collaboration Workspaces, **lock the workflow promptly** once the main flow is stable; make changes via the "unlock → edit → test → lock again" process
 2. Maintain a shared "common components Agent" within the team, holding tuned frequently-used nodes (compliance-scripted LLMs, standard classifiers, etc.), and copy them across Agents when needed
-3. The habit of writing node comments (see [2.3 Orchestration Principles](../../tutorials/orchestration-debug)) matters even more on a copyable, multi-user canvas
+3. The habit of writing node comments (see [Orchestration Principles](../../tutorials/orchestration-debug)) matters even more on a copyable, multi-user canvas
 
 ## Related Reading
 
-- [1.5 Workspace & Plans](../plans) — operational boundaries between Workspace members and the Owner
+- [Workspace & Plans](../plans) — operational boundaries between Workspace members and the Owner

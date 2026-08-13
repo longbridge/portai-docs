@@ -14,7 +14,7 @@ The management entry point for all Agents in the current Workspace:
 - View all Agents you have access to and their status (draft / published)
 - Search and filter to locate a target Agent
 - Management operations such as creating a new Agent, entering the editor, duplicating, and deleting
-- Note: Agents and the list contents are **scoped to the Workspace**—switching Workspaces changes the list accordingly (see [1.5](plans))
+- Note: Agents and the list contents are **scoped to the Workspace**—switching Workspaces changes the list accordingly (see [Workspace & Plans](plans))
 
 ## Create Agent
 
@@ -28,7 +28,7 @@ The creation entry supports two modes; choose based on your needs:
 | **Chatflow** | Canvas orchestration: nodes + connections | Multi-branch routing, precisely controlled production scenarios |
 
 - Supports **AI-assisted creation**: describe your need and the AI generates the initial configuration (this consumption is covered by the platform)
-- For a hands-on tutorial, see [1.3 Quick Start](quick-start); for mode selection tips, see [2.5 Tip 1](../tutorials/mode-model-selection)
+- For a hands-on tutorial, see [Quick Start](quick-start); for mode selection tips, see [Tip 1](../tutorials/mode-model-selection)
 
 ## Knowledge Base Management
 
@@ -39,7 +39,7 @@ Manage the knowledge files that Agents can retrieve and cite:
 - Upload, view, and delete knowledge files; check vectorization processing status
 - Capacity quota varies by plan (e.g. Starter 50MB / Pro 5GB / Premium 20GB; the plan page's live display is authoritative)
 - When capacity is exceeded, new uploads are blocked; over-limit files are marked **disabled** (excluded from retrieval) **starting from the oldest by upload time**, but are not deleted automatically
-- For a deep dive into knowledge base capabilities, see [1.7 Platform Capabilities · Knowledge Base](capabilities/knowledge-base)
+- For a deep dive into knowledge base capabilities, see [Platform Capabilities · Knowledge Base](capabilities/knowledge-base)
 
 ## Skill Management
 
@@ -50,7 +50,7 @@ Manage the Skills that can be attached to Agents:
 - Create, edit, and delete **custom Skills** (the count limit varies by plan)
 - View available **official built-in Skills** (earnings analysis, etc.; requires Pro or above)
 - When the Skill count limit is reached, creation is blocked—delete existing Skills or upgrade your plan
-- For a deep dive into the Skill system, see [1.7 Platform Capabilities · Skill System](capabilities/skill)
+- For a deep dive into the Skill system, see [Platform Capabilities · Skill System](capabilities/skill)
 
 ## Workspace Member Management
 
@@ -61,7 +61,7 @@ Manage the members and permissions of the current Workspace:
 - View the member list and each member's role
 - There are three member roles: **Owner** (only one per Workspace, with full permissions), **Editor** (can edit resources), and **Viewer** (read-only usage). The number of Editors and Viewers depends on the plan's member count limit
 - Only the Owner can perform commercial operations such as subscription purchases/upgrades
-- For member role rules in detail, see [1.5 · Workspace Member Roles](plans)
+- For member role rules in detail, see [Workspace Member Roles](plans)
 
 ## Usage
 
@@ -76,7 +76,7 @@ View your quota balance and consumption details:
 - When a benefit card is active, a **benefit card status card** is shown at the top (trial tier + remaining days + the stacked weekly available quota)
 - Shows the available quota for the current rolling 7-day period and the monthly balance
 - Consumption details show the source of each charge and which service entity collected it (charged by)
-- For billing units and deduction rules, see [1.5 · Usage](plans)
+- For billing units and deduction rules, see [Usage](plans)
 
 ## Plan
 
@@ -89,7 +89,7 @@ View and manage the current Workspace's plan:
 - Shows the current plan, a tier-by-tier benefits comparison, and prices (**the live display on this page is authoritative**; the help documentation may lag behind)
 - Purchase / upgrade / downgrade / unsubscribe entry points (**Workspace Owner only**)
 - Upgrades take effect immediately with a prorated charge; downgrades take effect the following month; after unsubscribing, the Workspace falls back to Starter at expiry
-- Pricing currency is fixed by your registration region; for SG users, page prices exclude tax (GST is collected separately by the payment channel)—see [1.6](regions)
+- Pricing currency is fixed by your registration region; for SG users, page prices exclude tax (GST is collected separately by the payment channel)—see [Regional Services](regions)
 
 ## Orders
 
@@ -105,6 +105,6 @@ View subscription-related transaction records:
 
 ## Related Reading
 
-- [1.3 Quick Start](quick-start) — build your first Agent starting from the creation page
-- [1.5 Workspace & Plans](plans) — the complete rules for plans, usage, and member roles
-- [1.9 Legal Agreements](legal) — where to find the user agreement, privacy policy, and other legal documents
+- [Quick Start](quick-start) — build your first Agent starting from the creation page
+- [Workspace & Plans](plans) — the complete rules for plans, usage, and member roles
+- [Legal Agreements](legal) — where to find the user agreement, privacy policy, and other legal documents

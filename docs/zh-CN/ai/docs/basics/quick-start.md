@@ -36,7 +36,7 @@ Agentic Chat 无需画布，**描述需求 → AI 生成 → 测试 → 发布**
 
 ![Agentic 第 4 步：提交发布，进入审核](./images/1.3-agentic-step4-publish.png)
 
-> 想进一步了解 Agentic Chat 有哪些可配置项，见 [1.10 Chatflow 与 Agentic Chat 设置项](chatflow-agenticchat-settings)。下面的教程将换用 Chatflow，带你掌握画布编排。
+> 想进一步了解 Agentic Chat 有哪些可配置项，见 [Chatflow 与 Agentic Chat 设置项](chatflow-agenticchat-settings)。下面的教程将换用 Chatflow，带你掌握画布编排。
 
 ## 创建 Chatflow 应用
 
@@ -67,7 +67,7 @@ Agentic Chat 无需画布，**描述需求 → AI 生成 → 测试 → 发布**
 4. **User Prompt**(具体任务指令):插入 Start 节点的用户输入变量，让模型基于用户消息作答
 5. (可选) 打开**短期记忆功能**开关，并设置记忆窗口数量，让 AI 记住最近几轮对话上下文
 
-> 💡 System Prompt 里的合规约束不是可选项 —— 面向客户的 Agent 必须内置「不提供投资建议」的护栏，详见 [03-合规要求](../compliance/index)。
+> 💡 System Prompt 里的合规约束不是可选项 —— 面向客户的 Agent 必须内置「不提供投资建议」的护栏，详见 [合规要求](../compliance/index)。
 
 完成后如下图:LLM 面板中配好了模型与 System Prompt,User Prompt 引用了 `开始 / sys.query`;下方的长期/短期记忆、输出内容合法合规检查、引用等开关默认全部关闭：
 
@@ -107,7 +107,7 @@ Agentic Chat 无需画布，**描述需求 → AI 生成 → 测试 → 发布**
 
 试运行全部符合预期后，点击右上角**发布**按钮，发布流程分三步：
 
-1. **提交审核**:点击发布后进入审核，弹窗显示「审核中」—— 预计等待约 1 分钟，审核通过后**自动发布**;弹窗中可确认本次发布的提交时间、编辑权限与使用权限 (审核规则见 [3.2 安全审核](../compliance/security-review)):
+1. **提交审核**:点击发布后进入审核，弹窗显示「审核中」—— 预计等待约 1 分钟，审核通过后**自动发布**;弹窗中可确认本次发布的提交时间、编辑权限与使用权限 (审核规则见 [安全审核](../compliance/security-review)):
 
 ![第 5 步：提交发布后的「审核中」弹窗](./images/1.3-step5-review.png)
 
@@ -127,7 +127,7 @@ Agentic Chat 无需画布，**描述需求 → AI 生成 → 测试 → 发布**
 
 | 想实现 | 用什么 | 看哪篇 |
 |--------|--------|--------|
-| 不同类型的问题走不同处理逻辑 | Question Classifier 意图分类 | [2.3 模式 2 · 意图路由](../tutorials/orchestration-debug) |
-| 查询实时行情等外部数据 | Tool / Http Request 节点 | [2.3 模式 3 · 工具增强](../tutorials/orchestration-debug) |
-| 让 AI 输出规范的 JSON | LLM 节点的结构化输出 | [2.2 变量与数据流设计技巧](../tutorials/variables-dataflow) |
-| 批量处理一组数据 | Iteration / Loop 节点 | [2.3 模式 6 · 批量处理](../tutorials/orchestration-debug) |
+| 不同类型的问题走不同处理逻辑 | Question Classifier 意图分类 | [模式 2 · 意图路由](../tutorials/orchestration-debug) |
+| 查询实时行情等外部数据 | Tool / Http Request 节点 | [模式 3 · 工具增强](../tutorials/orchestration-debug) |
+| 让 AI 输出规范的 JSON | LLM 节点的结构化输出 | [变量与数据流设计技巧](../tutorials/variables-dataflow) |
+| 批量处理一组数据 | Iteration / Loop 节点 | [模式 6 · 批量处理](../tutorials/orchestration-debug) |

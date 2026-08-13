@@ -18,8 +18,8 @@ LongbridgeAI Agent Platform 是长桥的 AI Agent 编排平台。你在一块**�
 
 两者的关系：
 - 你在 Agent Platform 上搭建的 Agent，发布后通过官方 Chatbot 等入口触达终端用户
-- **用量额度是打通的**:同一用户的用量额度**同时适用于这两个工具** —— 在 Chatbot 里问答和在 Agent Platform 里运行流程，消耗的是同一份额度 (见 [1.5 Workspace 与套餐体系](plans))
-- 官方 Chatbot 侧的能力 (会话图表、语音输入、长期记忆等) 见 [1.7-11 对话端体验](capabilities/chat-experience)
+- **用量额度是打通的**:同一用户的用量额度**同时适用于这两个工具** —— 在 Chatbot 里问答和在 Agent Platform 里运行流程，消耗的是同一份额度 (见 [Workspace 与套餐体系](plans))
+- 官方 Chatbot 侧的能力 (会话图表、语音输入、长期记忆等) 见 [对话端体验](capabilities/chat-experience)
 
 ## 三种应用类型:Agentic Chat、Chatflow 与 Workflow
 
@@ -43,7 +43,7 @@ LongbridgeAI Agent Platform 是长桥的 AI Agent 编排平台。你在一块**�
 ## 核心概念
 
 ### 节点 (Node)
-流程中的一个处理步骤。每个节点做一件事：调用大模型、判断条件、发 HTTP 请求、执行代码等。平台当前提供 15 个节点，完整列表见 [1.4 节点参考手册](capabilities/index)。
+流程中的一个处理步骤。每个节点做一件事：调用大模型、判断条件、发 HTTP 请求、执行代码等。平台当前提供 15 个节点，完整列表见 [节点参考手册](capabilities/index)。
 
 每个节点通用的界面元素：
 - **图标 + 名称**:名称按当前语言生成默认值，支持修改
@@ -69,32 +69,32 @@ LongbridgeAI Agent Platform 是长桥的 AI Agent 编排平台。你在一块**�
 LLM 相关节点的模型从**服务设置**中选择，由长桥内部统一初始化并提供测试账号。**支持调整部分输入参数**(可调参数以节点配置面板实际展示为准);模型管理暂未开放。模型分「主流」和「SOTA」两级，SOTA 消耗更多用量。
 
 ### Workspace(工作空间)
-你在平台上的一切行为都发生在某个 Workspace 内:Agent、Workflow、知识库、用量消耗都以 Workspace 为边界。每个 Workspace 绑定一个**套餐**,套餐决定这个空间里能用什么功能、能用多少额度。同一个人在不同 Workspace 中看到的功能可能不同。详细拆解见 [1.5 Workspace 与套餐体系](plans)。
+你在平台上的一切行为都发生在某个 Workspace 内:Agent、Workflow、知识库、用量消耗都以 Workspace 为边界。每个 Workspace 绑定一个**套餐**,套餐决定这个空间里能用什么功能、能用多少额度。同一个人在不同 Workspace 中看到的功能可能不同。详细拆解见 [Workspace 与套餐体系](plans)。
 
 ### 套餐 (Plan) 与用量 (Usage)
-平台提供 Starter(免费)/ Pro / Premium 三个套餐，差异体现在**月度用量额度**(LLM 调用等消耗按 USD 计量) 和**细分功能开关**(工具范围、Skill 数量、知识库容量、发布权限等)。注册即自动激活 Starter。额度按月分配、按 7 天滚动释放，超额时运行会被拦截。详见 [1.5 Workspace 与套餐体系](plans)。
+平台提供 Starter(免费)/ Pro / Premium 三个套餐，差异体现在**月度用量额度**(LLM 调用等消耗按 USD 计量) 和**细分功能开关**(工具范围、Skill 数量、知识库容量、发布权限等)。注册即自动激活 Starter。额度按月分配、按 7 天滚动释放，超额时运行会被拦截。详见 [Workspace 与套餐体系](plans)。
 
 ### 分地区服务
-平台在香港、新加坡、美国 (筹备中) 由独立法律实体运营，定价币种、监管要求和可用能力按地区有所差异，用户不可跨地区切换服务主体。详见 [1.6 分地区服务说明](regions)。
+平台在香港、新加坡、美国 (筹备中) 由独立法律实体运营，定价币种、监管要求和可用能力按地区有所差异，用户不可跨地区切换服务主体。详见 [分地区服务说明](regions)。
 
 ## 节点之外：平台能力全景
 
-节点编排是骨架，平台还提供一整套围绕 Agent 的能力，每项都有独立文档 (索引见 [1.7 平台能力](capabilities/index)):
+节点编排是骨架，平台还提供一整套围绕 Agent 的能力，每项都有独立文档 (索引见 [平台能力](capabilities/index)):
 
 | 能力 | 解决什么问题 | 文档 |
 |------|-------------|------|
-| **知识库** | Agent 只会通用知识，不懂你的私有文档 | [1.7.1 知识库](capabilities/knowledge-base) |
-| **Skill 体系** | 专业能力想复用，又不想撑爆 System Prompt | [1.7.2 Skill 体系](capabilities/skill) |
-| **Workflow 触发器** | 任务要定时跑、要被外部系统触发 | [1.7.3 Workflow 触发器](capabilities/workflow-triggers) |
-| **Guardrail 安全护栏** | 输入输出的合规风险需要机制层拦截 | [1.7.4 Guardrail 安全护栏](capabilities/guardrail) |
-| **上下文与记忆管理** | 多轮对话失忆、上下文越积越大 | [1.7.5 上下文与记忆管理](capabilities/context-memory) |
-| **规划与执行** | 复杂任务没条理、全自动不可控 | [1.7.6 规划与执行能力](capabilities/planning-execution) |
-| **运行调试与观测** | 批量验证效果、上线后跟踪运行质量 | [1.7.7 运行调试与观测](capabilities/observability) |
-| **安全校验与本地化** | 资产数据鉴权、简繁体适配 | [1.7.8 安全校验与本地化](capabilities/security-i18n) |
-| **画布与协作效率** | 多人协作防误改、节点复用 | [1.7.9 画布与协作效率](capabilities/canvas-collaboration) |
-| **模型与工具生态** | SOTA 模型选择、账户/行情类工具接入 | [1.7.10 模型与工具生态](capabilities/model-tool-ecosystem) |
-| **对话端体验** | 了解你的 Agent 发布后用户侧的呈现能力 | [1.7.11 对话端体验](capabilities/chat-experience) |
-| **容灾能力** | 厂商故障、调用失败时 Agent 仍稳定可用 | [1.7.12 容灾能力](capabilities/disaster-recovery) |
+| **知识库** | Agent 只会通用知识，不懂你的私有文档 | [知识库](capabilities/knowledge-base) |
+| **Skill 体系** | 专业能力想复用，又不想撑爆 System Prompt | [Skill 体系](capabilities/skill) |
+| **Workflow 触发器** | 任务要定时跑、要被外部系统触发 | [Workflow 触发器](capabilities/workflow-triggers) |
+| **Guardrail 安全护栏** | 输入输出的合规风险需要机制层拦截 | [Guardrail 安全护栏](capabilities/guardrail) |
+| **上下文与记忆管理** | 多轮对话失忆、上下文越积越大 | [上下文与记忆管理](capabilities/context-memory) |
+| **规划与执行** | 复杂任务没条理、全自动不可控 | [规划与执行能力](capabilities/planning-execution) |
+| **运行调试与观测** | 批量验证效果、上线后跟踪运行质量 | [运行调试与观测](capabilities/observability) |
+| **安全校验与本地化** | 资产数据鉴权、简繁体适配 | [安全校验与本地化](capabilities/security-i18n) |
+| **画布与协作效率** | 多人协作防误改、节点复用 | [画布与协作效率](capabilities/canvas-collaboration) |
+| **模型与工具生态** | SOTA 模型选择、账户/行情类工具接入 | [模型与工具生态](capabilities/model-tool-ecosystem) |
+| **对话端体验** | 了解你的 Agent 发布后用户侧的呈现能力 | [对话端体验](capabilities/chat-experience) |
+| **容灾能力** | 厂商故障、调用失败时 Agent 仍稳定可用 | [容灾能力](capabilities/disaster-recovery) |
 
 ## 15 个节点全景图
 
@@ -113,4 +113,4 @@ Start ──▶ LLM ──▶ Answer
 (接收用户消息)  (调用大模型生成回答)  (把回答输出到聊天窗口)
 ```
 
-下一步：跟着 [1.3 快速上手](quick-start) 把它亲手搭出来。
+下一步：跟着 [快速上手](quick-start) 把它亲手搭出来。
