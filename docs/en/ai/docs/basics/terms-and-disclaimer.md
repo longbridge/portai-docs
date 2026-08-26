@@ -3,6 +3,8 @@ sidebar_position: 10
 title: "LongbridgeAI Terms of Service (Singapore)"
 sidebar_label: "Terms and Disclaimer"
 slug: "terms-and-disclaimer"
+sidebar: false
+search: false
 ---
 
 # LONGBRIDGEAI AGENT PLATFORM SERVICE AGREEMENT
@@ -344,4 +346,3 @@ We expressly disclaim any and all of the following warranties:
 ---
 
 > **Disclaimer**: This article is for reference only and does not constitute any investment advice. Content provided by [Longbridge](https://longbridge.com).
-

@@ -124,7 +124,7 @@ function generateSidebarItems(
       const fileContent = fs.readFileSync(filePath, 'utf8')
       const { data, content } = matter(fileContent)
       // 跳过 hidden: true 的文档（如 URL 重定向占位页）
-      if (data['hidden'] === true) continue
+      if (data['hidden'] === true || data['sidebar'] === false) continue
       const title = data['sidebar_label'] || data['title'] || extractFirstH1(content) || getDefaultTitle(file)
       const slug = data['slug']
 
