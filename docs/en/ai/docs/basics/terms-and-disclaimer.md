@@ -5,6 +5,8 @@ sidebar_label: "Terms and Disclaimer"
 slug: "terms-and-disclaimer"
 sidebar: false
 search: false
+breadcrumb: false
+pageClass: terms-and-disclaimer-page
 ---
 
 # LONGBRIDGEAI AGENT PLATFORM SERVICE AGREEMENT

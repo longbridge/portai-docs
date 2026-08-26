@@ -5,6 +5,8 @@ sidebar_label: "条款与免责声明"
 slug: "terms-and-disclaimer"
 sidebar: false
 search: false
+breadcrumb: false
+pageClass: terms-and-disclaimer-page
 ---
 
 # LongbridgeAI Agent Platform 服务协议 (SG)
@@ -346,4 +348,3 @@ LongbridgeAI Agent Platform 是技术基础设施服务平台，仅向用户提�
 ---
 
 > **Disclaimer**: This article is for reference only and does not constitute any investment advice. Content provided by [Longbridge](https://longbridge.com).
-

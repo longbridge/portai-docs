@@ -2,19 +2,21 @@
 import Breadcrumb from '../components/Breadcrumb/index.vue'
 import Layout from './LayoutInner.vue'
 import { useI18nSync, useHighlighter, useLLMMarkdownLink } from '../composables'
+import { useData } from 'vitepress'
 
 // 使用抽离的 hooks
 useI18nSync()
 useHighlighter()
 
 const { llmMarkdownLink } = useLLMMarkdownLink()
+const { frontmatter } = useData()
 </script>
 
 <template>
   <Layout>
     <template #doc-top>
       <div class="-mt-4">
-        <Breadcrumb />
+      <Breadcrumb v-if="frontmatter.breadcrumb !== false" />
       </div>
     </template>
   </Layout>
