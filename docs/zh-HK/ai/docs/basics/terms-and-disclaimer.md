@@ -5,6 +5,7 @@ sidebar_label: "条款与免责声明"
 slug: "terms-and-disclaimer"
 sidebar: false
 search: false
+aside: false
 breadcrumb: false
 pageClass: terms-and-disclaimer-page
 ---

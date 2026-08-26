@@ -5,6 +5,7 @@ sidebar_label: "Terms and Disclaimer"
 slug: "terms-and-disclaimer"
 sidebar: false
 search: false
+aside: false
 breadcrumb: false
 pageClass: terms-and-disclaimer-page
 ---
